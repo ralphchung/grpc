@@ -36,4 +36,4 @@ class GrpcLibrary {
 
 }  // namespace grpc
 
-#endif
+#endif  // GRPCPP_GRPC_LIBRARY_H
