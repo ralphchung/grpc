@@ -23,6 +23,4 @@
 #ifndef GRPCXX_IMPL_CODEGEN_GRPC_LIBRARY_H
 #define GRPCXX_IMPL_CODEGEN_GRPC_LIBRARY_H
 
-#include <grpcpp/impl/codegen/grpc_library.h>
-
 #endif  // GRPCXX_IMPL_CODEGEN_GRPC_LIBRARY_H
