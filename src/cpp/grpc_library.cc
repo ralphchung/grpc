@@ -34,6 +34,8 @@ GrpcLibrary::~GrpcLibrary() {
   }
 }
 
+internal::GrpcLibrary GrpcLibrary::internal_grpc_library;
+
 namespace internal {
 
 void GrpcLibrary::init() { grpc_init(); }
