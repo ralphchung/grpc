@@ -19,7 +19,7 @@
 
 #include <grpc/grpc_security.h>
 #include <grpc/status.h>
-#include <grpcpp/impl/codegen/grpc_library.h>
+#include <grpcpp/impl/codegen/core_codegen.h>
 
 namespace grpc {
 namespace experimental {
