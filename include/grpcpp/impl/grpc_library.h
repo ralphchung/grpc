@@ -38,9 +38,6 @@ extern GrpcLibrary g_grpc_library;
 
 }  // namespace internal
 
-/// Initialized by \a grpc::GrpcLibraryInitializer
-extern internal::GrpcLibrary* g_glip;
-
 /// Classes that require gRPC to be initialized should inherit from this class.
 class GrpcLibraryCodegen {
  public:
@@ -67,9 +64,6 @@ namespace internal {
 class GrpcLibraryInitializer final {
  public:
   GrpcLibraryInitializer() {
-    if (grpc::g_glip == nullptr) {
-      grpc::g_glip = &g_grpc_library;
-    }
     if (grpc::g_core_codegen_interface == nullptr) {
       static auto* const g_core_codegen = new CoreCodegen();
       grpc::g_core_codegen_interface = g_core_codegen;
