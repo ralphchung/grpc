@@ -58,7 +58,7 @@ class ProtoUtilsTest : public ::testing::Test {
     // Ensure the ProtoBufferWriter internals are initialized.
     grpc::internal::GrpcLibraryInitializer init;
     init.summon();
-    grpc::GrpcLibraryCodegen lib;
+    grpc::GrpcLibrary lib;
     grpc_init();
   }
 
@@ -155,7 +155,7 @@ class WriterTest : public ::testing::Test {
   static void SetUpTestCase() {
     grpc::internal::GrpcLibraryInitializer init;
     init.summon();
-    grpc::GrpcLibraryCodegen lib;
+    grpc::GrpcLibrary lib;
     // Ensure the ProtoBufferWriter internals are initialized.
     grpc_init();
   }
