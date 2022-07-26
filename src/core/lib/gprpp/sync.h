@@ -36,9 +36,7 @@
 // Make sure any change to this file is also reflected in
 // include/grpcpp/impl/codegen/sync.h.
 //
-// Whenever possible, prefer using this file over <grpcpp/impl/codegen/sync.h>
-// since this file doesn't rely on g_core_codegen_interface and hence does not
-// pay the costs of virtual function calls.
+// Whenever possible, prefer using this file over <grpcpp/impl/codegen/sync.h>.
 
 namespace grpc_core {
 

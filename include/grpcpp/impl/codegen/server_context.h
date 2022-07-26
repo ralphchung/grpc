@@ -65,8 +65,6 @@ class ServerReader;
 template <class W>
 class ServerWriter;
 
-extern CoreCodegenInterface* g_core_codegen_interface;
-
 namespace internal {
 template <class ServiceType, class RequestType, class ResponseType>
 class BidiStreamingHandler;
@@ -442,8 +440,7 @@ class ServerContextBase {
   }
 
   void MaybeMarkCancelledOnRead() {
-    if (g_core_codegen_interface->grpc_call_failed_before_recv_message(
-            call_.call)) {
+    if (CoreCodegen::grpc_call_failed_before_recv_message(call_.call)) {
       marked_cancelled_.store(true, std::memory_order_release);
     }
   }

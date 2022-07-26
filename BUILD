@@ -604,7 +604,6 @@ grpc_cc_library(
         "grpc",
         "grpc++_base",
         "grpc++_codegen_base",
-        "grpc++_codegen_base_src",
         "grpc++_codegen_proto",
         "grpc++_internal_hdrs_only",
         "grpc_base",
@@ -771,7 +770,6 @@ grpc_cc_library(
         "gpr",
         "grpc++_base_unsecure",
         "grpc++_codegen_base",
-        "grpc++_codegen_base_src",
         "grpc++_codegen_proto",
         "grpc_codegen",
         "grpc_insecure_credentials",
@@ -6481,7 +6479,6 @@ grpc_cc_library(
         "gpr_codegen",
         "grpc",
         "grpc++_codegen_base",
-        "grpc++_codegen_base_src",
         "grpc++_internal_hdrs_only",
         "grpc_base",
         "grpc_codegen",
@@ -6529,7 +6526,6 @@ grpc_cc_library(
         "gpr_base",
         "gpr_codegen",
         "grpc++_codegen_base",
-        "grpc++_codegen_base_src",
         "grpc++_internal_hdrs_only",
         "grpc_base",
         "grpc_codegen",
@@ -6566,7 +6562,6 @@ grpc_cc_library(
         "include/grpc++/impl/codegen/completion_queue_tag.h",
         "include/grpc++/impl/codegen/completion_queue.h",
         "include/grpc++/impl/codegen/config.h",
-        "include/grpc++/impl/codegen/core_codegen_interface.h",
         "include/grpc++/impl/codegen/create_auth_context.h",
         "include/grpc++/impl/codegen/metadata_map.h",
         "include/grpc++/impl/codegen/method_handler_impl.h",
@@ -6601,7 +6596,6 @@ grpc_cc_library(
         "include/grpcpp/impl/codegen/completion_queue_tag.h",
         "include/grpcpp/impl/codegen/completion_queue.h",
         "include/grpcpp/impl/codegen/config.h",
-        "include/grpcpp/impl/codegen/core_codegen_interface.h",
         "include/grpcpp/impl/codegen/create_auth_context.h",
         "include/grpcpp/impl/codegen/delegating_channel.h",
         "include/grpcpp/impl/codegen/intercepted_channel.h",
@@ -6635,19 +6629,6 @@ grpc_cc_library(
         "grpc++_internal_hdrs_only",
         "grpc++_public_hdrs",
         "grpc_codegen",
-    ],
-)
-
-grpc_cc_library(
-    name = "grpc++_codegen_base_src",
-    srcs = [
-        "src/cpp/codegen/codegen_init.cc",
-    ],
-    language = "c++",
-    tags = ["nofixdeps"],
-    deps = [
-        "grpc++_codegen_base",
-        "grpc++_public_hdrs",
     ],
 )
 
