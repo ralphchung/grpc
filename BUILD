@@ -6094,7 +6094,6 @@ grpc_cc_library(
     deps = [
         "gpr_base",
         "grpc++",
-        "grpc++_codegen_base",
         "grpc_authorization_provider",
         "grpc_public_hdrs",
     ],
@@ -6659,8 +6658,8 @@ grpc_cc_library(
     visibility = ["@grpc:public"],
     deps = [
         "grpc++_internal_hdrs_only",
-        "grpc_codegen",
         "grpc++_public_hdrs",
+        "grpc_codegen",
     ],
 )
 
