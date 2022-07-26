@@ -21,10 +21,49 @@
 
 #include <iostream>
 
-#include <grpc/grpc.h>
 #include <grpcpp/impl/codegen/config.h>
 #include <grpcpp/impl/codegen/core_codegen.h>
-#include <grpcpp/impl/codegen/grpc_library.h>  // IWYU pragma: export
+
+namespace grpc {
+
+class GrpcLibraryInterface {
+ public:
+  virtual ~GrpcLibraryInterface() = default;
+  virtual void init() = 0;
+  virtual void shutdown() = 0;
+};
+
+/// Initialized by \a grpc::GrpcLibraryInitializer from
+/// <grpcpp/impl/grpc_library.h>
+extern GrpcLibraryInterface* g_glip;
+
+/// Classes that require gRPC to be initialized should inherit from this class.
+class GrpcLibraryCodegen {
+ public:
+  explicit GrpcLibraryCodegen(bool call_grpc_init = true)
+      : grpc_init_called_(false) {
+    if (call_grpc_init) {
+      GPR_CODEGEN_ASSERT(g_glip &&
+                         "gRPC library not initialized. See "
+                         "grpc::internal::GrpcLibraryInitializer.");
+      g_glip->init();
+      grpc_init_called_ = true;
+    }
+  }
+  virtual ~GrpcLibraryCodegen() {
+    if (grpc_init_called_) {
+      GPR_CODEGEN_ASSERT(g_glip &&
+                         "gRPC library not initialized. See "
+                         "grpc::internal::GrpcLibraryInitializer.");
+      g_glip->shutdown();
+    }
+  }
+
+ private:
+  bool grpc_init_called_;
+};
+
+}  // namespace grpc
 
 namespace grpc {
 
@@ -35,13 +74,14 @@ class GrpcLibrary final : public GrpcLibraryInterface {
   void shutdown() override { grpc_shutdown(); }
 };
 
+extern GrpcLibrary g_grpc_library;
+
 /// Instantiating this class ensures the proper initialization of gRPC.
 class GrpcLibraryInitializer final {
  public:
   GrpcLibraryInitializer() {
     if (grpc::g_glip == nullptr) {
-      static auto* const g_gli = new GrpcLibrary();
-      grpc::g_glip = g_gli;
+      grpc::g_glip = &g_grpc_library;
     }
     if (grpc::g_core_codegen_interface == nullptr) {
       static auto* const g_core_codegen = new CoreCodegen();
