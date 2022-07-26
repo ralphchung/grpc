@@ -237,6 +237,7 @@ GRPCXX_SRCS = [
     "src/cpp/util/status.cc",
     "src/cpp/util/string_ref.cc",
     "src/cpp/util/time_cc.cc",
+    "src/cpp/grpc_library.cc",
 ]
 
 GRPCXX_HDRS = [
@@ -6660,6 +6661,7 @@ grpc_cc_library(
     deps = [
         "grpc++_internal_hdrs_only",
         "grpc_codegen",
+        "grpc++_public_hdrs",
     ],
 )
 
