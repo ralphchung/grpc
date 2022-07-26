@@ -22,7 +22,7 @@
 // IWYU pragma: private, include <grpcpp/support/method_handler.h>
 
 #include <grpcpp/impl/codegen/byte_buffer.h>
-#include <grpcpp/impl/codegen/core_codegen_interface.h>
+#include <grpcpp/impl/codegen/core_codegen.h>
 #include <grpcpp/impl/codegen/rpc_service_method.h>
 #include <grpcpp/impl/codegen/sync_stream.h>
 
@@ -122,7 +122,7 @@ class RpcMethodHandler : public grpc::internal::MethodHandler {
 
   void* Deserialize(grpc_call* call, grpc_byte_buffer* req,
                     grpc::Status* status, void** /*handler_data*/) final {
-    auto* request = new (grpc::g_core_codegen_interface->grpc_call_arena_alloc(
+    auto* request = new (grpc::CoreCodegen::grpc_call_arena_alloc(
         call, sizeof(RequestType))) RequestType;
     return UnaryDeserializeHelper(req, status,
                                   static_cast<BaseRequestType*>(request));
@@ -231,7 +231,7 @@ class ServerStreamingHandler : public grpc::internal::MethodHandler {
                     grpc::Status* status, void** /*handler_data*/) final {
     grpc::ByteBuffer buf;
     buf.set_buffer(req);
-    auto* request = new (grpc::g_core_codegen_interface->grpc_call_arena_alloc(
+    auto* request = new (grpc::CoreCodegen::grpc_call_arena_alloc(
         call, sizeof(RequestType))) RequestType();
     *status =
         grpc::SerializationTraits<RequestType>::Deserialize(&buf, request);
@@ -386,7 +386,7 @@ class ErrorMethodHandler : public grpc::internal::MethodHandler {
                     grpc::Status* /*status*/, void** /*handler_data*/) final {
     // We have to destroy any request payload
     if (req != nullptr) {
-      grpc::g_core_codegen_interface->grpc_byte_buffer_destroy(req);
+      grpc::CoreCodegen::grpc_byte_buffer_destroy(req);
     }
     return nullptr;
   }

@@ -83,9 +83,7 @@ class MetadataMap {
   grpc_metadata_array arr_;
   std::multimap<grpc::string_ref, grpc::string_ref> map_;
 
-  void Destroy() {
-    g_core_codegen_interface->grpc_metadata_array_destroy(&arr_);
-  }
+  void Destroy() { CoreCodegen::grpc_metadata_array_destroy(&arr_); }
 
   void Setup() { memset(&arr_, 0, sizeof(arr_)); }
 

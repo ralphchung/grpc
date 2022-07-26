@@ -57,7 +57,6 @@ expected_files = [
     "include/grpc++/impl/codegen/status.h",
     "include/grpc++/impl/codegen/core_codegen.h",
     "include/grpc++/impl/codegen/config.h",
-    "include/grpc++/impl/codegen/core_codegen_interface.h",
     "include/grpc++/impl/codegen/status_code_enum.h",
     "include/grpc++/impl/codegen/metadata_map.h",
     "include/grpc++/impl/codegen/rpc_method.h",
