@@ -16,30 +16,24 @@
  *
  */
 
-#include <grpc/grpc.h>
-#include <grpcpp/grpc_library.h>
+#ifndef GRPCPP_GRPC_LIBRARY_H
+#define GRPCPP_GRPC_LIBRARY_H
+
 #include <grpcpp/impl/grpc_library.h>
 
 namespace grpc {
 
-GrpcLibrary::GrpcLibrary(bool call_grpc_init) : grpc_init_called_(false) {
-  if (call_grpc_init) {
-    internal_grpc_library.init();
-    grpc_init_called_ = true;
-  }
-}
-GrpcLibrary::~GrpcLibrary() {
-  if (grpc_init_called_) {
-    internal_grpc_library.shutdown();
-  }
-}
+/// Classes that require gRPC to be initialized should inherit from this class.
+class GrpcLibrary {
+ public:
+  explicit GrpcLibrary(bool call_grpc_init = true);
+  virtual ~GrpcLibrary();
 
-namespace internal {
-
-void GrpcLibrary::init() { grpc_init(); }
-
-void GrpcLibrary::shutdown() { grpc_shutdown(); }
-
-}  // namespace internal
+ private:
+  bool grpc_init_called_;
+  static internal::GrpcLibrary internal_grpc_library;
+};
 
 }  // namespace grpc
+
+#endif
