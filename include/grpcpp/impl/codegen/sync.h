@@ -33,16 +33,14 @@
 
 #include <grpc/impl/codegen/log.h>
 #include <grpc/impl/codegen/sync.h>
-#include <grpcpp/impl/codegen/core_codegen_interface.h>
+#include <grpcpp/impl/codegen/core_codegen.h>
 
 // The core library is not accessible in C++ codegen headers, and vice versa.
 // Thus, we need to have duplicate headers with similar functionality.
 // Make sure any change to this file is also reflected in
 // src/core/lib/gprpp/sync.h too.
 //
-// Whenever possible, prefer "src/core/lib/gprpp/sync.h" over this file,
-// since in core we do not rely on g_core_codegen_interface and hence do not
-// pay the costs of virtual function calls.
+// Whenever possible, prefer "src/core/lib/gprpp/sync.h" over this file.
 
 namespace grpc {
 namespace internal {
@@ -58,18 +56,14 @@ using CondVar = absl::CondVar;
 
 class ABSL_LOCKABLE Mutex {
  public:
-  Mutex() { g_core_codegen_interface->gpr_mu_init(&mu_); }
-  ~Mutex() { g_core_codegen_interface->gpr_mu_destroy(&mu_); }
+  Mutex() { CoreCodegen::gpr_mu_init(&mu_); }
+  ~Mutex() { CoreCodegen::gpr_mu_destroy(&mu_); }
 
   Mutex(const Mutex&) = delete;
   Mutex& operator=(const Mutex&) = delete;
 
-  void Lock() ABSL_EXCLUSIVE_LOCK_FUNCTION() {
-    g_core_codegen_interface->gpr_mu_lock(&mu_);
-  }
-  void Unlock() ABSL_UNLOCK_FUNCTION() {
-    g_core_codegen_interface->gpr_mu_unlock(&mu_);
-  }
+  void Lock() ABSL_EXCLUSIVE_LOCK_FUNCTION() { CoreCodegen::gpr_mu_lock(&mu_); }
+  void Unlock() ABSL_UNLOCK_FUNCTION() { CoreCodegen::gpr_mu_unlock(&mu_); }
 
  private:
   union {
@@ -123,19 +117,18 @@ class ABSL_SCOPED_LOCKABLE ReleasableMutexLock {
 
 class CondVar {
  public:
-  CondVar() { g_core_codegen_interface->gpr_cv_init(&cv_); }
-  ~CondVar() { g_core_codegen_interface->gpr_cv_destroy(&cv_); }
+  CondVar() { CoreCodegen::gpr_cv_init(&cv_); }
+  ~CondVar() { CoreCodegen::gpr_cv_destroy(&cv_); }
 
   CondVar(const CondVar&) = delete;
   CondVar& operator=(const CondVar&) = delete;
 
-  void Signal() { g_core_codegen_interface->gpr_cv_signal(&cv_); }
-  void SignalAll() { g_core_codegen_interface->gpr_cv_broadcast(&cv_); }
+  void Signal() { CoreCodegen::gpr_cv_signal(&cv_); }
+  void SignalAll() { CoreCodegen::gpr_cv_broadcast(&cv_); }
 
   void Wait(Mutex* mu) {
-    g_core_codegen_interface->gpr_cv_wait(
-        &cv_, &mu->mu_,
-        g_core_codegen_interface->gpr_inf_future(GPR_CLOCK_REALTIME));
+    CoreCodegen::gpr_cv_wait(&cv_, &mu->mu_,
+                             CoreCodegen::gpr_inf_future(GPR_CLOCK_REALTIME));
   }
 
  private:

@@ -28,7 +28,7 @@
 #include <grpc/impl/codegen/slice.h>
 #include <grpcpp/impl/codegen/byte_buffer.h>
 #include <grpcpp/impl/codegen/config_protobuf.h>
-#include <grpcpp/impl/codegen/core_codegen_interface.h>
+#include <grpcpp/impl/codegen/core_codegen.h>
 #include <grpcpp/impl/codegen/proto_buffer_reader.h>
 #include <grpcpp/impl/codegen/proto_buffer_writer.h>
 #include <grpcpp/impl/codegen/serialization_traits.h>
@@ -39,8 +39,6 @@
 /// messages serialized using protobuf and the C++ objects they represent.
 
 namespace grpc {
-
-extern CoreCodegenInterface* g_core_codegen_interface;
 
 // ProtoBufferWriter must be a subclass of ::protobuf::io::ZeroCopyOutputStream.
 template <class ProtoBufferWriter, class T>
@@ -60,11 +58,11 @@ Status GenericSerialize(const grpc::protobuf::MessageLite& msg, ByteBuffer* bb,
     ByteBuffer tmp(&slice, 1);
     bb->Swap(&tmp);
 
-    return g_core_codegen_interface->ok();
+    return CoreCodegen::ok();
   }
   ProtoBufferWriter writer(bb, kProtoBufferWriterMaxBufferLength, byte_size);
   return msg.SerializeToZeroCopyStream(&writer)
-             ? g_core_codegen_interface->ok()
+             ? CoreCodegen::ok()
              : Status(StatusCode::INTERNAL, "Failed to serialize message");
 }
 
@@ -79,7 +77,7 @@ Status GenericDeserialize(ByteBuffer* buffer,
   if (buffer == nullptr) {
     return Status(StatusCode::INTERNAL, "No payload");
   }
-  Status result = g_core_codegen_interface->ok();
+  Status result = CoreCodegen::ok();
   {
     ProtoBufferReader reader(buffer);
     if (!reader.status().ok()) {

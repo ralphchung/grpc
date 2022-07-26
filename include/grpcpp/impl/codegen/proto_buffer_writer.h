@@ -27,7 +27,7 @@
 #include <grpc/impl/codegen/slice.h>
 #include <grpcpp/impl/codegen/byte_buffer.h>
 #include <grpcpp/impl/codegen/config_protobuf.h>
-#include <grpcpp/impl/codegen/core_codegen_interface.h>
+#include <grpcpp/impl/codegen/core_codegen.h>
 #include <grpcpp/impl/codegen/serialization_traits.h>
 #include <grpcpp/impl/codegen/status.h>
 
@@ -35,8 +35,6 @@
 /// grpc::ByteBuffer, via the ZeroCopyOutputStream interface
 
 namespace grpc {
-
-extern CoreCodegenInterface* g_core_codegen_interface;
 
 // Forward declaration for testing use only
 namespace internal {
@@ -66,15 +64,14 @@ class ProtoBufferWriter : public grpc::protobuf::io::ZeroCopyOutputStream {
         have_backup_(false) {
     GPR_CODEGEN_ASSERT(!byte_buffer->Valid());
     /// Create an empty raw byte buffer and look at its underlying slice buffer
-    grpc_byte_buffer* bp =
-        g_core_codegen_interface->grpc_raw_byte_buffer_create(nullptr, 0);
+    grpc_byte_buffer* bp = CoreCodegen::grpc_raw_byte_buffer_create(nullptr, 0);
     byte_buffer->set_buffer(bp);
     slice_buffer_ = &bp->data.raw.slice_buffer;
   }
 
   ~ProtoBufferWriter() override {
     if (have_backup_) {
-      g_core_codegen_interface->grpc_slice_unref(backup_slice_);
+      CoreCodegen::grpc_slice_unref(backup_slice_);
     }
   }
 
@@ -101,7 +98,7 @@ class ProtoBufferWriter : public grpc::protobuf::io::ZeroCopyOutputStream {
       // But make sure the allocated slice is not inlined.
       size_t allocate_length =
           remain > static_cast<size_t>(block_size_) ? block_size_ : remain;
-      slice_ = g_core_codegen_interface->grpc_slice_malloc(
+      slice_ = CoreCodegen::grpc_slice_malloc(
           allocate_length > GRPC_SLICE_INLINED_SIZE
               ? allocate_length
               : GRPC_SLICE_INLINED_SIZE + 1);
@@ -114,8 +111,7 @@ class ProtoBufferWriter : public grpc::protobuf::io::ZeroCopyOutputStream {
     // previous slice. Therefore, use grpc_slice_buffer_add_indexed method to
     // ensure the slice gets added at a separate index. It can then be kept
     // around and popped later in the BackUp function.
-    g_core_codegen_interface->grpc_slice_buffer_add_indexed(slice_buffer_,
-                                                            slice_);
+    CoreCodegen::grpc_slice_buffer_add_indexed(slice_buffer_, slice_);
     return true;
   }
 
@@ -135,13 +131,13 @@ class ProtoBufferWriter : public grpc::protobuf::io::ZeroCopyOutputStream {
     /// 3. Add the needed part back to the slice buffer
     /// 4. Mark that we still have the remaining part (for later use/unref)
     GPR_CODEGEN_ASSERT(count <= static_cast<int>(GRPC_SLICE_LENGTH(slice_)));
-    g_core_codegen_interface->grpc_slice_buffer_pop(slice_buffer_);
+    CoreCodegen::grpc_slice_buffer_pop(slice_buffer_);
     if (static_cast<size_t>(count) == GRPC_SLICE_LENGTH(slice_)) {
       backup_slice_ = slice_;
     } else {
-      backup_slice_ = g_core_codegen_interface->grpc_slice_split_tail(
+      backup_slice_ = CoreCodegen::grpc_slice_split_tail(
           &slice_, GRPC_SLICE_LENGTH(slice_) - count);
-      g_core_codegen_interface->grpc_slice_buffer_add(slice_buffer_, slice_);
+      CoreCodegen::grpc_slice_buffer_add(slice_buffer_, slice_);
     }
     // It's dangerous to keep an inlined grpc_slice as the backup slice, since
     // on a following Next() call, a reference will be returned to this slice

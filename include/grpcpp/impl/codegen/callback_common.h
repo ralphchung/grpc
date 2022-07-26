@@ -28,7 +28,7 @@
 #include <grpcpp/impl/codegen/channel_interface.h>
 #include <grpcpp/impl/codegen/completion_queue_tag.h>
 #include <grpcpp/impl/codegen/config.h>
-#include <grpcpp/impl/codegen/core_codegen_interface.h>
+#include <grpcpp/impl/codegen/core_codegen.h>
 #include <grpcpp/impl/codegen/status.h>
 
 namespace grpc {
@@ -85,7 +85,7 @@ class CallbackWithStatusTag : public grpc_completion_queue_functor {
   CallbackWithStatusTag(grpc_call* call, std::function<void(Status)> f,
                         CompletionQueueTag* ops)
       : call_(call), func_(std::move(f)), ops_(ops) {
-    g_core_codegen_interface->grpc_call_ref(call);
+    CoreCodegen::grpc_call_ref(call);
     functor_run = &CallbackWithStatusTag::StaticRun;
     // A client-side callback should never be run inline since they will always
     // have work to do from the user application. So, set the parent's
@@ -127,7 +127,7 @@ class CallbackWithStatusTag : public grpc_completion_queue_functor {
     func_ = nullptr;     // reset to clear this out for sure
     status_ = Status();  // reset to clear this out for sure
     CatchingCallback(std::move(func), std::move(status));
-    g_core_codegen_interface->grpc_call_unref(call_);
+    CoreCodegen::grpc_call_unref(call_);
   }
 };
 
@@ -164,7 +164,7 @@ class CallbackWithSuccessTag : public grpc_completion_queue_functor {
   void Set(grpc_call* call, std::function<void(bool)> f,
            CompletionQueueTag* ops, bool can_inline) {
     GPR_CODEGEN_ASSERT(call_ == nullptr);
-    g_core_codegen_interface->grpc_call_ref(call);
+    CoreCodegen::grpc_call_ref(call);
     call_ = call;
     func_ = std::move(f);
     ops_ = ops;
@@ -177,7 +177,7 @@ class CallbackWithSuccessTag : public grpc_completion_queue_functor {
       grpc_call* call = call_;
       call_ = nullptr;
       func_ = nullptr;
-      g_core_codegen_interface->grpc_call_unref(call);
+      CoreCodegen::grpc_call_unref(call);
     }
   }
 
