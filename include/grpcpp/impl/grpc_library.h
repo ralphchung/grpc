@@ -34,32 +34,6 @@ class GrpcLibrary final {
   void shutdown();
 };
 
-extern GrpcLibrary g_grpc_library;
-
-}  // namespace internal
-
-/// Classes that require gRPC to be initialized should inherit from this class.
-class GrpcLibraryCodegen {
- public:
-  explicit GrpcLibraryCodegen(bool call_grpc_init = true)
-      : grpc_init_called_(false) {
-    if (call_grpc_init) {
-      internal::g_grpc_library.init();
-      grpc_init_called_ = true;
-    }
-  }
-  virtual ~GrpcLibraryCodegen() {
-    if (grpc_init_called_) {
-      internal::g_grpc_library.shutdown();
-    }
-  }
-
- private:
-  bool grpc_init_called_;
-};
-
-namespace internal {
-
 /// Instantiating this class ensures the proper initialization of gRPC.
 class GrpcLibraryInitializer final {
  public:

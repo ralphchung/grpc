@@ -106,7 +106,7 @@ grpc_sts_credentials_options StsCredentialsCppToCoreOptions(
 
 }  // namespace experimental
 
-class MetadataCredentialsPluginWrapper final : private GrpcLibraryCodegen {
+class MetadataCredentialsPluginWrapper final : private GrpcLibrary {
  public:
   static void Destroy(void* wrapper);
   static int GetMetadata(
