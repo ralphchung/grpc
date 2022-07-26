@@ -3112,6 +3112,7 @@ add_library(grpc++
   src/cpp/common/tls_credentials_options.cc
   src/cpp/common/validate_service_config.cc
   src/cpp/common/version_cc.cc
+  src/cpp/grpc_library.cc
   src/cpp/server/async_generic_service.cc
   src/cpp/server/channel_argument_option.cc
   src/cpp/server/create_default_thread_pool.cc
@@ -3135,7 +3136,6 @@ add_library(grpc++
   src/cpp/util/status.cc
   src/cpp/util/string_ref.cc
   src/cpp/util/time_cc.cc
-  src/cpp/grpc_library.cc
 )
 
 set_target_properties(grpc++ PROPERTIES
@@ -3264,6 +3264,7 @@ foreach(_hdr
   include/grpcpp/ext/health_check_service_server_builder_option.h
   include/grpcpp/generic/async_generic_service.h
   include/grpcpp/generic/generic_stub.h
+  include/grpcpp/grpc_library.h
   include/grpcpp/grpcpp.h
   include/grpcpp/health_check_service_interface.h
   include/grpcpp/impl/call.h
@@ -3785,6 +3786,7 @@ add_library(grpc++_unsecure
   src/cpp/common/rpc_method.cc
   src/cpp/common/validate_service_config.cc
   src/cpp/common/version_cc.cc
+  src/cpp/grpc_library.cc
   src/cpp/server/async_generic_service.cc
   src/cpp/server/channel_argument_option.cc
   src/cpp/server/create_default_thread_pool.cc
@@ -3806,7 +3808,6 @@ add_library(grpc++_unsecure
   src/cpp/util/status.cc
   src/cpp/util/string_ref.cc
   src/cpp/util/time_cc.cc
-  src/cpp/grpc_library.cc
 )
 
 set_target_properties(grpc++_unsecure PROPERTIES
@@ -3933,6 +3934,7 @@ foreach(_hdr
   include/grpcpp/ext/health_check_service_server_builder_option.h
   include/grpcpp/generic/async_generic_service.h
   include/grpcpp/generic/generic_stub.h
+  include/grpcpp/grpc_library.h
   include/grpcpp/grpcpp.h
   include/grpcpp/health_check_service_interface.h
   include/grpcpp/impl/call.h
@@ -6510,6 +6512,7 @@ add_executable(binder_transport_test
   src/cpp/common/rpc_method.cc
   src/cpp/common/validate_service_config.cc
   src/cpp/common/version_cc.cc
+  src/cpp/grpc_library.cc
   src/cpp/server/async_generic_service.cc
   src/cpp/server/channel_argument_option.cc
   src/cpp/server/create_default_thread_pool.cc
@@ -6530,7 +6533,6 @@ add_executable(binder_transport_test
   src/cpp/util/status.cc
   src/cpp/util/string_ref.cc
   src/cpp/util/time_cc.cc
-  src/cpp/grpc_library.cc
   test/core/transport/binder/binder_transport_test.cc
   test/core/transport/binder/mock_objects.cc
   third_party/googletest/googletest/src/gtest-all.cc
@@ -9036,6 +9038,7 @@ add_executable(endpoint_binder_pool_test
   src/cpp/common/rpc_method.cc
   src/cpp/common/validate_service_config.cc
   src/cpp/common/version_cc.cc
+  src/cpp/grpc_library.cc
   src/cpp/server/async_generic_service.cc
   src/cpp/server/channel_argument_option.cc
   src/cpp/server/create_default_thread_pool.cc
@@ -9056,7 +9059,6 @@ add_executable(endpoint_binder_pool_test
   src/cpp/util/status.cc
   src/cpp/util/string_ref.cc
   src/cpp/util/time_cc.cc
-  src/cpp/grpc_library.cc
   test/core/transport/binder/endpoint_binder_pool_test.cc
   test/core/transport/binder/mock_objects.cc
   third_party/googletest/googletest/src/gtest-all.cc
@@ -9626,6 +9628,7 @@ add_executable(fake_binder_test
   src/cpp/common/rpc_method.cc
   src/cpp/common/validate_service_config.cc
   src/cpp/common/version_cc.cc
+  src/cpp/grpc_library.cc
   src/cpp/server/async_generic_service.cc
   src/cpp/server/channel_argument_option.cc
   src/cpp/server/create_default_thread_pool.cc
@@ -9646,7 +9649,6 @@ add_executable(fake_binder_test
   src/cpp/util/status.cc
   src/cpp/util/string_ref.cc
   src/cpp/util/time_cc.cc
-  src/cpp/grpc_library.cc
   test/core/transport/binder/end2end/fake_binder.cc
   test/core/transport/binder/end2end/fake_binder_test.cc
   third_party/googletest/googletest/src/gtest-all.cc
@@ -19077,6 +19079,7 @@ add_executable(transport_stream_receiver_test
   src/cpp/common/rpc_method.cc
   src/cpp/common/validate_service_config.cc
   src/cpp/common/version_cc.cc
+  src/cpp/grpc_library.cc
   src/cpp/server/async_generic_service.cc
   src/cpp/server/channel_argument_option.cc
   src/cpp/server/create_default_thread_pool.cc
@@ -19097,7 +19100,6 @@ add_executable(transport_stream_receiver_test
   src/cpp/util/status.cc
   src/cpp/util/string_ref.cc
   src/cpp/util/time_cc.cc
-  src/cpp/grpc_library.cc
   test/core/transport/binder/transport_stream_receiver_test.cc
   third_party/googletest/googletest/src/gtest-all.cc
   third_party/googletest/googlemock/src/gmock-all.cc
@@ -19541,6 +19543,7 @@ add_executable(wire_reader_test
   src/cpp/common/rpc_method.cc
   src/cpp/common/validate_service_config.cc
   src/cpp/common/version_cc.cc
+  src/cpp/grpc_library.cc
   src/cpp/server/async_generic_service.cc
   src/cpp/server/channel_argument_option.cc
   src/cpp/server/create_default_thread_pool.cc
@@ -19561,7 +19564,6 @@ add_executable(wire_reader_test
   src/cpp/util/status.cc
   src/cpp/util/string_ref.cc
   src/cpp/util/time_cc.cc
-  src/cpp/grpc_library.cc
   test/core/transport/binder/mock_objects.cc
   test/core/transport/binder/wire_reader_test.cc
   third_party/googletest/googletest/src/gtest-all.cc
@@ -19635,6 +19637,7 @@ add_executable(wire_writer_test
   src/cpp/common/rpc_method.cc
   src/cpp/common/validate_service_config.cc
   src/cpp/common/version_cc.cc
+  src/cpp/grpc_library.cc
   src/cpp/server/async_generic_service.cc
   src/cpp/server/channel_argument_option.cc
   src/cpp/server/create_default_thread_pool.cc
@@ -19655,7 +19658,6 @@ add_executable(wire_writer_test
   src/cpp/util/status.cc
   src/cpp/util/string_ref.cc
   src/cpp/util/time_cc.cc
-  src/cpp/grpc_library.cc
   test/core/transport/binder/mock_objects.cc
   test/core/transport/binder/wire_writer_test.cc
   third_party/googletest/googletest/src/gtest-all.cc
