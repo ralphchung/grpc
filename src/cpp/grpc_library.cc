@@ -1,6 +1,6 @@
 /*
  *
- * Copyright 2016 gRPC authors.
+ * Copyright 2022 gRPC authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,12 +16,15 @@
  *
  */
 
-#ifndef GRPCPP_IMPL_CODEGEN_GRPC_LIBRARY_H
-#define GRPCPP_IMPL_CODEGEN_GRPC_LIBRARY_H
-
-// IWYU pragma: private, include <grpcpp/impl/grpc_library.h>
-
-#include <grpcpp/impl/codegen/core_codegen_interface.h>
+#include <grpc/grpc.h>
 #include <grpcpp/impl/grpc_library.h>
 
-#endif  // GRPCPP_IMPL_CODEGEN_GRPC_LIBRARY_H
+namespace grpc {
+
+namespace internal {
+
+GrpcLibrary g_grpc_library;
+
+}
+
+}  // namespace grpc
