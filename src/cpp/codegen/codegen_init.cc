@@ -27,4 +27,3 @@
 /// as part of the instantiation of a \a grpc::GrpcLibraryInitializer variable.
 
 grpc::CoreCodegenInterface* grpc::g_core_codegen_interface;
-grpc::GrpcLibraryInterface* grpc::g_glip;
