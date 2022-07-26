@@ -21,8 +21,6 @@
 
 namespace grpc {
 
-grpc::internal::GrpcLibrary* g_glip;
-
 namespace internal {
 
 GrpcLibrary g_grpc_library;
