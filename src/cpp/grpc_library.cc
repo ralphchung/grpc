@@ -21,10 +21,16 @@
 
 namespace grpc {
 
+grpc::internal::GrpcLibrary* g_glip;
+
 namespace internal {
 
 GrpcLibrary g_grpc_library;
 
-}
+void GrpcLibrary::init() { grpc_init(); }
+
+void GrpcLibrary::shutdown() { grpc_shutdown(); }
+
+}  // namespace internal
 
 }  // namespace grpc
