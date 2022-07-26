@@ -26,16 +26,20 @@
 
 namespace grpc {
 
-class GrpcLibraryInterface {
+namespace internal {
+
+class GrpcLibrary final {
  public:
-  virtual ~GrpcLibraryInterface() = default;
-  virtual void init() = 0;
-  virtual void shutdown() = 0;
+  void init();
+  void shutdown();
 };
 
-/// Initialized by \a grpc::GrpcLibraryInitializer from
-/// <grpcpp/impl/grpc_library.h>
-extern GrpcLibraryInterface* g_glip;
+extern GrpcLibrary g_grpc_library;
+
+}  // namespace internal
+
+/// Initialized by \a grpc::GrpcLibraryInitializer
+extern internal::GrpcLibrary* g_glip;
 
 /// Classes that require gRPC to be initialized should inherit from this class.
 class GrpcLibraryCodegen {
@@ -43,19 +47,13 @@ class GrpcLibraryCodegen {
   explicit GrpcLibraryCodegen(bool call_grpc_init = true)
       : grpc_init_called_(false) {
     if (call_grpc_init) {
-      GPR_CODEGEN_ASSERT(g_glip &&
-                         "gRPC library not initialized. See "
-                         "grpc::internal::GrpcLibraryInitializer.");
-      g_glip->init();
+      internal::g_grpc_library.init();
       grpc_init_called_ = true;
     }
   }
   virtual ~GrpcLibraryCodegen() {
     if (grpc_init_called_) {
-      GPR_CODEGEN_ASSERT(g_glip &&
-                         "gRPC library not initialized. See "
-                         "grpc::internal::GrpcLibraryInitializer.");
-      g_glip->shutdown();
+      internal::g_grpc_library.shutdown();
     }
   }
 
@@ -63,18 +61,7 @@ class GrpcLibraryCodegen {
   bool grpc_init_called_;
 };
 
-}  // namespace grpc
-
-namespace grpc {
-
 namespace internal {
-class GrpcLibrary final : public GrpcLibraryInterface {
- public:
-  void init() override { grpc_init(); }
-  void shutdown() override { grpc_shutdown(); }
-};
-
-extern GrpcLibrary g_grpc_library;
 
 /// Instantiating this class ensures the proper initialization of gRPC.
 class GrpcLibraryInitializer final {
