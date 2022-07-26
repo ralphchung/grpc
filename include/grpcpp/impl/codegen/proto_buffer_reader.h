@@ -28,7 +28,7 @@
 #include <grpc/impl/codegen/slice.h>
 #include <grpcpp/impl/codegen/byte_buffer.h>
 #include <grpcpp/impl/codegen/config_protobuf.h>
-#include <grpcpp/impl/codegen/core_codegen_interface.h>
+#include <grpcpp/impl/codegen/core_codegen.h>
 #include <grpcpp/impl/codegen/serialization_traits.h>
 #include <grpcpp/impl/codegen/status.h>
 
@@ -36,8 +36,6 @@
 /// grpc::ByteBuffer, via the ZeroCopyInputStream interface
 
 namespace grpc {
-
-extern CoreCodegenInterface* g_core_codegen_interface;
 
 /// This is a specialization of the protobuf class ZeroCopyInputStream
 /// The principle is to get one chunk of data at a time from the proto layer,
@@ -53,9 +51,8 @@ class ProtoBufferReader : public grpc::protobuf::io::ZeroCopyInputStream {
       : byte_count_(0), backup_count_(0), status_() {
     /// Implemented through a grpc_byte_buffer_reader which iterates
     /// over the slices that make up a byte buffer
-    if (!buffer->Valid() ||
-        !g_core_codegen_interface->grpc_byte_buffer_reader_init(
-            &reader_, buffer->c_buffer())) {
+    if (!buffer->Valid() || !CoreCodegen::grpc_byte_buffer_reader_init(
+                                &reader_, buffer->c_buffer())) {
       status_ = Status(StatusCode::INTERNAL,
                        "Couldn't initialize byte buffer reader");
     }
@@ -63,7 +60,7 @@ class ProtoBufferReader : public grpc::protobuf::io::ZeroCopyInputStream {
 
   ~ProtoBufferReader() override {
     if (status_.ok()) {
-      g_core_codegen_interface->grpc_byte_buffer_reader_destroy(&reader_);
+      CoreCodegen::grpc_byte_buffer_reader_destroy(&reader_);
     }
   }
 
@@ -83,8 +80,7 @@ class ProtoBufferReader : public grpc::protobuf::io::ZeroCopyInputStream {
       return true;
     }
     /// Otherwise get the next slice from the byte buffer reader
-    if (!g_core_codegen_interface->grpc_byte_buffer_reader_peek(&reader_,
-                                                                &slice_)) {
+    if (!CoreCodegen::grpc_byte_buffer_reader_peek(&reader_, &slice_)) {
       return false;
     }
     *data = GRPC_SLICE_START_PTR(*slice_);
