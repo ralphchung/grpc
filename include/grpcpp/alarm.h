@@ -43,10 +43,6 @@ class Alarm : private grpc::GrpcLibrary {
   /// DEPRECATED: Create and set a completion queue alarm instance associated to
   /// \a cq.
   /// This form is deprecated because it is inherently racy.
-  /// \internal We rely on the presence of \a cq for grpc initialization. If \a
-  /// cq were ever to be removed, a reference to a static
-  /// internal::GrpcLibraryInitializer instance would need to be introduced
-  /// here. \endinternal.
   template <typename T>
   Alarm(grpc::CompletionQueue* cq, const T& deadline, void* tag) : Alarm() {
     SetInternal(cq, grpc::TimePoint<T>(deadline).raw_time(), tag);

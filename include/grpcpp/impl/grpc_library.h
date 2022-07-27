@@ -34,16 +34,6 @@ class GrpcLibrary final {
   void shutdown();
 };
 
-/// Instantiating this class ensures the proper initialization of gRPC.
-class GrpcLibraryInitializer final {
- public:
-  GrpcLibraryInitializer() {}
-
-  /// A no-op method to force the linker to reference this class, which will
-  /// take care of initializing and shutting down the gRPC runtime.
-  int summon() { return 0; }
-};
-
 }  // namespace internal
 }  // namespace grpc
 
