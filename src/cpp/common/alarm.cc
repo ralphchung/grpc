@@ -27,7 +27,6 @@
 #include <grpcpp/alarm.h>
 #include <grpcpp/completion_queue.h>
 #include <grpcpp/impl/codegen/completion_queue_tag.h>
-#include <grpcpp/impl/grpc_library.h>
 
 #include "src/core/lib/gprpp/time.h"
 #include "src/core/lib/iomgr/closure.h"
@@ -133,11 +132,7 @@ class AlarmImpl : public grpc::internal::CompletionQueueTag {
 };
 }  // namespace internal
 
-static grpc::internal::GrpcLibraryInitializer g_gli_initializer;
-
-Alarm::Alarm() : alarm_(new internal::AlarmImpl()) {
-  g_gli_initializer.summon();
-}
+Alarm::Alarm() : alarm_(new internal::AlarmImpl()) {}
 
 void Alarm::SetInternal(grpc::CompletionQueue* cq, gpr_timespec deadline,
                         void* tag) {

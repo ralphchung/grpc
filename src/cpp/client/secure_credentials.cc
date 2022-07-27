@@ -36,7 +36,6 @@
 #include <grpc/support/string_util.h>
 #include <grpc/support/time.h>
 #include <grpcpp/channel.h>
-#include <grpcpp/impl/grpc_library.h>
 #include <grpcpp/security/tls_credentials_options.h>
 #include <grpcpp/support/channel_arguments.h>
 #include <grpcpp/support/slice.h>
@@ -55,12 +54,9 @@
 
 namespace grpc {
 
-static grpc::internal::GrpcLibraryInitializer g_gli_initializer;
 SecureChannelCredentials::SecureChannelCredentials(
     grpc_channel_credentials* c_creds)
-    : c_creds_(c_creds) {
-  g_gli_initializer.summon();
-}
+    : c_creds_(c_creds) {}
 
 std::shared_ptr<Channel> SecureChannelCredentials::CreateChannelImpl(
     const std::string& target, const ChannelArguments& args) {
@@ -85,9 +81,7 @@ SecureChannelCredentials::CreateChannelWithInterceptors(
 }
 
 SecureCallCredentials::SecureCallCredentials(grpc_call_credentials* c_creds)
-    : c_creds_(c_creds) {
-  g_gli_initializer.summon();
-}
+    : c_creds_(c_creds) {}
 
 bool SecureCallCredentials::ApplyToCall(grpc_call* call) {
   return grpc_call_set_credentials(call, c_creds_) == GRPC_CALL_OK;

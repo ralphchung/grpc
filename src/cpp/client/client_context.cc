@@ -37,7 +37,6 @@
 #include <grpcpp/client_context.h>
 #include <grpcpp/impl/codegen/interceptor_common.h>
 #include <grpcpp/impl/codegen/sync.h>
-#include <grpcpp/impl/grpc_library.h>
 #include <grpcpp/security/credentials.h>
 #include <grpcpp/server_context.h>
 #include <grpcpp/support/client_interceptor.h>
@@ -55,7 +54,6 @@ class DefaultGlobalClientCallbacks final
   void Destructor(ClientContext* /*context*/) override {}
 };
 
-static internal::GrpcLibraryInitializer g_gli_initializer;
 static DefaultGlobalClientCallbacks* g_default_client_callbacks =
     new DefaultGlobalClientCallbacks();
 static ClientContext::GlobalCallbacks* g_client_callbacks =
@@ -72,7 +70,6 @@ ClientContext::ClientContext()
       propagate_from_call_(nullptr),
       compression_algorithm_(GRPC_COMPRESS_NONE),
       initial_metadata_corked_(false) {
-  g_gli_initializer.summon();
   g_client_callbacks->DefaultConstructor(this);
 }
 

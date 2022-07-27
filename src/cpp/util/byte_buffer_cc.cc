@@ -23,14 +23,11 @@
 #include <grpc/impl/codegen/compression_types.h>
 #include <grpc/impl/codegen/grpc_types.h>
 #include <grpc/slice.h>
-#include <grpcpp/impl/grpc_library.h>
 #include <grpcpp/support/byte_buffer.h>
 #include <grpcpp/support/slice.h>
 #include <grpcpp/support/status.h>
 
 namespace grpc {
-
-static internal::GrpcLibraryInitializer g_gli_initializer;
 
 Status ByteBuffer::TrySingleSlice(Slice* slice) const {
   if (!buffer_) {
