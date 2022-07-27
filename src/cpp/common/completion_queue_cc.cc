@@ -29,7 +29,6 @@
 #include <grpcpp/completion_queue.h>
 #include <grpcpp/grpc_library.h>
 #include <grpcpp/impl/codegen/completion_queue_tag.h>
-#include <grpcpp/impl/grpc_library.h>
 
 #include "src/core/lib/gpr/useful.h"
 #include "src/core/lib/gprpp/sync.h"
