@@ -6566,7 +6566,6 @@ grpc_cc_library(
     name = "grpc++_codegen_base",
     language = "c++",
     public_hdrs = [
-        "include/grpc++/impl/codegen/async_stream.h",
         "include/grpc++/impl/codegen/async_unary_call.h",
         "include/grpc++/impl/codegen/byte_buffer.h",
         "include/grpc++/impl/codegen/call_hook.h",
@@ -6594,7 +6593,6 @@ grpc_cc_library(
         "include/grpc++/impl/codegen/stub_options.h",
         "include/grpc++/impl/codegen/sync_stream.h",
         "include/grpc++/impl/codegen/time.h",
-        "include/grpcpp/impl/codegen/async_stream.h",
         "include/grpcpp/impl/codegen/async_unary_call.h",
         "include/grpcpp/impl/codegen/byte_buffer.h",
         "include/grpcpp/impl/codegen/call_hook.h",

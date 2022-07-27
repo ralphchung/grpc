@@ -815,7 +815,6 @@ include/grpc++/health_check_service_interface.h \
 include/grpc++/impl/call.h \
 include/grpc++/impl/channel_argument_option.h \
 include/grpc++/impl/client_unary_call.h \
-include/grpc++/impl/codegen/async_stream.h \
 include/grpc++/impl/codegen/async_unary_call.h \
 include/grpc++/impl/codegen/byte_buffer.h \
 include/grpc++/impl/codegen/call.h \
@@ -956,7 +955,6 @@ include/grpcpp/health_check_service_interface.h \
 include/grpcpp/impl/call.h \
 include/grpcpp/impl/channel_argument_option.h \
 include/grpcpp/impl/client_unary_call.h \
-include/grpcpp/impl/codegen/async_stream.h \
 include/grpcpp/impl/codegen/async_unary_call.h \
 include/grpcpp/impl/codegen/byte_buffer.h \
 include/grpcpp/impl/codegen/call.h \
@@ -1099,18 +1097,18 @@ EXCLUDE_SYMLINKS       = NO
 # certain files from those directories.
 #
 # Note that the wildcards are matched against the file with absolute path, so to
-# exclude all test directories for example use the pattern */test/*
-
-EXCLUDE_PATTERNS       =
-
-# The EXCLUDE_SYMBOLS tag can be used to specify one or more symbol names
-# (namespaces, classes, functions, etc.) that should be excluded from the
-# output. The symbol name can be a fully qualified name, a word, or if the
-# wildcard * is used, a substring. Examples: ANamespace, AClass,
-# AClass::ANamespace, ANamespace::*Test
-#
-# Note that the wildcards are matched against the file with absolute path, so to
-# exclude all test directories use the pattern */test/*
+#exclude all test directories for example use the pattern* / test /*           \
+                                                                               \
+ EXCLUDE_PATTERNS       =                                                      \
+                                                                               \
+ # The EXCLUDE_SYMBOLS tag can be used to specify one or more symbol names     \
+ # (namespaces, classes, functions, etc.) that should be excluded from the     \
+ # output. The symbol name can be a fully qualified name, a word, or if the    \
+ # wildcard * is used, a substring. Examples: ANamespace, AClass,              \
+ # AClass::ANamespace, ANamespace::*Test                                       \
+ #                                                                             \
+ # Note that the wildcards are matched against the file with absolute path, so \
+ to # exclude all test directories use the pattern */ test/*
 
 EXCLUDE_SYMBOLS        =
 
@@ -2652,4 +2650,3 @@ GENERATE_LEGEND        = YES
 # This tag requires that the tag HAVE_DOT is set to YES.
 
 DOT_CLEANUP            = YES
-
