@@ -48,7 +48,6 @@
 #include <grpcpp/impl/codegen/completion_queue_tag.h>
 #include <grpcpp/impl/codegen/interceptor_common.h>
 #include <grpcpp/impl/codegen/metadata_map.h>
-#include <grpcpp/impl/grpc_library.h>
 #include <grpcpp/server_context.h>
 #include <grpcpp/support/config.h>
 #include <grpcpp/support/interceptor.h>

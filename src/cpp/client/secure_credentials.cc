@@ -36,7 +36,6 @@
 #include <grpc/support/string_util.h>
 #include <grpc/support/time.h>
 #include <grpcpp/channel.h>
-#include <grpcpp/impl/grpc_library.h>
 #include <grpcpp/security/tls_credentials_options.h>
 #include <grpcpp/support/channel_arguments.h>
 #include <grpcpp/support/slice.h>
