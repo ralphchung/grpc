@@ -28,7 +28,6 @@
 #include <grpc/support/log.h>
 #include <grpc/support/string_util.h>
 #include <grpcpp/impl/codegen/sync.h>
-#include <grpcpp/impl/grpc_library.h>
 #include <grpcpp/security/tls_certificate_verifier.h>
 #include <grpcpp/support/config.h>
 #include <grpcpp/support/status.h>
