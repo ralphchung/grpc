@@ -21,8 +21,7 @@
 
 namespace grpc {
 
-static internal::GrpcLibraryInitializer g_gli_initializer;
-ServerCredentials::ServerCredentials() { g_gli_initializer.summon(); }
+ServerCredentials::ServerCredentials() {}
 
 ServerCredentials::~ServerCredentials() {}
 
