@@ -34,7 +34,6 @@ avoidness = collections.defaultdict(int)
 consumes = {}
 no_update = set()
 buildozer_commands = []
-needs_codegen_base_src = set()
 original_deps = {}
 original_external_deps = {}
 
@@ -299,8 +298,6 @@ def grpc_cc_library(name,
             m = re.search(r'#include "(.*)"', line)
             if m:
                 inc.add(m.group(1))
-            if 'grpc::g_glip' in line or 'grpc::g_core_codegen_interface' in line:
-                needs_codegen_base_src.add(name)
     consumes[name] = list(inc)
 
 
@@ -546,9 +543,6 @@ def make_library(library):
         print("# ERROR: can't categorize header: %s used by %s" %
               (hdr, library))
         error = True
-
-    if library in needs_codegen_base_src:
-        deps.add('grpc++_codegen_base_src')
 
     deps.remove(library)
 
