@@ -20,6 +20,8 @@
 
 #include <string.h>
 
+#include <grpcpp/impl/grpc_library.h>
+
 static grpc::internal::GrpcLibraryInitializer g_gli_initializer;
 static LibraryInitializer* g_libraryInitializer;
 

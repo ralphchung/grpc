@@ -23,7 +23,6 @@
 #include "absl/memory/memory.h"
 
 #include <grpcpp/grpcpp.h>
-#include <grpcpp/impl/grpc_library.h>
 #include <grpcpp/security/binder_credentials.h>
 #include <grpcpp/security/binder_security_policy.h>
 

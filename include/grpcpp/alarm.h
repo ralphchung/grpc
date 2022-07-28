@@ -28,7 +28,6 @@
 #include <grpcpp/impl/codegen/completion_queue.h>
 #include <grpcpp/impl/codegen/completion_queue_tag.h>
 #include <grpcpp/impl/codegen/time.h>
-#include <grpcpp/impl/grpc_library.h>
 
 namespace grpc {
 

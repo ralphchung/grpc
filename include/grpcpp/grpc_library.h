@@ -15,8 +15,6 @@
 #ifndef GRPCPP_GRPC_LIBRARY_H
 #define GRPCPP_GRPC_LIBRARY_H
 
-#include <grpcpp/impl/grpc_library.h>
-
 namespace grpc {
 
 /// Classes that require gRPC to be initialized should inherit from this class.
