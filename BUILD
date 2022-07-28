@@ -214,6 +214,7 @@ GRPCXX_SRCS = [
     "src/cpp/common/channel_filter.cc",
     "src/cpp/common/completion_queue_cc.cc",
     "src/cpp/common/core_codegen.cc",
+    "src/cpp/common/grpc_library.cc",
     "src/cpp/common/resource_quota_cc.cc",
     "src/cpp/common/rpc_method.cc",
     "src/cpp/common/version_cc.cc",
@@ -237,7 +238,6 @@ GRPCXX_SRCS = [
     "src/cpp/util/status.cc",
     "src/cpp/util/string_ref.cc",
     "src/cpp/util/time_cc.cc",
-    "src/cpp/grpc_library.cc",
 ]
 
 GRPCXX_HDRS = [
