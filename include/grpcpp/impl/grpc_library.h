@@ -28,12 +28,6 @@ namespace grpc {
 
 namespace internal {
 
-class GrpcLibrary final {
- public:
-  void init();
-  void shutdown();
-};
-
 /// Instantiating this class ensures the proper initialization of gRPC.
 class GrpcLibraryInitializer final {
  public:

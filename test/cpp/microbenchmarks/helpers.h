@@ -26,7 +26,7 @@
 
 #include <benchmark/benchmark.h>
 
-#include <grpcpp/impl/grpc_library.h>
+#include <grpcpp/grpc_library.h>
 
 #include "src/core/lib/debug/stats.h"
 
@@ -38,7 +38,7 @@ class LibraryInitializer {
   static LibraryInitializer& get();
 
  private:
-  grpc::internal::GrpcLibrary init_lib_;
+  grpc::GrpcLibrary init_lib_;
 };
 
 #ifdef GPR_LOW_LEVEL_COUNTERS

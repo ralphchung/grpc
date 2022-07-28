@@ -18,30 +18,16 @@
 
 namespace grpc {
 
-namespace {
-
-internal::GrpcLibrary internal_grpc_library;
-
-}
-
 GrpcLibrary::GrpcLibrary(bool call_grpc_init) : grpc_init_called_(false) {
   if (call_grpc_init) {
-    internal_grpc_library.init();
+    grpc_init();
     grpc_init_called_ = true;
   }
 }
 GrpcLibrary::~GrpcLibrary() {
   if (grpc_init_called_) {
-    internal_grpc_library.shutdown();
+    grpc_shutdown();
   }
 }
-
-namespace internal {
-
-void GrpcLibrary::init() { grpc_init(); }
-
-void GrpcLibrary::shutdown() { grpc_shutdown(); }
-
-}  // namespace internal
 
 }  // namespace grpc
