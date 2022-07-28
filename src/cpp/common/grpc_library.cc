@@ -12,23 +12,36 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef GRPCPP_GRPC_LIBRARY_H
-#define GRPCPP_GRPC_LIBRARY_H
-
+#include <grpc/grpc.h>
+#include <grpcpp/grpc_library.h>
 #include <grpcpp/impl/grpc_library.h>
 
 namespace grpc {
 
-/// Classes that require gRPC to be initialized should inherit from this class.
-class GrpcLibrary {
- public:
-  explicit GrpcLibrary(bool call_grpc_init = true);
-  virtual ~GrpcLibrary();
+namespace {
 
- private:
-  bool grpc_init_called_;
-};
+internal::GrpcLibrary internal_grpc_library;
+
+}
+
+GrpcLibrary::GrpcLibrary(bool call_grpc_init) : grpc_init_called_(false) {
+  if (call_grpc_init) {
+    internal_grpc_library.init();
+    grpc_init_called_ = true;
+  }
+}
+GrpcLibrary::~GrpcLibrary() {
+  if (grpc_init_called_) {
+    internal_grpc_library.shutdown();
+  }
+}
+
+namespace internal {
+
+void GrpcLibrary::init() { grpc_init(); }
+
+void GrpcLibrary::shutdown() { grpc_shutdown(); }
+
+}  // namespace internal
 
 }  // namespace grpc
-
-#endif  // GRPCPP_GRPC_LIBRARY_H
