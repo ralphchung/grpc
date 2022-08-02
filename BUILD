@@ -6667,7 +6667,6 @@ grpc_cc_library(
     visibility = ["@grpc:public"],
     deps = [
         "grpc++_internal_hdrs_only",
-        "grpc++_public_hdrs",
         "grpc_codegen",
     ],
 )
@@ -6700,6 +6699,7 @@ grpc_cc_library(
     tags = ["nofixdeps"],
     visibility = ["@grpc:public"],
     deps = [
+        "grpc++_base",
         "grpc++_codegen_base",
         "grpc++_config_proto",
     ],
