@@ -880,12 +880,7 @@ grpc_cc_library(
 )
 
 # for compatibility purpose
-grpc_cc_library(
-    name = "gpr_base",
-    deps = [
-        "gpr",
-    ],
-)
+grpc_cc_library(name = "gpr_base")
 
 grpc_cc_library(
     name = "gpr",
