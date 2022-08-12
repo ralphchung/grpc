@@ -3261,6 +3261,7 @@ target_link_libraries(grpc++
   ${_gRPC_ALLTARGETS_LIBRARIES}
   absl::cleanup
   grpc
+  grpc_unsecure
 )
 
 foreach(_hdr
@@ -3931,6 +3932,7 @@ target_link_libraries(grpc++_unsecure
   ${_gRPC_BASELIB_LIBRARIES}
   ${_gRPC_PROTOBUF_LIBRARIES}
   ${_gRPC_ALLTARGETS_LIBRARIES}
+  grpc
   grpc_unsecure
 )
 
@@ -6623,6 +6625,7 @@ target_link_libraries(binder_transport_test
   ${_gRPC_PROTOBUF_LIBRARIES}
   ${_gRPC_ALLTARGETS_LIBRARIES}
   absl::cleanup
+  grpc_unsecure
   grpc_test_util
 )
 
@@ -9150,6 +9153,7 @@ target_link_libraries(endpoint_binder_pool_test
   ${_gRPC_PROTOBUF_LIBRARIES}
   ${_gRPC_ALLTARGETS_LIBRARIES}
   absl::cleanup
+  grpc_unsecure
   grpc_test_util
 )
 
@@ -9739,6 +9743,7 @@ target_link_libraries(fake_binder_test
   ${_gRPC_PROTOBUF_LIBRARIES}
   ${_gRPC_ALLTARGETS_LIBRARIES}
   absl::cleanup
+  grpc_unsecure
   grpc_test_util
 )
 
@@ -19056,6 +19061,7 @@ target_link_libraries(transport_stream_receiver_test
   ${_gRPC_PROTOBUF_LIBRARIES}
   ${_gRPC_ALLTARGETS_LIBRARIES}
   absl::cleanup
+  grpc_unsecure
   grpc_test_util
 )
 
@@ -19558,6 +19564,7 @@ target_link_libraries(wire_reader_test
   ${_gRPC_PROTOBUF_LIBRARIES}
   ${_gRPC_ALLTARGETS_LIBRARIES}
   absl::cleanup
+  grpc_unsecure
   grpc_test_util
 )
 
@@ -19651,6 +19658,7 @@ target_link_libraries(wire_writer_test
   ${_gRPC_PROTOBUF_LIBRARIES}
   ${_gRPC_ALLTARGETS_LIBRARIES}
   absl::cleanup
+  grpc_unsecure
   grpc_test_util
 )
 
