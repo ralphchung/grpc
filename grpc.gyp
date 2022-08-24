@@ -1510,6 +1510,7 @@
         'src/cpp/common/channel_filter.cc',
         'src/cpp/common/completion_queue_cc.cc',
         'src/cpp/common/core_codegen.cc',
+        'src/cpp/common/insecure_create_auth_context.cc',
         'src/cpp/common/resource_quota_cc.cc',
         'src/cpp/common/rpc_method.cc',
         'src/cpp/common/secure_auth_context.cc',

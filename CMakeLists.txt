@@ -3149,6 +3149,20 @@ target_link_libraries(benchmark_helpers
   grpc++_test_config
 )
 
+foreach(_hdr
+  include/grpc++/impl/codegen/config_protobuf.h
+  include/grpc++/impl/codegen/proto_utils.h
+  include/grpcpp/impl/codegen/config_protobuf.h
+  include/grpcpp/impl/codegen/proto_buffer_reader.h
+  include/grpcpp/impl/codegen/proto_buffer_writer.h
+  include/grpcpp/impl/codegen/proto_utils.h
+)
+  string(REPLACE "include/" "" _path ${_hdr})
+  get_filename_component(_path ${_path} PATH)
+  install(FILES ${_hdr}
+    DESTINATION "${gRPC_INSTALL_INCLUDEDIR}/${_path}"
+  )
+endforeach()
 endif()
 
 endif()
@@ -3190,6 +3204,7 @@ add_library(grpc++
   src/cpp/common/channel_filter.cc
   src/cpp/common/completion_queue_cc.cc
   src/cpp/common/core_codegen.cc
+  src/cpp/common/insecure_create_auth_context.cc
   src/cpp/common/resource_quota_cc.cc
   src/cpp/common/rpc_method.cc
   src/cpp/common/secure_auth_context.cc
@@ -3851,6 +3866,16 @@ target_link_libraries(grpc++_test_util
   grpc_test_util
 )
 
+foreach(_hdr
+  include/grpc++/impl/codegen/config_protobuf.h
+  include/grpcpp/impl/codegen/config_protobuf.h
+)
+  string(REPLACE "include/" "" _path ${_hdr})
+  get_filename_component(_path ${_path} PATH)
+  install(FILES ${_hdr}
+    DESTINATION "${gRPC_INSTALL_INCLUDEDIR}/${_path}"
+  )
+endforeach()
 
 endif()
 
@@ -3962,14 +3987,12 @@ foreach(_hdr
   include/grpc++/impl/codegen/completion_queue.h
   include/grpc++/impl/codegen/completion_queue_tag.h
   include/grpc++/impl/codegen/config.h
-  include/grpc++/impl/codegen/config_protobuf.h
   include/grpc++/impl/codegen/core_codegen.h
   include/grpc++/impl/codegen/core_codegen_interface.h
   include/grpc++/impl/codegen/create_auth_context.h
   include/grpc++/impl/codegen/grpc_library.h
   include/grpc++/impl/codegen/metadata_map.h
   include/grpc++/impl/codegen/method_handler_impl.h
-  include/grpc++/impl/codegen/proto_utils.h
   include/grpc++/impl/codegen/rpc_method.h
   include/grpc++/impl/codegen/rpc_service_method.h
   include/grpc++/impl/codegen/security/auth_context.h
@@ -4046,7 +4069,6 @@ foreach(_hdr
   include/grpcpp/impl/codegen/completion_queue.h
   include/grpcpp/impl/codegen/completion_queue_tag.h
   include/grpcpp/impl/codegen/config.h
-  include/grpcpp/impl/codegen/config_protobuf.h
   include/grpcpp/impl/codegen/core_codegen.h
   include/grpcpp/impl/codegen/core_codegen_interface.h
   include/grpcpp/impl/codegen/create_auth_context.h
@@ -4059,9 +4081,6 @@ foreach(_hdr
   include/grpcpp/impl/codegen/metadata_map.h
   include/grpcpp/impl/codegen/method_handler.h
   include/grpcpp/impl/codegen/method_handler_impl.h
-  include/grpcpp/impl/codegen/proto_buffer_reader.h
-  include/grpcpp/impl/codegen/proto_buffer_writer.h
-  include/grpcpp/impl/codegen/proto_utils.h
   include/grpcpp/impl/codegen/rpc_method.h
   include/grpcpp/impl/codegen/rpc_service_method.h
   include/grpcpp/impl/codegen/security/auth_context.h
@@ -14769,6 +14788,44 @@ endif()
 if(gRPC_BUILD_TESTS)
 
 add_executable(proto_utils_test
+  src/cpp/client/channel_cc.cc
+  src/cpp/client/client_callback.cc
+  src/cpp/client/client_context.cc
+  src/cpp/client/client_interceptor.cc
+  src/cpp/client/create_channel.cc
+  src/cpp/client/create_channel_internal.cc
+  src/cpp/client/create_channel_posix.cc
+  src/cpp/client/credentials_cc.cc
+  src/cpp/codegen/codegen_init.cc
+  src/cpp/common/alarm.cc
+  src/cpp/common/channel_arguments.cc
+  src/cpp/common/channel_filter.cc
+  src/cpp/common/completion_queue_cc.cc
+  src/cpp/common/core_codegen.cc
+  src/cpp/common/resource_quota_cc.cc
+  src/cpp/common/rpc_method.cc
+  src/cpp/common/validate_service_config.cc
+  src/cpp/common/version_cc.cc
+  src/cpp/server/async_generic_service.cc
+  src/cpp/server/channel_argument_option.cc
+  src/cpp/server/create_default_thread_pool.cc
+  src/cpp/server/dynamic_thread_pool.cc
+  src/cpp/server/external_connection_acceptor_impl.cc
+  src/cpp/server/health/default_health_check_service.cc
+  src/cpp/server/health/health_check_service.cc
+  src/cpp/server/health/health_check_service_server_builder_option.cc
+  src/cpp/server/orca/call_metric_recorder.cc
+  src/cpp/server/server_builder.cc
+  src/cpp/server/server_callback.cc
+  src/cpp/server/server_cc.cc
+  src/cpp/server/server_context.cc
+  src/cpp/server/server_credentials.cc
+  src/cpp/server/server_posix.cc
+  src/cpp/thread_manager/thread_manager.cc
+  src/cpp/util/byte_buffer_cc.cc
+  src/cpp/util/status.cc
+  src/cpp/util/string_ref.cc
+  src/cpp/util/time_cc.cc
   test/cpp/codegen/proto_utils_test.cc
   third_party/googletest/googletest/src/gtest-all.cc
   third_party/googletest/googlemock/src/gmock-all.cc
@@ -14796,7 +14853,7 @@ target_include_directories(proto_utils_test
 target_link_libraries(proto_utils_test
   ${_gRPC_PROTOBUF_LIBRARIES}
   ${_gRPC_ALLTARGETS_LIBRARIES}
-  grpc++
+  grpc_unsecure
   grpc_test_util
 )
 

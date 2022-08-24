@@ -80,6 +80,7 @@ grpc_cc_library(
     ],
     deps = [
         "//:grpc++",
+        "//:grpc++_config_proto",
         "//test/core/end2end:ssl_test_data",
         "//test/core/util:grpc_test_util",
         "//test/core/util:grpc_test_util_base",
@@ -113,6 +114,7 @@ grpc_cc_library(
         "protobuf",
     ],
     deps = [
+        "//:grpc++_config_proto",
         "//:grpc++_unsecure",
         "//test/core/util:grpc_test_util_base",
         "//test/core/util:grpc_test_util_unsecure",

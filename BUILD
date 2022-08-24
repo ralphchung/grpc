@@ -717,6 +717,7 @@ grpc_cc_library(
     name = "grpc++_insecure_credentials",
     srcs = [
         "src/cpp/client/insecure_credentials.cc",
+        "src/cpp/common/insecure_create_auth_context.cc",
         "src/cpp/server/insecure_server_credentials.cc",
     ],
     language = "c++",
@@ -868,25 +869,14 @@ grpc_cc_library(
 
 grpc_cc_library(
     name = "grpc++_unsecure",
-    srcs = [
-        "src/cpp/client/insecure_credentials.cc",
-        "src/cpp/common/insecure_create_auth_context.cc",
-        "src/cpp/server/insecure_server_credentials.cc",
-    ],
     language = "c++",
-    standalone = True,
     tags = [
         "avoid_dep",
         "nofixdeps",
     ],
     visibility = ["@grpc:public"],
     deps = [
-        "gpr",
-        "grpc++_base",
-        "grpc++_codegen_proto",
-        "grpc_codegen",
-        "grpc_insecure_credentials",
-        "grpc_unsecure",
+        "grpc++_insecure_credentials",
     ],
 )
 
