@@ -3290,7 +3290,6 @@ foreach(_hdr
   include/grpc++/impl/codegen/core_codegen.h
   include/grpc++/impl/codegen/core_codegen_interface.h
   include/grpc++/impl/codegen/create_auth_context.h
-  include/grpc++/impl/codegen/grpc_library.h
   include/grpc++/impl/codegen/metadata_map.h
   include/grpc++/impl/codegen/method_handler_impl.h
   include/grpc++/impl/codegen/proto_utils.h
@@ -3349,6 +3348,7 @@ foreach(_hdr
   include/grpcpp/ext/health_check_service_server_builder_option.h
   include/grpcpp/generic/async_generic_service.h
   include/grpcpp/generic/generic_stub.h
+  include/grpcpp/grpc_library.h
   include/grpcpp/grpcpp.h
   include/grpcpp/health_check_service_interface.h
   include/grpcpp/impl/call.h
@@ -3376,7 +3376,6 @@ foreach(_hdr
   include/grpcpp/impl/codegen/core_codegen_interface.h
   include/grpcpp/impl/codegen/create_auth_context.h
   include/grpcpp/impl/codegen/delegating_channel.h
-  include/grpcpp/impl/codegen/grpc_library.h
   include/grpcpp/impl/codegen/intercepted_channel.h
   include/grpcpp/impl/codegen/interceptor.h
   include/grpcpp/impl/codegen/interceptor_common.h
@@ -3961,7 +3960,6 @@ foreach(_hdr
   include/grpc++/impl/codegen/core_codegen.h
   include/grpc++/impl/codegen/core_codegen_interface.h
   include/grpc++/impl/codegen/create_auth_context.h
-  include/grpc++/impl/codegen/grpc_library.h
   include/grpc++/impl/codegen/metadata_map.h
   include/grpc++/impl/codegen/method_handler_impl.h
   include/grpc++/impl/codegen/proto_utils.h
@@ -4019,6 +4017,7 @@ foreach(_hdr
   include/grpcpp/ext/health_check_service_server_builder_option.h
   include/grpcpp/generic/async_generic_service.h
   include/grpcpp/generic/generic_stub.h
+  include/grpcpp/grpc_library.h
   include/grpcpp/grpcpp.h
   include/grpcpp/health_check_service_interface.h
   include/grpcpp/impl/call.h
@@ -4046,7 +4045,6 @@ foreach(_hdr
   include/grpcpp/impl/codegen/core_codegen_interface.h
   include/grpcpp/impl/codegen/create_auth_context.h
   include/grpcpp/impl/codegen/delegating_channel.h
-  include/grpcpp/impl/codegen/grpc_library.h
   include/grpcpp/impl/codegen/intercepted_channel.h
   include/grpcpp/impl/codegen/interceptor.h
   include/grpcpp/impl/codegen/interceptor_common.h
