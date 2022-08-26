@@ -51,7 +51,6 @@
 #include <grpcpp/impl/codegen/server_callback_handlers.h>
 #include <grpcpp/impl/codegen/server_interface.h>
 #include <grpcpp/impl/codegen/sync.h>
-#include <grpcpp/impl/grpc_library.h>
 #include <grpcpp/impl/rpc_method.h>
 #include <grpcpp/impl/rpc_service_method.h>
 #include <grpcpp/impl/server_initializer.h>
@@ -871,7 +870,6 @@ class Server::SyncRequestThreadManager : public grpc::ThreadManager {
   std::shared_ptr<Server::GlobalCallbacks> global_callbacks_;
 };
 
-static grpc::internal::GrpcLibraryInitializer g_gli_initializer;
 Server::Server(
     grpc::ChannelArguments* args,
     std::shared_ptr<std::vector<std::unique_ptr<grpc::ServerCompletionQueue>>>
@@ -894,7 +892,6 @@ Server::Server(
       server_(nullptr),
       server_initializer_(new ServerInitializer(this)),
       health_check_service_disabled_(false) {
-  g_gli_initializer.summon();
   gpr_once_init(&grpc::g_once_init_callbacks, grpc::InitGlobalCallbacks);
   global_callbacks_ = grpc::g_callbacks;
   global_callbacks_->UpdateArguments(args);

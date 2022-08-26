@@ -22,7 +22,6 @@
 #include <grpc/slice.h>
 #include <grpcpp/grpc_library.h>
 #include <grpcpp/impl/codegen/proto_utils.h>
-#include <grpcpp/impl/grpc_library.h>
 
 #include "test/core/util/test_config.h"
 
@@ -56,8 +55,6 @@ class ProtoUtilsTest : public ::testing::Test {
  protected:
   static void SetUpTestCase() {
     // Ensure the ProtoBufferWriter internals are initialized.
-    grpc::internal::GrpcLibraryInitializer init;
-    init.summon();
     grpc::GrpcLibrary lib;
     grpc_init();
   }
@@ -153,8 +150,6 @@ void BufferWriterTest(int block_size, int total_size, int backup_size) {
 class WriterTest : public ::testing::Test {
  protected:
   static void SetUpTestCase() {
-    grpc::internal::GrpcLibraryInitializer init;
-    init.summon();
     grpc::GrpcLibrary lib;
     // Ensure the ProtoBufferWriter internals are initialized.
     grpc_init();

@@ -38,7 +38,6 @@
 #include <grpcpp/impl/codegen/completion_queue_tag.h>
 #include <grpcpp/impl/codegen/core_codegen.h>
 #include <grpcpp/impl/codegen/sync.h>
-#include <grpcpp/impl/grpc_library.h>
 #include <grpcpp/impl/rpc_method.h>
 #include <grpcpp/support/client_interceptor.h>
 #include <grpcpp/support/config.h>
@@ -48,7 +47,6 @@
 
 namespace grpc {
 
-static grpc::internal::GrpcLibraryInitializer g_gli_initializer;
 Channel::Channel(
     const std::string& host, grpc_channel* channel,
     std::vector<
@@ -56,7 +54,6 @@ Channel::Channel(
         interceptor_creators)
     : host_(host), c_channel_(channel) {
   interceptor_creators_ = std::move(interceptor_creators);
-  g_gli_initializer.summon();
 }
 
 Channel::~Channel() {

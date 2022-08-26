@@ -24,7 +24,6 @@
 #include <grpc/grpc.h>
 #include <grpc/support/log.h>
 #include <grpcpp/completion_queue.h>
-#include <grpcpp/impl/grpc_library.h>
 
 #include "src/core/lib/surface/completion_queue.h"
 #include "test/core/util/test_config.h"

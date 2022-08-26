@@ -24,7 +24,6 @@
 
 #include <grpc/impl/codegen/byte_buffer_reader.h>
 #include <grpcpp/impl/codegen/core_codegen.h>
-#include <grpcpp/impl/grpc_library.h>
 #include <grpcpp/support/byte_buffer.h>
 
 #include "test/core/util/test_config.h"

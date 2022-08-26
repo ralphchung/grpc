@@ -846,7 +846,6 @@ include/grpc++/impl/codegen/string_ref.h \
 include/grpc++/impl/codegen/stub_options.h \
 include/grpc++/impl/codegen/sync_stream.h \
 include/grpc++/impl/codegen/time.h \
-include/grpc++/impl/grpc_library.h \
 include/grpc++/impl/method_handler_impl.h \
 include/grpc++/impl/rpc_method.h \
 include/grpc++/impl/rpc_service_method.h \
@@ -1005,7 +1004,6 @@ include/grpcpp/impl/codegen/stub_options.h \
 include/grpcpp/impl/codegen/sync.h \
 include/grpcpp/impl/codegen/sync_stream.h \
 include/grpcpp/impl/codegen/time.h \
-include/grpcpp/impl/grpc_library.h \
 include/grpcpp/impl/method_handler_impl.h \
 include/grpcpp/impl/rpc_method.h \
 include/grpcpp/impl/rpc_service_method.h \

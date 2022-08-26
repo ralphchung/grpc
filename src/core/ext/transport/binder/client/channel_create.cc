@@ -39,8 +39,6 @@
 #include "absl/time/clock.h"
 #include "absl/time/time.h"
 
-#include <grpcpp/impl/grpc_library.h>
-
 #include "src/core/ext/filters/client_channel/client_channel.h"
 #include "src/core/ext/transport/binder/client/channel_create_impl.h"
 #include "src/core/ext/transport/binder/client/connection_id_generator.h"

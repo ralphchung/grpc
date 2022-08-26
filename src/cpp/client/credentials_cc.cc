@@ -16,17 +16,15 @@
  *
  */
 
-#include <grpcpp/impl/grpc_library.h>
 #include <grpcpp/security/credentials.h>
 
 namespace grpc {
 
-static grpc::internal::GrpcLibraryInitializer g_gli_initializer;
-ChannelCredentials::ChannelCredentials() { g_gli_initializer.summon(); }
+ChannelCredentials::ChannelCredentials() {}
 
 ChannelCredentials::~ChannelCredentials() {}
 
-CallCredentials::CallCredentials() { g_gli_initializer.summon(); }
+CallCredentials::CallCredentials() {}
 
 CallCredentials::~CallCredentials() {}
 

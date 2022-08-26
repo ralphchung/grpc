@@ -27,7 +27,6 @@
 #include <benchmark/benchmark.h>
 
 #include <grpcpp/grpc_library.h>
-#include <grpcpp/impl/grpc_library.h>
 
 #include "src/core/lib/debug/stats.h"
 
