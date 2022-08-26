@@ -25,7 +25,6 @@
 #include <grpcpp/impl/codegen/call_op_set.h>
 #include <grpcpp/impl/codegen/channel_interface.h>
 #include <grpcpp/impl/codegen/config.h>
-#include <grpcpp/impl/codegen/core_codegen_interface.h>
 #include <grpcpp/impl/codegen/status.h>
 
 namespace grpc {

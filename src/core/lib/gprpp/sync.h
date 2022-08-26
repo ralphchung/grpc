@@ -39,6 +39,7 @@
 // Whenever possible, prefer using this file over <grpcpp/impl/codegen/sync.h>
 // since this file doesn't rely on g_core_codegen_interface and hence does not
 // pay the costs of virtual function calls.
+// TODO(chengyuc): fix this comment when removing codegen files
 
 namespace grpc_core {
 
