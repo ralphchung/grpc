@@ -27,7 +27,6 @@
 #include <functional>
 
 #include <grpcpp/generic/async_generic_service.h>
-#include <grpcpp/impl/codegen/async_stream.h>
 #include <grpcpp/impl/codegen/async_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
 #include <grpcpp/impl/codegen/client_context.h>
@@ -43,6 +42,7 @@
 #include <grpcpp/impl/codegen/status.h>
 #include <grpcpp/impl/codegen/stub_options.h>
 #include <grpcpp/impl/codegen/sync_stream.h>
+#include <grpcpp/support/async_stream.h>
 
 #include "src/proto/grpc/testing/compiler_test.pb.h"
 
