@@ -3274,7 +3274,6 @@ foreach(_hdr
   include/grpc++/impl/call.h
   include/grpc++/impl/channel_argument_option.h
   include/grpc++/impl/client_unary_call.h
-  include/grpc++/impl/codegen/byte_buffer.h
   include/grpc++/impl/codegen/call.h
   include/grpc++/impl/codegen/call_hook.h
   include/grpc++/impl/codegen/channel_interface.h
@@ -3349,7 +3348,6 @@ foreach(_hdr
   include/grpcpp/impl/call.h
   include/grpcpp/impl/channel_argument_option.h
   include/grpcpp/impl/client_unary_call.h
-  include/grpcpp/impl/codegen/byte_buffer.h
   include/grpcpp/impl/codegen/call.h
   include/grpcpp/impl/codegen/call_hook.h
   include/grpcpp/impl/codegen/call_op_set.h
@@ -3934,7 +3932,6 @@ foreach(_hdr
   include/grpc++/impl/call.h
   include/grpc++/impl/channel_argument_option.h
   include/grpc++/impl/client_unary_call.h
-  include/grpc++/impl/codegen/byte_buffer.h
   include/grpc++/impl/codegen/call.h
   include/grpc++/impl/codegen/call_hook.h
   include/grpc++/impl/codegen/channel_interface.h
@@ -4008,7 +4005,6 @@ foreach(_hdr
   include/grpcpp/impl/call.h
   include/grpcpp/impl/channel_argument_option.h
   include/grpcpp/impl/client_unary_call.h
-  include/grpcpp/impl/codegen/byte_buffer.h
   include/grpcpp/impl/codegen/call.h
   include/grpcpp/impl/codegen/call_hook.h
   include/grpcpp/impl/codegen/call_op_set.h
