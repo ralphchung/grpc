@@ -24,8 +24,8 @@
 #include <grpc/impl/codegen/port_platform.h>
 
 #include <grpc/impl/codegen/grpc_types.h>
+#include <grpcpp/impl/call_hook.h>
 #include <grpcpp/impl/codegen/call.h>
-#include <grpcpp/impl/codegen/call_hook.h>
 #include <grpcpp/impl/codegen/completion_queue_tag.h>
 #include <grpcpp/impl/codegen/core_codegen.h>
 #include <grpcpp/impl/codegen/interceptor_common.h>

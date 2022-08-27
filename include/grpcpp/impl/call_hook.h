@@ -16,10 +16,8 @@
  *
  */
 
-#ifndef GRPCPP_IMPL_CODEGEN_CALL_HOOK_H
-#define GRPCPP_IMPL_CODEGEN_CALL_HOOK_H
-
-// IWYU pragma: private
+#ifndef GRPCPP_IMPL_CALL_HOOK_H
+#define GRPCPP_IMPL_CALL_HOOK_H
 
 namespace grpc {
 
@@ -38,4 +36,4 @@ class CallHook {
 
 }  // namespace grpc
 
-#endif  // GRPCPP_IMPL_CODEGEN_CALL_HOOK_H
+#endif  // GRPCPP_IMPL_CALL_HOOK_H
