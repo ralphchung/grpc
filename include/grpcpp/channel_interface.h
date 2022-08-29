@@ -16,15 +16,15 @@
  *
  */
 
-#ifndef GRPCPP_IMPL_CODEGEN_CHANNEL_INTERFACE_H
-#define GRPCPP_IMPL_CODEGEN_CHANNEL_INTERFACE_H
+#ifndef GRPCPP_CHANNEL_INTERFACE_H
+#define GRPCPP_CHANNEL_INTERFACE_H
 
 // IWYU pragma: private
 
 #include <grpc/impl/codegen/connectivity_state.h>
 #include <grpcpp/impl/call.h>
-#include <grpcpp/impl/codegen/status.h>
-#include <grpcpp/impl/codegen/time.h>
+#include <grpcpp/support/status.h>
+#include <grpcpp/support/time.h>
 
 namespace grpc {
 template <class R>
@@ -169,4 +169,4 @@ class ChannelInterface {
 };
 }  // namespace grpc
 
-#endif  // GRPCPP_IMPL_CODEGEN_CHANNEL_INTERFACE_H
+#endif  // GRPCPP_CHANNEL_INTERFACE_H

@@ -21,7 +21,7 @@
 
 // IWYU pragma: private
 
-#include <grpcpp/impl/codegen/channel_interface.h>
+#include <grpcpp/channel_interface.h>
 
 namespace grpc {
 class CompletionQueue;

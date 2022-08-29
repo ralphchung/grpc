@@ -19,11 +19,11 @@
 #ifndef GRPCPP_SUPPORT_ASYNC_UNARY_CALL_H
 #define GRPCPP_SUPPORT_ASYNC_UNARY_CALL_H
 
+#include <grpcpp/channel_interface.h>
 #include <grpcpp/client_context.h>
 #include <grpcpp/impl/call.h>
 #include <grpcpp/impl/call_op_set.h>
 #include <grpcpp/impl/call_op_set_interface.h>
-#include <grpcpp/impl/codegen/channel_interface.h>
 #include <grpcpp/impl/service_type.h>
 #include <grpcpp/server_context.h>
 #include <grpcpp/support/status.h>

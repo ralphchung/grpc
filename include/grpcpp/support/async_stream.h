@@ -19,8 +19,8 @@
 #ifndef GRPCPP_SUPPORT_ASYNC_STREAM_H
 #define GRPCPP_SUPPORT_ASYNC_STREAM_H
 
+#include <grpcpp/channel_interface.h>
 #include <grpcpp/impl/call.h>
-#include <grpcpp/impl/codegen/channel_interface.h>
 #include <grpcpp/impl/service_type.h>
 #include <grpcpp/server_context.h>
 #include <grpcpp/support/status.h>

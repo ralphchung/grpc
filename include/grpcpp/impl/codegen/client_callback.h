@@ -23,10 +23,10 @@
 #include <atomic>
 #include <functional>
 
+#include <grpcpp/channel_interface.h>
 #include <grpcpp/impl/call.h>
 #include <grpcpp/impl/call_op_set.h>
 #include <grpcpp/impl/callback_common.h>
-#include <grpcpp/impl/codegen/channel_interface.h>
 #include <grpcpp/impl/codegen/config.h>
 #include <grpcpp/impl/codegen/core_codegen.h>
 #include <grpcpp/impl/codegen/status.h>

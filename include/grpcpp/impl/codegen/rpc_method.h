@@ -23,7 +23,7 @@
 
 #include <memory>
 
-#include <grpcpp/impl/codegen/channel_interface.h>
+#include <grpcpp/channel_interface.h>
 
 namespace grpc {
 namespace internal {
