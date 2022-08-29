@@ -28,8 +28,8 @@
 #include <grpc/impl/codegen/compression_types.h>
 #include <grpc/impl/codegen/grpc_types.h>
 #include <grpcpp/impl/call_hook.h>
+#include <grpcpp/impl/call_op_set_interface.h>
 #include <grpcpp/impl/codegen/call.h>
-#include <grpcpp/impl/codegen/call_op_set_interface.h>
 #include <grpcpp/impl/codegen/client_context.h>
 #include <grpcpp/impl/codegen/completion_queue.h>
 #include <grpcpp/impl/codegen/completion_queue_tag.h>

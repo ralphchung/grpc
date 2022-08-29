@@ -16,8 +16,8 @@
  *
  */
 
-#ifndef GRPCPP_IMPL_CODEGEN_CALL_OP_SET_INTERFACE_H
-#define GRPCPP_IMPL_CODEGEN_CALL_OP_SET_INTERFACE_H
+#ifndef GRPCPP_IMPL_CALL_OP_SET_INTERFACE_H
+#define GRPCPP_IMPL_CALL_OP_SET_INTERFACE_H
 
 // IWYU pragma: private
 
@@ -58,4 +58,4 @@ class CallOpSetInterface : public CompletionQueueTag {
 }  // namespace internal
 }  // namespace grpc
 
-#endif  // GRPCPP_IMPL_CODEGEN_CALL_OP_SET_INTERFACE_H
+#endif  // GRPCPP_IMPL_CALL_OP_SET_INTERFACE_H
