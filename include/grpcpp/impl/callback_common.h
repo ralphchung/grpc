@@ -16,20 +16,21 @@
  *
  */
 
-#ifndef GRPCPP_IMPL_CODEGEN_CALLBACK_COMMON_H
-#define GRPCPP_IMPL_CODEGEN_CALLBACK_COMMON_H
+#ifndef GRPCPP_IMPL_CALLBACK_COMMON_H
+#define GRPCPP_IMPL_CALLBACK_COMMON_H
 
 // IWYU pragma: private
 
 #include <functional>
 
+#include <grpc/grpc.h>
 #include <grpc/impl/codegen/grpc_types.h>
+#include <grpc/support/log.h>
 #include <grpcpp/impl/call.h>
 #include <grpcpp/impl/codegen/channel_interface.h>
 #include <grpcpp/impl/codegen/completion_queue_tag.h>
-#include <grpcpp/impl/codegen/config.h>
-#include <grpcpp/impl/codegen/core_codegen.h>
-#include <grpcpp/impl/codegen/status.h>
+#include <grpcpp/support/config.h>
+#include <grpcpp/support/status.h>
 
 namespace grpc {
 namespace internal {
@@ -72,7 +73,7 @@ class CallbackWithStatusTag : public grpc_completion_queue_functor {
  public:
   // always allocated against a call arena, no memory free required
   static void operator delete(void* /*ptr*/, std::size_t size) {
-    GPR_CODEGEN_ASSERT(size == sizeof(CallbackWithStatusTag));
+    GPR_ASSERT(size == sizeof(CallbackWithStatusTag));
   }
 
   // This operator should never be called as the memory should be freed as part
@@ -80,12 +81,12 @@ class CallbackWithStatusTag : public grpc_completion_queue_functor {
   // delete to the operator new so that some compilers will not complain (see
   // https://github.com/grpc/grpc/issues/11301) Note at the time of adding this
   // there are no tests catching the compiler warning.
-  static void operator delete(void*, void*) { GPR_CODEGEN_ASSERT(false); }
+  static void operator delete(void*, void*) { GPR_ASSERT(false); }
 
   CallbackWithStatusTag(grpc_call* call, std::function<void(Status)> f,
                         CompletionQueueTag* ops)
       : call_(call), func_(std::move(f)), ops_(ops) {
-    CoreCodegen::grpc_call_ref(call);
+    ::grpc_call_ref(call);
     functor_run = &CallbackWithStatusTag::StaticRun;
     // A client-side callback should never be run inline since they will always
     // have work to do from the user application. So, set the parent's
@@ -119,7 +120,7 @@ class CallbackWithStatusTag : public grpc_completion_queue_functor {
       // The tag was swallowed
       return;
     }
-    GPR_CODEGEN_ASSERT(ignored == ops_);
+    GPR_ASSERT(ignored == ops_);
 
     // Last use of func_ or status_, so ok to move them out
     auto func = std::move(func_);
@@ -127,7 +128,7 @@ class CallbackWithStatusTag : public grpc_completion_queue_functor {
     func_ = nullptr;     // reset to clear this out for sure
     status_ = Status();  // reset to clear this out for sure
     CatchingCallback(std::move(func), std::move(status));
-    CoreCodegen::grpc_call_unref(call_);
+    ::grpc_call_unref(call_);
   }
 };
 
@@ -138,7 +139,7 @@ class CallbackWithSuccessTag : public grpc_completion_queue_functor {
  public:
   // always allocated against a call arena, no memory free required
   static void operator delete(void* /*ptr*/, std::size_t size) {
-    GPR_CODEGEN_ASSERT(size == sizeof(CallbackWithSuccessTag));
+    GPR_ASSERT(size == sizeof(CallbackWithSuccessTag));
   }
 
   // This operator should never be called as the memory should be freed as part
@@ -146,7 +147,7 @@ class CallbackWithSuccessTag : public grpc_completion_queue_functor {
   // delete to the operator new so that some compilers will not complain (see
   // https://github.com/grpc/grpc/issues/11301) Note at the time of adding this
   // there are no tests catching the compiler warning.
-  static void operator delete(void*, void*) { GPR_CODEGEN_ASSERT(false); }
+  static void operator delete(void*, void*) { GPR_ASSERT(false); }
 
   CallbackWithSuccessTag() : call_(nullptr) {}
 
@@ -163,8 +164,8 @@ class CallbackWithSuccessTag : public grpc_completion_queue_functor {
   // callbacks.
   void Set(grpc_call* call, std::function<void(bool)> f,
            CompletionQueueTag* ops, bool can_inline) {
-    GPR_CODEGEN_ASSERT(call_ == nullptr);
-    CoreCodegen::grpc_call_ref(call);
+    GPR_ASSERT(call_ == nullptr);
+    ::grpc_call_ref(call);
     call_ = call;
     func_ = std::move(f);
     ops_ = ops;
@@ -177,7 +178,7 @@ class CallbackWithSuccessTag : public grpc_completion_queue_functor {
       grpc_call* call = call_;
       call_ = nullptr;
       func_ = nullptr;
-      CoreCodegen::grpc_call_unref(call);
+      ::grpc_call_unref(call);
     }
   }
 
@@ -208,7 +209,7 @@ class CallbackWithSuccessTag : public grpc_completion_queue_functor {
     auto* ops = ops_;
 #endif
     bool do_callback = ops_->FinalizeResult(&ignored, &ok);
-    GPR_CODEGEN_DEBUG_ASSERT(ignored == ops);
+    GPR_DEBUG_ASSERT(ignored == ops);
 
     if (do_callback) {
       CatchingCallback(func_, ok);
@@ -219,4 +220,4 @@ class CallbackWithSuccessTag : public grpc_completion_queue_functor {
 }  // namespace internal
 }  // namespace grpc
 
-#endif  // GRPCPP_IMPL_CODEGEN_CALLBACK_COMMON_H
+#endif  // GRPCPP_IMPL_CALLBACK_COMMON_H
