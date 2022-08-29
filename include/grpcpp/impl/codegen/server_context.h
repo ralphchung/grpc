@@ -31,8 +31,8 @@
 #include <vector>
 
 #include <grpc/impl/codegen/compression_types.h>
+#include <grpcpp/impl/call.h>
 #include <grpcpp/impl/call_op_set.h>
-#include <grpcpp/impl/codegen/call.h>
 #include <grpcpp/impl/codegen/callback_common.h>
 #include <grpcpp/impl/codegen/completion_queue_tag.h>
 #include <grpcpp/impl/codegen/config.h>
