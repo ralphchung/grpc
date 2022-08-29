@@ -21,8 +21,8 @@
 
 // IWYU pragma: private, include <grpcpp/impl/client_unary_call.h>
 
+#include <grpcpp/impl/call_op_set.h>
 #include <grpcpp/impl/codegen/call.h>
-#include <grpcpp/impl/codegen/call_op_set.h>
 #include <grpcpp/impl/codegen/channel_interface.h>
 #include <grpcpp/impl/codegen/config.h>
 #include <grpcpp/impl/codegen/status.h>

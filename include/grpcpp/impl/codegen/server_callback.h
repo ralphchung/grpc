@@ -24,8 +24,8 @@
 #include <functional>
 #include <type_traits>
 
+#include <grpcpp/impl/call_op_set.h>
 #include <grpcpp/impl/codegen/call.h>
-#include <grpcpp/impl/codegen/call_op_set.h>
 #include <grpcpp/impl/codegen/callback_common.h>
 #include <grpcpp/impl/codegen/config.h>
 #include <grpcpp/impl/codegen/message_allocator.h>
