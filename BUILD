@@ -403,7 +403,6 @@ GRPCXX_PUBLIC_HDRS = [
     "include/grpc++/impl/codegen/stub_options.h",
     "include/grpc++/impl/codegen/sync_stream.h",
     "include/grpc++/impl/codegen/time.h",
-    "include/grpcpp/impl/codegen/client_callback.h",
     "include/grpcpp/impl/codegen/client_context.h",
     "include/grpcpp/impl/codegen/client_interceptor.h",
     "include/grpcpp/impl/codegen/client_unary_call.h",
