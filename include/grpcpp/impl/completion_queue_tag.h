@@ -16,10 +16,8 @@
  *
  */
 
-#ifndef GRPCPP_IMPL_CODEGEN_COMPLETION_QUEUE_TAG_H
-#define GRPCPP_IMPL_CODEGEN_COMPLETION_QUEUE_TAG_H
-
-// IWYU pragma: private
+#ifndef GRPCPP_IMPL_COMPLETION_QUEUE_TAG_H
+#define GRPCPP_IMPL_COMPLETION_QUEUE_TAG_H
 
 namespace grpc {
 
@@ -53,4 +51,4 @@ class CompletionQueueTag {
 
 }  // namespace grpc
 
-#endif  // GRPCPP_IMPL_CODEGEN_COMPLETION_QUEUE_TAG_H
+#endif  // GRPCPP_IMPL_COMPLETION_QUEUE_TAG_H
