@@ -34,7 +34,6 @@
 #include <grpcpp/impl/call.h>
 #include <grpcpp/impl/call_op_set.h>
 #include <grpcpp/impl/callback_common.h>
-#include <grpcpp/impl/codegen/config.h>
 #include <grpcpp/impl/codegen/core_codegen.h>
 #include <grpcpp/impl/codegen/create_auth_context.h>
 #include <grpcpp/impl/codegen/message_allocator.h>
@@ -47,6 +46,7 @@
 #include <grpcpp/impl/codegen/string_ref.h>
 #include <grpcpp/impl/codegen/time.h>
 #include <grpcpp/impl/completion_queue_tag.h>
+#include <grpcpp/support/config.h>
 
 struct grpc_metadata;
 struct grpc_call;

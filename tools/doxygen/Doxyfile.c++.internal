@@ -815,7 +815,6 @@ include/grpc++/health_check_service_interface.h \
 include/grpc++/impl/call.h \
 include/grpc++/impl/channel_argument_option.h \
 include/grpc++/impl/client_unary_call.h \
-include/grpc++/impl/codegen/config.h \
 include/grpc++/impl/codegen/core_codegen.h \
 include/grpc++/impl/codegen/create_auth_context.h \
 include/grpc++/impl/codegen/metadata_map.h \
@@ -950,7 +949,6 @@ include/grpcpp/impl/call_op_set_interface.h \
 include/grpcpp/impl/callback_common.h \
 include/grpcpp/impl/channel_argument_option.h \
 include/grpcpp/impl/client_unary_call.h \
-include/grpcpp/impl/codegen/config.h \
 include/grpcpp/impl/codegen/core_codegen.h \
 include/grpcpp/impl/codegen/create_auth_context.h \
 include/grpcpp/impl/codegen/delegating_channel.h \

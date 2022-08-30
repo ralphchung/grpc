@@ -24,7 +24,7 @@
 #include <chrono>
 
 #include <grpc/impl/codegen/grpc_types.h>
-#include <grpcpp/impl/codegen/config.h>
+#include <grpcpp/support/config.h>
 
 namespace grpc {
 

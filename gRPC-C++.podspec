@@ -102,7 +102,6 @@ Pod::Spec.new do |s|
                       'include/grpcpp/impl/callback_common.h',
                       'include/grpcpp/impl/channel_argument_option.h',
                       'include/grpcpp/impl/client_unary_call.h',
-                      'include/grpcpp/impl/codegen/config.h',
                       'include/grpcpp/impl/codegen/core_codegen.h',
                       'include/grpcpp/impl/codegen/create_auth_context.h',
                       'include/grpcpp/impl/codegen/delegating_channel.h',

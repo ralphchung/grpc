@@ -22,7 +22,7 @@
 struct grpc_resource_quota;
 
 #include <grpcpp/grpc_library.h>
-#include <grpcpp/impl/codegen/config.h>
+#include <grpcpp/support/config.h>
 
 namespace grpc {
 

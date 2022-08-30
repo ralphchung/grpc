@@ -22,9 +22,9 @@
 // IWYU pragma: private, include <grpcpp/support/slice.h>
 
 #include <grpc/impl/codegen/slice.h>
-#include <grpcpp/impl/codegen/config.h>
 #include <grpcpp/impl/codegen/core_codegen.h>
 #include <grpcpp/impl/codegen/string_ref.h>
+#include <grpcpp/support/config.h>
 
 namespace grpc {
 

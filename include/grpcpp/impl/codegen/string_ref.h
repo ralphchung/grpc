@@ -28,7 +28,7 @@
 #include <iostream>
 #include <iterator>
 
-#include <grpcpp/impl/codegen/config.h>
+#include <grpcpp/support/config.h>
 
 namespace grpc {
 
