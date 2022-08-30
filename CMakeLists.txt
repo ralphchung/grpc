@@ -3274,7 +3274,6 @@ foreach(_hdr
   include/grpc++/impl/call.h
   include/grpc++/impl/channel_argument_option.h
   include/grpc++/impl/client_unary_call.h
-  include/grpc++/impl/codegen/client_context.h
   include/grpc++/impl/codegen/client_unary_call.h
   include/grpc++/impl/codegen/completion_queue.h
   include/grpc++/impl/codegen/completion_queue_tag.h
@@ -3350,7 +3349,6 @@ foreach(_hdr
   include/grpcpp/impl/callback_common.h
   include/grpcpp/impl/channel_argument_option.h
   include/grpcpp/impl/client_unary_call.h
-  include/grpcpp/impl/codegen/client_context.h
   include/grpcpp/impl/codegen/client_interceptor.h
   include/grpcpp/impl/codegen/client_unary_call.h
   include/grpcpp/impl/codegen/completion_queue.h
@@ -3927,7 +3925,6 @@ foreach(_hdr
   include/grpc++/impl/call.h
   include/grpc++/impl/channel_argument_option.h
   include/grpc++/impl/client_unary_call.h
-  include/grpc++/impl/codegen/client_context.h
   include/grpc++/impl/codegen/client_unary_call.h
   include/grpc++/impl/codegen/completion_queue.h
   include/grpc++/impl/codegen/completion_queue_tag.h
@@ -4002,7 +3999,6 @@ foreach(_hdr
   include/grpcpp/impl/callback_common.h
   include/grpcpp/impl/channel_argument_option.h
   include/grpcpp/impl/client_unary_call.h
-  include/grpcpp/impl/codegen/client_context.h
   include/grpcpp/impl/codegen/client_interceptor.h
   include/grpcpp/impl/codegen/client_unary_call.h
   include/grpcpp/impl/codegen/completion_queue.h
