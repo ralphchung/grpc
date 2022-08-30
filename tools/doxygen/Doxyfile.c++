@@ -816,7 +816,6 @@ include/grpc++/impl/call.h \
 include/grpc++/impl/channel_argument_option.h \
 include/grpc++/impl/client_unary_call.h \
 include/grpc++/impl/codegen/config.h \
-include/grpc++/impl/codegen/config_protobuf.h \
 include/grpc++/impl/codegen/core_codegen.h \
 include/grpc++/impl/codegen/create_auth_context.h \
 include/grpc++/impl/codegen/metadata_map.h \
@@ -933,6 +932,7 @@ include/grpcpp/channel.h \
 include/grpcpp/channel_interface.h \
 include/grpcpp/client_context.h \
 include/grpcpp/completion_queue.h \
+include/grpcpp/config_protobuf.h \
 include/grpcpp/create_channel.h \
 include/grpcpp/create_channel_binder.h \
 include/grpcpp/create_channel_posix.h \
@@ -951,7 +951,6 @@ include/grpcpp/impl/callback_common.h \
 include/grpcpp/impl/channel_argument_option.h \
 include/grpcpp/impl/client_unary_call.h \
 include/grpcpp/impl/codegen/config.h \
-include/grpcpp/impl/codegen/config_protobuf.h \
 include/grpcpp/impl/codegen/core_codegen.h \
 include/grpcpp/impl/codegen/create_auth_context.h \
 include/grpcpp/impl/codegen/delegating_channel.h \

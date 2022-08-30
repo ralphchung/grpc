@@ -6929,8 +6929,7 @@ grpc_cc_library(
     ],
     language = "c++",
     public_hdrs = [
-        "include/grpc++/impl/codegen/config_protobuf.h",
-        "include/grpcpp/impl/codegen/config_protobuf.h",
+        "include/grpcpp/config_protobuf.h",
     ],
     tags = ["nofixdeps"],
     visibility = ["@grpc:public"],
