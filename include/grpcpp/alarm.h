@@ -24,8 +24,8 @@
 #include <functional>
 
 #include <grpc/grpc.h>
+#include <grpcpp/completion_queue.h>
 #include <grpcpp/grpc_library.h>
-#include <grpcpp/impl/codegen/completion_queue.h>
 #include <grpcpp/impl/codegen/time.h>
 #include <grpcpp/impl/completion_queue_tag.h>
 

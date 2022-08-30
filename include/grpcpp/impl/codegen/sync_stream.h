@@ -22,8 +22,8 @@
 
 #include <grpcpp/channel_interface.h>
 #include <grpcpp/client_context.h>
+#include <grpcpp/completion_queue.h>
 #include <grpcpp/impl/call.h>
-#include <grpcpp/impl/codegen/completion_queue.h>
 #include <grpcpp/impl/codegen/server_context.h>
 #include <grpcpp/impl/codegen/service_type.h>
 #include <grpcpp/impl/codegen/status.h>

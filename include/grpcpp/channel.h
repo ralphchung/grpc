@@ -23,9 +23,9 @@
 
 #include <grpc/grpc.h>
 #include <grpcpp/channel_interface.h>
+#include <grpcpp/completion_queue.h>
 #include <grpcpp/grpc_library.h>
 #include <grpcpp/impl/call.h>
-#include <grpcpp/impl/codegen/completion_queue.h>
 #include <grpcpp/impl/codegen/config.h>
 #include <grpcpp/impl/codegen/sync.h>
 #include <grpcpp/support/client_interceptor.h>
