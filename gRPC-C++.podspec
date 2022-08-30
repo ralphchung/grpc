@@ -101,7 +101,6 @@ Pod::Spec.new do |s|
                       'include/grpcpp/impl/callback_common.h',
                       'include/grpcpp/impl/channel_argument_option.h',
                       'include/grpcpp/impl/client_unary_call.h',
-                      'include/grpcpp/impl/codegen/client_unary_call.h',
                       'include/grpcpp/impl/codegen/completion_queue.h',
                       'include/grpcpp/impl/codegen/completion_queue_tag.h',
                       'include/grpcpp/impl/codegen/config.h',
