@@ -28,12 +28,12 @@
 #include <grpc/impl/codegen/slice.h>
 #include <grpcpp/config_protobuf.h>
 #include <grpcpp/impl/codegen/core_codegen.h>
-#include <grpcpp/impl/codegen/proto_buffer_writer.h>
 #include <grpcpp/impl/codegen/serialization_traits.h>
 #include <grpcpp/impl/codegen/slice.h>
 #include <grpcpp/impl/codegen/status.h>
 #include <grpcpp/support/byte_buffer.h>
 #include <grpcpp/support/proto_buffer_reader.h>
+#include <grpcpp/support/proto_buffer_writer.h>
 
 /// This header provides serialization and deserialization between gRPC
 /// messages serialized using protobuf and the C++ objects they represent.
