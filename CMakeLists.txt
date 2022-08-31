@@ -3276,7 +3276,6 @@ foreach(_hdr
   include/grpc++/impl/client_unary_call.h
   include/grpc++/impl/codegen/core_codegen.h
   include/grpc++/impl/codegen/security/auth_context.h
-  include/grpc++/impl/codegen/serialization_traits.h
   include/grpc++/impl/codegen/server_context.h
   include/grpc++/impl/codegen/server_interface.h
   include/grpc++/impl/codegen/service_type.h
@@ -3343,7 +3342,6 @@ foreach(_hdr
   include/grpcpp/impl/client_unary_call.h
   include/grpcpp/impl/codegen/core_codegen.h
   include/grpcpp/impl/codegen/security/auth_context.h
-  include/grpcpp/impl/codegen/serialization_traits.h
   include/grpcpp/impl/codegen/server_callback.h
   include/grpcpp/impl/codegen/server_callback_handlers.h
   include/grpcpp/impl/codegen/server_context.h
@@ -3904,7 +3902,6 @@ foreach(_hdr
   include/grpc++/impl/client_unary_call.h
   include/grpc++/impl/codegen/core_codegen.h
   include/grpc++/impl/codegen/security/auth_context.h
-  include/grpc++/impl/codegen/serialization_traits.h
   include/grpc++/impl/codegen/server_context.h
   include/grpc++/impl/codegen/server_interface.h
   include/grpc++/impl/codegen/service_type.h
@@ -3970,7 +3967,6 @@ foreach(_hdr
   include/grpcpp/impl/client_unary_call.h
   include/grpcpp/impl/codegen/core_codegen.h
   include/grpcpp/impl/codegen/security/auth_context.h
-  include/grpcpp/impl/codegen/serialization_traits.h
   include/grpcpp/impl/codegen/server_callback.h
   include/grpcpp/impl/codegen/server_callback_handlers.h
   include/grpcpp/impl/codegen/server_context.h
