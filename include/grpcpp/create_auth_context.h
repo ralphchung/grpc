@@ -16,15 +16,13 @@
  *
  */
 
-#ifndef GRPCPP_IMPL_CODEGEN_CREATE_AUTH_CONTEXT_H
-#define GRPCPP_IMPL_CODEGEN_CREATE_AUTH_CONTEXT_H
-
-// IWYU pragma: private
+#ifndef GRPCPP_CREATE_AUTH_CONTEXT_H
+#define GRPCPP_CREATE_AUTH_CONTEXT_H
 
 #include <memory>
 
 #include <grpc/impl/codegen/grpc_types.h>
-#include <grpcpp/impl/codegen/security/auth_context.h>
+#include <grpcpp/security/auth_context.h>
 
 namespace grpc {
 
@@ -32,4 +30,4 @@ std::shared_ptr<const AuthContext> CreateAuthContext(grpc_call* call);
 
 }  // namespace grpc
 
-#endif  // GRPCPP_IMPL_CODEGEN_CREATE_AUTH_CONTEXT_H
+#endif  // GRPCPP_CREATE_AUTH_CONTEXT_H

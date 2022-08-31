@@ -31,11 +31,11 @@
 #include <vector>
 
 #include <grpc/impl/codegen/compression_types.h>
+#include <grpcpp/create_auth_context.h>
 #include <grpcpp/impl/call.h>
 #include <grpcpp/impl/call_op_set.h>
 #include <grpcpp/impl/callback_common.h>
 #include <grpcpp/impl/codegen/core_codegen.h>
-#include <grpcpp/impl/codegen/create_auth_context.h>
 #include <grpcpp/impl/codegen/message_allocator.h>
 #include <grpcpp/impl/codegen/metadata_map.h>
 #include <grpcpp/impl/codegen/rpc_service_method.h>

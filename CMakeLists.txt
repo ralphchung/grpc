@@ -3275,7 +3275,6 @@ foreach(_hdr
   include/grpc++/impl/channel_argument_option.h
   include/grpc++/impl/client_unary_call.h
   include/grpc++/impl/codegen/core_codegen.h
-  include/grpc++/impl/codegen/create_auth_context.h
   include/grpc++/impl/codegen/metadata_map.h
   include/grpc++/impl/codegen/method_handler_impl.h
   include/grpc++/impl/codegen/proto_utils.h
@@ -3328,6 +3327,7 @@ foreach(_hdr
   include/grpcpp/client_context.h
   include/grpcpp/completion_queue.h
   include/grpcpp/config_protobuf.h
+  include/grpcpp/create_auth_context.h
   include/grpcpp/create_channel.h
   include/grpcpp/create_channel_binder.h
   include/grpcpp/create_channel_posix.h
@@ -3346,7 +3346,6 @@ foreach(_hdr
   include/grpcpp/impl/channel_argument_option.h
   include/grpcpp/impl/client_unary_call.h
   include/grpcpp/impl/codegen/core_codegen.h
-  include/grpcpp/impl/codegen/create_auth_context.h
   include/grpcpp/impl/codegen/delegating_channel.h
   include/grpcpp/impl/codegen/intercepted_channel.h
   include/grpcpp/impl/codegen/interceptor.h
@@ -3917,7 +3916,6 @@ foreach(_hdr
   include/grpc++/impl/channel_argument_option.h
   include/grpc++/impl/client_unary_call.h
   include/grpc++/impl/codegen/core_codegen.h
-  include/grpc++/impl/codegen/create_auth_context.h
   include/grpc++/impl/codegen/metadata_map.h
   include/grpc++/impl/codegen/method_handler_impl.h
   include/grpc++/impl/codegen/proto_utils.h
@@ -3970,6 +3968,7 @@ foreach(_hdr
   include/grpcpp/client_context.h
   include/grpcpp/completion_queue.h
   include/grpcpp/config_protobuf.h
+  include/grpcpp/create_auth_context.h
   include/grpcpp/create_channel.h
   include/grpcpp/create_channel_posix.h
   include/grpcpp/ext/call_metric_recorder.h
@@ -3987,7 +3986,6 @@ foreach(_hdr
   include/grpcpp/impl/channel_argument_option.h
   include/grpcpp/impl/client_unary_call.h
   include/grpcpp/impl/codegen/core_codegen.h
-  include/grpcpp/impl/codegen/create_auth_context.h
   include/grpcpp/impl/codegen/delegating_channel.h
   include/grpcpp/impl/codegen/intercepted_channel.h
   include/grpcpp/impl/codegen/interceptor.h
