@@ -21,10 +21,10 @@
 
 // IWYU pragma: private, include <grpcpp/impl/service_type.h>
 
-#include <grpcpp/impl/codegen/rpc_service_method.h>
 #include <grpcpp/impl/codegen/serialization_traits.h>
 #include <grpcpp/impl/codegen/server_interface.h>
 #include <grpcpp/impl/codegen/status.h>
+#include <grpcpp/impl/rpc_service_method.h>
 #include <grpcpp/support/config.h>
 
 namespace grpc {

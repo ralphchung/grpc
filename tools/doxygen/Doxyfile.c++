@@ -816,7 +816,6 @@ include/grpc++/impl/call.h \
 include/grpc++/impl/channel_argument_option.h \
 include/grpc++/impl/client_unary_call.h \
 include/grpc++/impl/codegen/core_codegen.h \
-include/grpc++/impl/codegen/rpc_service_method.h \
 include/grpc++/impl/codegen/security/auth_context.h \
 include/grpc++/impl/codegen/serialization_traits.h \
 include/grpc++/impl/codegen/server_context.h \
@@ -947,7 +946,6 @@ include/grpcpp/impl/callback_common.h \
 include/grpcpp/impl/channel_argument_option.h \
 include/grpcpp/impl/client_unary_call.h \
 include/grpcpp/impl/codegen/core_codegen.h \
-include/grpcpp/impl/codegen/rpc_service_method.h \
 include/grpcpp/impl/codegen/security/auth_context.h \
 include/grpcpp/impl/codegen/serialization_traits.h \
 include/grpcpp/impl/codegen/server_callback.h \

@@ -105,7 +105,6 @@ Pod::Spec.new do |s|
                       'include/grpcpp/impl/channel_argument_option.h',
                       'include/grpcpp/impl/client_unary_call.h',
                       'include/grpcpp/impl/codegen/core_codegen.h',
-                      'include/grpcpp/impl/codegen/rpc_service_method.h',
                       'include/grpcpp/impl/codegen/security/auth_context.h',
                       'include/grpcpp/impl/codegen/serialization_traits.h',
                       'include/grpcpp/impl/codegen/server_callback.h',
