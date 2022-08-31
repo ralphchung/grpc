@@ -35,8 +35,8 @@
 #include <grpcpp/impl/call.h>
 #include <grpcpp/impl/call_hook.h>
 #include <grpcpp/impl/call_op_set_interface.h>
-#include <grpcpp/impl/codegen/interceptor_common.h>
 #include <grpcpp/impl/intercepted_channel.h>
+#include <grpcpp/impl/interceptor_common.h>
 #include <grpcpp/impl/serialization_traits.h>
 #include <grpcpp/support/byte_buffer.h>
 #include <grpcpp/support/config.h>

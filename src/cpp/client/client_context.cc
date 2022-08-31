@@ -35,8 +35,8 @@
 #include <grpc/support/time.h>
 #include <grpcpp/channel.h>
 #include <grpcpp/client_context.h>
-#include <grpcpp/impl/codegen/interceptor_common.h>
 #include <grpcpp/impl/codegen/sync.h>
+#include <grpcpp/impl/interceptor_common.h>
 #include <grpcpp/security/credentials.h>
 #include <grpcpp/server_context.h>
 #include <grpcpp/support/client_interceptor.h>
