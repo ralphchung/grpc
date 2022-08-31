@@ -45,7 +45,6 @@
 #include <grpcpp/impl/call.h>
 #include <grpcpp/impl/call_op_set.h>
 #include <grpcpp/impl/call_op_set_interface.h>
-#include <grpcpp/impl/codegen/server_callback_handlers.h>
 #include <grpcpp/impl/codegen/server_interface.h>
 #include <grpcpp/impl/codegen/sync.h>
 #include <grpcpp/impl/completion_queue_tag.h>
@@ -63,6 +62,7 @@
 #include <grpcpp/support/config.h>
 #include <grpcpp/support/interceptor.h>
 #include <grpcpp/support/method_handler.h>
+#include <grpcpp/support/server_callback_handlers.h>
 #include <grpcpp/support/server_interceptor.h>
 #include <grpcpp/support/slice.h>
 #include <grpcpp/support/status.h>

@@ -15,17 +15,14 @@
  * limitations under the License.
  */
 
-#ifndef GRPCPP_IMPL_CODEGEN_SERVER_CALLBACK_HANDLERS_H
-#define GRPCPP_IMPL_CODEGEN_SERVER_CALLBACK_HANDLERS_H
+#ifndef GRPCPP_SUPPORT_SERVER_CALLBACK_HANDLERS_H
+#define GRPCPP_SUPPORT_SERVER_CALLBACK_HANDLERS_H
 
-// IWYU pragma: private
-
-#include <grpcpp/impl/codegen/core_codegen.h>
-#include <grpcpp/impl/codegen/server_callback.h>
-#include <grpcpp/impl/codegen/server_context.h>
-#include <grpcpp/impl/codegen/status.h>
 #include <grpcpp/impl/rpc_service_method.h>
+#include <grpcpp/server_context.h>
 #include <grpcpp/support/message_allocator.h>
+#include <grpcpp/support/server_callback.h>
+#include <grpcpp/support/status.h>
 
 namespace grpc {
 namespace internal {
@@ -147,7 +144,7 @@ class CallbackUnaryHandler : public grpc::internal::MethodHandler {
     }
 
     void SendInitialMetadata() override {
-      GPR_CODEGEN_ASSERT(!ctx_->sent_initial_metadata_);
+      GPR_ASSERT(!ctx_->sent_initial_metadata_);
       this->Ref();
       // The callback for this function should not be marked inline because it
       // is directly invoking a user-controlled reaction
@@ -333,7 +330,7 @@ class CallbackClientStreamingHandler : public grpc::internal::MethodHandler {
     }
 
     void SendInitialMetadata() override {
-      GPR_CODEGEN_ASSERT(!ctx_->sent_initial_metadata_);
+      GPR_ASSERT(!ctx_->sent_initial_metadata_);
       this->Ref();
       // The callback for this function should not be inlined because it invokes
       // a user-controlled reaction, but any resulting OnDone can be inlined in
@@ -535,7 +532,7 @@ class CallbackServerStreamingHandler : public grpc::internal::MethodHandler {
     }
 
     void SendInitialMetadata() override {
-      GPR_CODEGEN_ASSERT(!ctx_->sent_initial_metadata_);
+      GPR_ASSERT(!ctx_->sent_initial_metadata_);
       this->Ref();
       // The callback for this function should not be inlined because it invokes
       // a user-controlled reaction, but any resulting OnDone can be inlined in
@@ -573,7 +570,7 @@ class CallbackServerStreamingHandler : public grpc::internal::MethodHandler {
         ctx_->sent_initial_metadata_ = true;
       }
       // TODO(vjpai): don't assert
-      GPR_CODEGEN_ASSERT(write_ops_.SendMessagePtr(resp, options).ok());
+      GPR_ASSERT(write_ops_.SendMessagePtr(resp, options).ok());
       call_.PerformOps(&write_ops_);
     }
 
@@ -581,7 +578,7 @@ class CallbackServerStreamingHandler : public grpc::internal::MethodHandler {
                         grpc::Status s) override {
       // This combines the write into the finish callback
       // TODO(vjpai): don't assert
-      GPR_CODEGEN_ASSERT(finish_ops_.SendMessagePtr(resp, options).ok());
+      GPR_ASSERT(finish_ops_.SendMessagePtr(resp, options).ok());
       Finish(std::move(s));
     }
 
@@ -745,7 +742,7 @@ class CallbackBidiHandler : public grpc::internal::MethodHandler {
     }
 
     void SendInitialMetadata() override {
-      GPR_CODEGEN_ASSERT(!ctx_->sent_initial_metadata_);
+      GPR_ASSERT(!ctx_->sent_initial_metadata_);
       this->Ref();
       // The callback for this function should not be inlined because it invokes
       // a user-controlled reaction, but any resulting OnDone can be inlined in
@@ -783,14 +780,14 @@ class CallbackBidiHandler : public grpc::internal::MethodHandler {
         ctx_->sent_initial_metadata_ = true;
       }
       // TODO(vjpai): don't assert
-      GPR_CODEGEN_ASSERT(write_ops_.SendMessagePtr(resp, options).ok());
+      GPR_ASSERT(write_ops_.SendMessagePtr(resp, options).ok());
       call_.PerformOps(&write_ops_);
     }
 
     void WriteAndFinish(const ResponseType* resp, grpc::WriteOptions options,
                         grpc::Status s) override {
       // TODO(vjpai): don't assert
-      GPR_CODEGEN_ASSERT(finish_ops_.SendMessagePtr(resp, options).ok());
+      GPR_ASSERT(finish_ops_.SendMessagePtr(resp, options).ok());
       Finish(std::move(s));
     }
 
@@ -886,4 +883,4 @@ class CallbackBidiHandler : public grpc::internal::MethodHandler {
 }  // namespace internal
 }  // namespace grpc
 
-#endif  // GRPCPP_IMPL_CODEGEN_SERVER_CALLBACK_HANDLERS_H
+#endif  // GRPCPP_SUPPORT_SERVER_CALLBACK_HANDLERS_H

@@ -21,10 +21,10 @@
 
 #include <grpc/impl/codegen/port_platform.h>
 
-#include <grpcpp/impl/codegen/server_callback_handlers.h>
 #include <grpcpp/support/async_stream.h>
 #include <grpcpp/support/byte_buffer.h>
 #include <grpcpp/support/server_callback.h>
+#include <grpcpp/support/server_callback_handlers.h>
 
 struct grpc_server;
 

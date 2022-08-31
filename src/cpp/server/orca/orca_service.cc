@@ -32,7 +32,6 @@
 #include <grpc/event_engine/event_engine.h>
 #include <grpc/support/log.h>
 #include <grpcpp/ext/orca_service.h>
-#include <grpcpp/impl/codegen/server_callback_handlers.h>
 #include <grpcpp/impl/codegen/sync.h>
 #include <grpcpp/impl/rpc_method.h>
 #include <grpcpp/impl/rpc_service_method.h>
@@ -40,6 +39,7 @@
 #include <grpcpp/support/byte_buffer.h>
 #include <grpcpp/support/config.h>
 #include <grpcpp/support/server_callback.h>
+#include <grpcpp/support/server_callback_handlers.h>
 #include <grpcpp/support/slice.h>
 #include <grpcpp/support/status.h>
 
