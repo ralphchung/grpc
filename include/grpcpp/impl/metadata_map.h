@@ -16,16 +16,14 @@
  *
  */
 
-#ifndef GRPCPP_IMPL_CODEGEN_METADATA_MAP_H
-#define GRPCPP_IMPL_CODEGEN_METADATA_MAP_H
-
-// IWYU pragma: private
+#ifndef GRPCPP_IMPL_METADATA_MAP_H
+#define GRPCPP_IMPL_METADATA_MAP_H
 
 #include <map>
 
+#include <grpc/grpc.h>
 #include <grpc/impl/codegen/log.h>
-#include <grpcpp/impl/codegen/core_codegen.h>
-#include <grpcpp/impl/codegen/slice.h>
+#include <grpcpp/support/slice.h>
 
 namespace grpc {
 
@@ -84,7 +82,7 @@ class MetadataMap {
   grpc_metadata_array arr_;
   std::multimap<grpc::string_ref, grpc::string_ref> map_;
 
-  void Destroy() { CoreCodegen::grpc_metadata_array_destroy(&arr_); }
+  void Destroy() { grpc_metadata_array_destroy(&arr_); }
 
   void Setup() { memset(&arr_, 0, sizeof(arr_)); }
 
@@ -103,4 +101,4 @@ class MetadataMap {
 
 }  // namespace grpc
 
-#endif  // GRPCPP_IMPL_CODEGEN_METADATA_MAP_H
+#endif  // GRPCPP_IMPL_METADATA_MAP_H

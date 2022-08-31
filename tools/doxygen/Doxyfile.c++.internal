@@ -816,7 +816,6 @@ include/grpc++/impl/call.h \
 include/grpc++/impl/channel_argument_option.h \
 include/grpc++/impl/client_unary_call.h \
 include/grpc++/impl/codegen/core_codegen.h \
-include/grpc++/impl/codegen/metadata_map.h \
 include/grpc++/impl/codegen/method_handler_impl.h \
 include/grpc++/impl/codegen/proto_utils.h \
 include/grpc++/impl/codegen/rpc_method.h \
@@ -951,7 +950,6 @@ include/grpcpp/impl/callback_common.h \
 include/grpcpp/impl/channel_argument_option.h \
 include/grpcpp/impl/client_unary_call.h \
 include/grpcpp/impl/codegen/core_codegen.h \
-include/grpcpp/impl/codegen/metadata_map.h \
 include/grpcpp/impl/codegen/method_handler.h \
 include/grpcpp/impl/codegen/method_handler_impl.h \
 include/grpcpp/impl/codegen/proto_buffer_reader.h \
@@ -978,6 +976,7 @@ include/grpcpp/impl/codegen/time.h \
 include/grpcpp/impl/completion_queue_tag.h \
 include/grpcpp/impl/intercepted_channel.h \
 include/grpcpp/impl/interceptor_common.h \
+include/grpcpp/impl/metadata_map.h \
 include/grpcpp/impl/method_handler_impl.h \
 include/grpcpp/impl/rpc_method.h \
 include/grpcpp/impl/rpc_service_method.h \
