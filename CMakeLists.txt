@@ -3275,7 +3275,6 @@ foreach(_hdr
   include/grpc++/impl/channel_argument_option.h
   include/grpc++/impl/client_unary_call.h
   include/grpc++/impl/codegen/core_codegen.h
-  include/grpc++/impl/codegen/method_handler_impl.h
   include/grpc++/impl/codegen/proto_utils.h
   include/grpc++/impl/codegen/rpc_method.h
   include/grpc++/impl/codegen/rpc_service_method.h
@@ -3347,7 +3346,6 @@ foreach(_hdr
   include/grpcpp/impl/client_unary_call.h
   include/grpcpp/impl/codegen/core_codegen.h
   include/grpcpp/impl/codegen/method_handler.h
-  include/grpcpp/impl/codegen/method_handler_impl.h
   include/grpcpp/impl/codegen/proto_buffer_reader.h
   include/grpcpp/impl/codegen/proto_buffer_writer.h
   include/grpcpp/impl/codegen/proto_utils.h
@@ -3913,7 +3911,6 @@ foreach(_hdr
   include/grpc++/impl/channel_argument_option.h
   include/grpc++/impl/client_unary_call.h
   include/grpc++/impl/codegen/core_codegen.h
-  include/grpc++/impl/codegen/method_handler_impl.h
   include/grpc++/impl/codegen/proto_utils.h
   include/grpc++/impl/codegen/rpc_method.h
   include/grpc++/impl/codegen/rpc_service_method.h
@@ -3984,7 +3981,6 @@ foreach(_hdr
   include/grpcpp/impl/client_unary_call.h
   include/grpcpp/impl/codegen/core_codegen.h
   include/grpcpp/impl/codegen/method_handler.h
-  include/grpcpp/impl/codegen/method_handler_impl.h
   include/grpcpp/impl/codegen/proto_buffer_reader.h
   include/grpcpp/impl/codegen/proto_buffer_writer.h
   include/grpcpp/impl/codegen/proto_utils.h
