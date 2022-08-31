@@ -105,7 +105,6 @@ Pod::Spec.new do |s|
                       'include/grpcpp/impl/channel_argument_option.h',
                       'include/grpcpp/impl/client_unary_call.h',
                       'include/grpcpp/impl/codegen/core_codegen.h',
-                      'include/grpcpp/impl/codegen/interceptor.h',
                       'include/grpcpp/impl/codegen/message_allocator.h',
                       'include/grpcpp/impl/codegen/metadata_map.h',
                       'include/grpcpp/impl/codegen/method_handler.h',

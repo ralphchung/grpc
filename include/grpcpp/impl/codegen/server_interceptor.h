@@ -24,9 +24,9 @@
 #include <atomic>
 #include <vector>
 
-#include <grpcpp/impl/codegen/interceptor.h>
 #include <grpcpp/impl/codegen/rpc_method.h>
 #include <grpcpp/impl/codegen/string_ref.h>
+#include <grpcpp/support/interceptor.h>
 
 namespace grpc {
 class ServerContextBase;
