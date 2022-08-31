@@ -6980,7 +6980,6 @@ grpc_cc_library(
         "config",
         "gpr",
         "gpr_codegen",
-        "grpc",
         "grpc_base",
         "grpc_codegen",
         "grpc_health_upb",

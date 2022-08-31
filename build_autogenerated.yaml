@@ -3247,7 +3247,6 @@ libs:
   - src/cpp/util/string_ref.cc
   - src/cpp/util/time_cc.cc
   deps:
-  - grpc
   - grpc_unsecure
   baselib: true
 - name: grpc_plugin_support

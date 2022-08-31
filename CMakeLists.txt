@@ -3957,7 +3957,6 @@ target_link_libraries(grpc++_unsecure
   ${_gRPC_BASELIB_LIBRARIES}
   ${_gRPC_PROTOBUF_LIBRARIES}
   ${_gRPC_ALLTARGETS_LIBRARIES}
-  grpc
   grpc_unsecure
 )
 
