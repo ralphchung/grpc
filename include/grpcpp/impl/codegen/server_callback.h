@@ -27,10 +27,10 @@
 #include <grpcpp/impl/call.h>
 #include <grpcpp/impl/call_op_set.h>
 #include <grpcpp/impl/callback_common.h>
-#include <grpcpp/impl/codegen/message_allocator.h>
 #include <grpcpp/impl/codegen/status.h>
 #include <grpcpp/impl/codegen/sync.h>
 #include <grpcpp/support/config.h>
+#include <grpcpp/support/message_allocator.h>
 
 namespace grpc {
 
