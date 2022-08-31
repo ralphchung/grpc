@@ -231,7 +231,6 @@ libs:
   - src/core/lib/gprpp/sync.h
   - src/core/lib/gprpp/thd.h
   - src/core/lib/gprpp/time_util.h
-  - src/core/lib/profiling/timers.h
   src:
   - src/core/lib/gpr/alloc.cc
   - src/core/lib/gpr/atm.cc
@@ -274,8 +273,6 @@ libs:
   - src/core/lib/gprpp/thd_posix.cc
   - src/core/lib/gprpp/thd_windows.cc
   - src/core/lib/gprpp/time_util.cc
-  - src/core/lib/profiling/basic_timers.cc
-  - src/core/lib/profiling/stap_timers.cc
   deps:
   - absl/base:base
   - absl/base:core_headers
@@ -3544,6 +3541,7 @@ targets:
   - mac
 - name: goaway_server_test
   build: test
+  run: false
   language: c
   headers:
   - test/core/end2end/cq_verifier.h
@@ -11246,6 +11244,7 @@ targets:
 - name: xds_csds_end2end_test
   gtest: true
   build: test
+  run: false
   language: c++
   headers:
   - src/cpp/server/csds/csds.h
