@@ -16,10 +16,8 @@
  *
  */
 
-#ifndef GRPCPP_IMPL_CODEGEN_INTERCEPTED_CHANNEL_H
-#define GRPCPP_IMPL_CODEGEN_INTERCEPTED_CHANNEL_H
-
-// IWYU pragma: private
+#ifndef GRPCPP_IMPL_INTERCEPTED_CHANNEL_H
+#define GRPCPP_IMPL_INTERCEPTED_CHANNEL_H
 
 #include <grpcpp/channel_interface.h>
 
@@ -82,4 +80,4 @@ class InterceptedChannel : public ChannelInterface {
 }  // namespace internal
 }  // namespace grpc
 
-#endif  // GRPCPP_IMPL_CODEGEN_INTERCEPTED_CHANNEL_H
+#endif  // GRPCPP_IMPL_INTERCEPTED_CHANNEL_H
