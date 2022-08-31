@@ -28,8 +28,8 @@
 #include <vector>
 
 #include <grpc/impl/codegen/log.h>
-#include <grpcpp/impl/codegen/rpc_method.h>
 #include <grpcpp/impl/codegen/status.h>
+#include <grpcpp/impl/rpc_method.h>
 #include <grpcpp/support/byte_buffer.h>
 #include <grpcpp/support/config.h>
 
