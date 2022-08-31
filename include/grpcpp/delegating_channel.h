@@ -16,10 +16,8 @@
  *
  */
 
-#ifndef GRPCPP_IMPL_CODEGEN_DELEGATING_CHANNEL_H
-#define GRPCPP_IMPL_CODEGEN_DELEGATING_CHANNEL_H
-
-// IWYU pragma: private
+#ifndef GRPCPP_DELEGATING_CHANNEL_H
+#define GRPCPP_DELEGATING_CHANNEL_H
 
 #include <memory>
 
@@ -90,4 +88,4 @@ class DelegatingChannel : public grpc::ChannelInterface {
 }  // namespace experimental
 }  // namespace grpc
 
-#endif  // GRPCPP_IMPL_CODEGEN_DELEGATING_CHANNEL_H
+#endif  // GRPCPP_DELEGATING_CHANNEL_H

@@ -935,6 +935,7 @@ include/grpcpp/create_auth_context.h \
 include/grpcpp/create_channel.h \
 include/grpcpp/create_channel_binder.h \
 include/grpcpp/create_channel_posix.h \
+include/grpcpp/delegating_channel.h \
 include/grpcpp/ext/call_metric_recorder.h \
 include/grpcpp/ext/health_check_service_server_builder_option.h \
 include/grpcpp/generic/async_generic_service.h \
@@ -950,7 +951,6 @@ include/grpcpp/impl/callback_common.h \
 include/grpcpp/impl/channel_argument_option.h \
 include/grpcpp/impl/client_unary_call.h \
 include/grpcpp/impl/codegen/core_codegen.h \
-include/grpcpp/impl/codegen/delegating_channel.h \
 include/grpcpp/impl/codegen/intercepted_channel.h \
 include/grpcpp/impl/codegen/interceptor.h \
 include/grpcpp/impl/codegen/interceptor_common.h \
