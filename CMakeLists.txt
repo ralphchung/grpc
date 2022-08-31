@@ -3345,7 +3345,6 @@ foreach(_hdr
   include/grpcpp/impl/channel_argument_option.h
   include/grpcpp/impl/client_unary_call.h
   include/grpcpp/impl/codegen/core_codegen.h
-  include/grpcpp/impl/codegen/proto_buffer_reader.h
   include/grpcpp/impl/codegen/proto_buffer_writer.h
   include/grpcpp/impl/codegen/proto_utils.h
   include/grpcpp/impl/codegen/rpc_method.h
@@ -3979,7 +3978,6 @@ foreach(_hdr
   include/grpcpp/impl/channel_argument_option.h
   include/grpcpp/impl/client_unary_call.h
   include/grpcpp/impl/codegen/core_codegen.h
-  include/grpcpp/impl/codegen/proto_buffer_reader.h
   include/grpcpp/impl/codegen/proto_buffer_writer.h
   include/grpcpp/impl/codegen/proto_utils.h
   include/grpcpp/impl/codegen/rpc_method.h
