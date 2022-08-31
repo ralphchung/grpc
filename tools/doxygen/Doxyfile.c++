@@ -816,7 +816,6 @@ include/grpc++/impl/call.h \
 include/grpc++/impl/channel_argument_option.h \
 include/grpc++/impl/client_unary_call.h \
 include/grpc++/impl/codegen/core_codegen.h \
-include/grpc++/impl/codegen/proto_utils.h \
 include/grpc++/impl/codegen/rpc_method.h \
 include/grpc++/impl/codegen/rpc_service_method.h \
 include/grpc++/impl/codegen/security/auth_context.h \
@@ -949,7 +948,6 @@ include/grpcpp/impl/callback_common.h \
 include/grpcpp/impl/channel_argument_option.h \
 include/grpcpp/impl/client_unary_call.h \
 include/grpcpp/impl/codegen/core_codegen.h \
-include/grpcpp/impl/codegen/proto_utils.h \
 include/grpcpp/impl/codegen/rpc_method.h \
 include/grpcpp/impl/codegen/rpc_service_method.h \
 include/grpcpp/impl/codegen/security/auth_context.h \
@@ -1007,6 +1005,7 @@ include/grpcpp/support/message_allocator.h \
 include/grpcpp/support/method_handler.h \
 include/grpcpp/support/proto_buffer_reader.h \
 include/grpcpp/support/proto_buffer_writer.h \
+include/grpcpp/support/proto_utils.h \
 include/grpcpp/support/server_callback.h \
 include/grpcpp/support/server_interceptor.h \
 include/grpcpp/support/slice.h \

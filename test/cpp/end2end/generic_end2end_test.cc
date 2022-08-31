@@ -30,10 +30,10 @@
 #include <grpcpp/create_channel.h>
 #include <grpcpp/generic/async_generic_service.h>
 #include <grpcpp/generic/generic_stub.h>
-#include <grpcpp/impl/codegen/proto_utils.h>
 #include <grpcpp/server.h>
 #include <grpcpp/server_builder.h>
 #include <grpcpp/server_context.h>
+#include <grpcpp/support/proto_utils.h>
 #include <grpcpp/support/slice.h>
 
 #include "src/proto/grpc/testing/echo.grpc.pb.h"

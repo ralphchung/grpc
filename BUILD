@@ -377,6 +377,7 @@ GRPCXX_PUBLIC_HDRS = [
     "include/grpcpp/support/method_handler.h",
     "include/grpcpp/support/proto_buffer_reader.h",
     "include/grpcpp/support/proto_buffer_writer.h",
+    "include/grpcpp/support/proto_utils.h",
     "include/grpcpp/support/server_callback.h",
     "include/grpcpp/support/server_interceptor.h",
     "include/grpcpp/support/slice.h",
@@ -6899,10 +6900,7 @@ grpc_cc_library(
         "protobuf_headers",
     ],
     language = "c++",
-    public_hdrs = [
-        "include/grpc++/impl/codegen/proto_utils.h",
-        "include/grpcpp/impl/codegen/proto_utils.h",
-    ],
+    public_hdrs = [],
     tags = ["nofixdeps"],
     visibility = ["@grpc:public"],
     deps = [

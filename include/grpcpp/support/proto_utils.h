@@ -16,24 +16,23 @@
  *
  */
 
-#ifndef GRPCPP_IMPL_CODEGEN_PROTO_UTILS_H
-#define GRPCPP_IMPL_CODEGEN_PROTO_UTILS_H
+#ifndef GRPCPP_SUPPORT_PROTO_UTILS_H
+#define GRPCPP_SUPPORT_PROTO_UTILS_H
 
 // IWYU pragma: private
 
 #include <type_traits>
 
-#include <grpc/impl/codegen/byte_buffer_reader.h>
+#include <grpc/byte_buffer_reader.h>
 #include <grpc/impl/codegen/grpc_types.h>
-#include <grpc/impl/codegen/slice.h>
+#include <grpc/slice.h>
 #include <grpcpp/config_protobuf.h>
-#include <grpcpp/impl/codegen/core_codegen.h>
-#include <grpcpp/impl/codegen/serialization_traits.h>
-#include <grpcpp/impl/codegen/slice.h>
-#include <grpcpp/impl/codegen/status.h>
+#include <grpcpp/impl/serialization_traits.h>
 #include <grpcpp/support/byte_buffer.h>
 #include <grpcpp/support/proto_buffer_reader.h>
 #include <grpcpp/support/proto_buffer_writer.h>
+#include <grpcpp/support/slice.h>
+#include <grpcpp/support/status.h>
 
 /// This header provides serialization and deserialization between gRPC
 /// messages serialized using protobuf and the C++ objects they represent.
@@ -53,16 +52,16 @@ Status GenericSerialize(const grpc::protobuf::MessageLite& msg, ByteBuffer* bb,
   if (static_cast<size_t>(byte_size) <= GRPC_SLICE_INLINED_SIZE) {
     Slice slice(byte_size);
     // We serialize directly into the allocated slices memory
-    GPR_CODEGEN_ASSERT(slice.end() == msg.SerializeWithCachedSizesToArray(
-                                          const_cast<uint8_t*>(slice.begin())));
+    GPR_ASSERT(slice.end() == msg.SerializeWithCachedSizesToArray(
+                                  const_cast<uint8_t*>(slice.begin())));
     ByteBuffer tmp(&slice, 1);
     bb->Swap(&tmp);
 
-    return CoreCodegen::ok();
+    return Status::OK;
   }
   ProtoBufferWriter writer(bb, kProtoBufferWriterMaxBufferLength, byte_size);
   return msg.SerializeToZeroCopyStream(&writer)
-             ? CoreCodegen::ok()
+             ? Status::OK
              : Status(StatusCode::INTERNAL, "Failed to serialize message");
 }
 
@@ -77,7 +76,7 @@ Status GenericDeserialize(ByteBuffer* buffer,
   if (buffer == nullptr) {
     return Status(StatusCode::INTERNAL, "No payload");
   }
-  Status result = CoreCodegen::ok();
+  Status result = Status::OK;
   {
     ProtoBufferReader reader(buffer);
     if (!reader.status().ok()) {
@@ -116,4 +115,4 @@ class SerializationTraits<
 
 }  // namespace grpc
 
-#endif  // GRPCPP_IMPL_CODEGEN_PROTO_UTILS_H
+#endif  // GRPCPP_SUPPORT_PROTO_UTILS_H
