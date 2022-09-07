@@ -24,8 +24,8 @@
 #include <grpc/impl/codegen/port_platform.h>
 
 #include <grpc/impl/codegen/status.h>
-#include <grpcpp/impl/codegen/status_code_enum.h>
 #include <grpcpp/support/config.h>
+#include <grpcpp/support/status_code_enum.h>
 
 namespace grpc {
 

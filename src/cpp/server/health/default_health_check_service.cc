@@ -33,6 +33,7 @@
 #include <grpcpp/impl/rpc_service_method.h>
 #include <grpcpp/support/server_callback_handlers.h>
 #include <grpcpp/support/slice.h>
+#include <grpcpp/support/status_code_enum.h>
 
 #include "src/proto/grpc/health/v1/health.upb.h"
 

@@ -42,6 +42,7 @@
 #include <grpcpp/support/server_callback_handlers.h>
 #include <grpcpp/support/slice.h>
 #include <grpcpp/support/status.h>
+#include <grpcpp/support/status_code_enum.h>
 
 #include "src/core/lib/event_engine/default_event_engine.h"
 #include "src/core/lib/gprpp/debug_location.h"

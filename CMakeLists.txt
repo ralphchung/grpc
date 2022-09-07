@@ -3277,7 +3277,6 @@ foreach(_hdr
   include/grpc++/impl/codegen/core_codegen.h
   include/grpc++/impl/codegen/security/auth_context.h
   include/grpc++/impl/codegen/status.h
-  include/grpc++/impl/codegen/status_code_enum.h
   include/grpc++/impl/codegen/string_ref.h
   include/grpc++/impl/codegen/stub_options.h
   include/grpc++/impl/codegen/sync_stream.h
@@ -3339,7 +3338,6 @@ foreach(_hdr
   include/grpcpp/impl/codegen/core_codegen.h
   include/grpcpp/impl/codegen/security/auth_context.h
   include/grpcpp/impl/codegen/status.h
-  include/grpcpp/impl/codegen/status_code_enum.h
   include/grpcpp/impl/codegen/string_ref.h
   include/grpcpp/impl/codegen/stub_options.h
   include/grpcpp/impl/codegen/sync.h
@@ -3894,7 +3892,6 @@ foreach(_hdr
   include/grpc++/impl/codegen/core_codegen.h
   include/grpc++/impl/codegen/security/auth_context.h
   include/grpc++/impl/codegen/status.h
-  include/grpc++/impl/codegen/status_code_enum.h
   include/grpc++/impl/codegen/string_ref.h
   include/grpc++/impl/codegen/stub_options.h
   include/grpc++/impl/codegen/sync_stream.h
@@ -3955,7 +3952,6 @@ foreach(_hdr
   include/grpcpp/impl/codegen/core_codegen.h
   include/grpcpp/impl/codegen/security/auth_context.h
   include/grpcpp/impl/codegen/status.h
-  include/grpcpp/impl/codegen/status_code_enum.h
   include/grpcpp/impl/codegen/string_ref.h
   include/grpcpp/impl/codegen/stub_options.h
   include/grpcpp/impl/codegen/sync.h
