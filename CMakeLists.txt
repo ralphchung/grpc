@@ -3276,7 +3276,6 @@ foreach(_hdr
   include/grpc++/impl/client_unary_call.h
   include/grpc++/impl/codegen/core_codegen.h
   include/grpc++/impl/codegen/security/auth_context.h
-  include/grpc++/impl/codegen/server_interface.h
   include/grpc++/impl/codegen/service_type.h
   include/grpc++/impl/codegen/slice.h
   include/grpc++/impl/codegen/status.h
@@ -3341,7 +3340,6 @@ foreach(_hdr
   include/grpcpp/impl/client_unary_call.h
   include/grpcpp/impl/codegen/core_codegen.h
   include/grpcpp/impl/codegen/security/auth_context.h
-  include/grpcpp/impl/codegen/server_interface.h
   include/grpcpp/impl/codegen/service_type.h
   include/grpcpp/impl/codegen/slice.h
   include/grpcpp/impl/codegen/status.h
@@ -3377,6 +3375,7 @@ foreach(_hdr
   include/grpcpp/server.h
   include/grpcpp/server_builder.h
   include/grpcpp/server_context.h
+  include/grpcpp/server_interface.h
   include/grpcpp/server_posix.h
   include/grpcpp/support/async_stream.h
   include/grpcpp/support/async_unary_call.h
@@ -3898,7 +3897,6 @@ foreach(_hdr
   include/grpc++/impl/client_unary_call.h
   include/grpc++/impl/codegen/core_codegen.h
   include/grpc++/impl/codegen/security/auth_context.h
-  include/grpc++/impl/codegen/server_interface.h
   include/grpc++/impl/codegen/service_type.h
   include/grpc++/impl/codegen/slice.h
   include/grpc++/impl/codegen/status.h
@@ -3962,7 +3960,6 @@ foreach(_hdr
   include/grpcpp/impl/client_unary_call.h
   include/grpcpp/impl/codegen/core_codegen.h
   include/grpcpp/impl/codegen/security/auth_context.h
-  include/grpcpp/impl/codegen/server_interface.h
   include/grpcpp/impl/codegen/service_type.h
   include/grpcpp/impl/codegen/slice.h
   include/grpcpp/impl/codegen/status.h
@@ -3996,6 +3993,7 @@ foreach(_hdr
   include/grpcpp/server.h
   include/grpcpp/server_builder.h
   include/grpcpp/server_context.h
+  include/grpcpp/server_interface.h
   include/grpcpp/server_posix.h
   include/grpcpp/support/async_stream.h
   include/grpcpp/support/async_unary_call.h
