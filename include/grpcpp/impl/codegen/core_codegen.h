@@ -26,7 +26,7 @@
 #include <grpc/byte_buffer.h>
 #include <grpc/grpc.h>
 #include <grpc/impl/codegen/grpc_types.h>
-#include <grpcpp/impl/codegen/status.h>
+#include <grpcpp/support/status.h>
 
 namespace grpc {
 

@@ -26,9 +26,9 @@
 #include <grpc/impl/codegen/grpc_types.h>
 #include <grpc/slice.h>
 #include <grpcpp/config_protobuf.h>
-#include <grpcpp/impl/codegen/status.h>
 #include <grpcpp/impl/serialization_traits.h>
 #include <grpcpp/support/byte_buffer.h>
+#include <grpcpp/support/status.h>
 
 /// This header provides an object that reads bytes directly from a
 /// grpc::ByteBuffer, via the ZeroCopyInputStream interface
