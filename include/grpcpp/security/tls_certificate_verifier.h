@@ -28,6 +28,7 @@
 #include <grpc/support/log.h>
 #include <grpcpp/impl/codegen/sync.h>
 #include <grpcpp/support/config.h>
+#include <grpcpp/support/status.h>
 #include <grpcpp/support/string_ref.h>
 
 // TODO(yihuazhang): remove the forward declaration here and include
