@@ -24,8 +24,8 @@
 #include <iterator>
 #include <vector>
 
-#include <grpcpp/impl/codegen/string_ref.h>
 #include <grpcpp/support/config.h>
+#include <grpcpp/support/string_ref.h>
 
 struct grpc_auth_context;
 struct grpc_auth_property;
