@@ -29,12 +29,12 @@
 #include "absl/time/time.h"
 
 #include <grpc/impl/codegen/gpr_types.h>
+#include <grpc/impl/sync.h>
 #include <grpc/support/atm.h>
 
 #include "src/core/lib/channel/call_tracer.h"
 #include "src/core/lib/channel/channel_stack.h"
 #include "src/core/lib/channel/context.h"
-#include "src/core/lib/gprpp/sync.h"
 #include "src/core/lib/iomgr/error.h"
 #include "src/core/lib/resource_quota/arena.h"
 #include "src/core/lib/slice/slice.h"

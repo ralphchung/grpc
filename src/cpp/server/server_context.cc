@@ -34,6 +34,7 @@
 #include <grpc/impl/codegen/compression_types.h>
 #include <grpc/impl/codegen/gpr_types.h>
 #include <grpc/impl/codegen/grpc_types.h>
+#include <grpc/impl/sync.h>
 #include <grpc/load_reporting.h>
 #include <grpc/status.h>
 #include <grpc/support/alloc.h>
@@ -56,7 +57,6 @@
 #include <grpcpp/support/string_ref.h>
 
 #include "src/core/lib/gprpp/ref_counted.h"
-#include "src/core/lib/gprpp/sync.h"
 #include "src/core/lib/resource_quota/arena.h"
 #include "src/core/lib/surface/call.h"
 

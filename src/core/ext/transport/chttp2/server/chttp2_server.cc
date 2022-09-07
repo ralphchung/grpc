@@ -43,6 +43,7 @@
 #include <grpc/grpc.h>
 #include <grpc/grpc_posix.h>
 #include <grpc/impl/codegen/grpc_types.h>
+#include <grpc/impl/sync.h>
 #include <grpc/support/alloc.h>
 #include <grpc/support/log.h>
 
@@ -58,7 +59,6 @@
 #include "src/core/lib/gprpp/debug_location.h"
 #include "src/core/lib/gprpp/orphanable.h"
 #include "src/core/lib/gprpp/ref_counted_ptr.h"
-#include "src/core/lib/gprpp/sync.h"
 #include "src/core/lib/gprpp/time.h"
 #include "src/core/lib/gprpp/unique_type_name.h"
 #include "src/core/lib/iomgr/closure.h"

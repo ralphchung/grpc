@@ -31,10 +31,10 @@
 
 #include <grpc/grpc.h>
 #include <grpc/grpc_security.h>
+#include <grpc/impl/sync.h>
 
 #include "src/core/lib/channel/channel_args.h"
 #include "src/core/lib/gprpp/ref_counted_ptr.h"
-#include "src/core/lib/gprpp/sync.h"
 #include "src/core/lib/iomgr/closure.h"
 #include "src/core/lib/iomgr/endpoint.h"
 #include "src/core/lib/iomgr/error.h"

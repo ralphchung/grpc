@@ -17,9 +17,8 @@
 
 #include "absl/time/time.h"
 
+#include <grpc/impl/sync.h>
 #include <grpc/support/log.h>
-
-#include "src/core/lib/gprpp/sync.h"
 
 namespace grpc_event_engine {
 namespace experimental {

@@ -14,13 +14,13 @@
 #include <grpc/support/port_platform.h>
 
 #ifdef GPR_WINDOWS
+#include <grpc/impl/sync.h>
 #include <grpc/support/alloc.h>
 #include <grpc/support/log_windows.h>
 
 #include "src/core/lib/event_engine/executor/executor.h"
 #include "src/core/lib/event_engine/trace.h"
 #include "src/core/lib/event_engine/windows/win_socket.h"
-#include "src/core/lib/gprpp/sync.h"
 #include "src/core/lib/iomgr/error.h"
 
 #if defined(__MSYS__) && defined(GPR_ARCH_64)

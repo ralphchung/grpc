@@ -41,6 +41,7 @@
 #include <grpc/grpc.h>
 #include <grpc/impl/codegen/gpr_types.h>
 #include <grpc/impl/codegen/propagation_bits.h>
+#include <grpc/impl/sync.h>
 #include <grpc/slice.h>
 #include <grpc/slice_buffer.h>
 #include <grpc/status.h>
@@ -59,7 +60,6 @@
 #include "src/core/lib/gprpp/cpp_impl_of.h"
 #include "src/core/lib/gprpp/debug_location.h"
 #include "src/core/lib/gprpp/ref_counted.h"
-#include "src/core/lib/gprpp/sync.h"
 #include "src/core/lib/iomgr/call_combiner.h"
 #include "src/core/lib/iomgr/exec_ctx.h"
 #include "src/core/lib/iomgr/polling_entity.h"

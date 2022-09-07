@@ -25,6 +25,7 @@
 #include <grpc/event_engine/event_engine.h>
 #include <grpc/event_engine/memory_allocator.h>
 #include <grpc/event_engine/slice_buffer.h>
+#include <grpc/impl/sync.h>
 
 #include "src/core/lib/event_engine/executor/threaded_executor.h"
 #include "src/core/lib/event_engine/handle_containers.h"
@@ -33,7 +34,6 @@
 #include "src/core/lib/event_engine/utils.h"
 #include "src/core/lib/event_engine/windows/iocp.h"
 #include "src/core/lib/event_engine/windows/windows_engine.h"
-#include "src/core/lib/gprpp/sync.h"
 #include "src/core/lib/gprpp/time.h"
 
 namespace grpc_event_engine {

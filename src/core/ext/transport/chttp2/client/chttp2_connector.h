@@ -23,9 +23,10 @@
 
 #include "absl/types/optional.h"
 
+#include <grpc/impl/sync.h>
+
 #include "src/core/ext/filters/client_channel/connector.h"
 #include "src/core/lib/gprpp/ref_counted_ptr.h"
-#include "src/core/lib/gprpp/sync.h"
 #include "src/core/lib/iomgr/closure.h"
 #include "src/core/lib/iomgr/endpoint.h"
 #include "src/core/lib/iomgr/error.h"

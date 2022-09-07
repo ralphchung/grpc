@@ -37,6 +37,7 @@
 #include <grpc/grpc.h>
 #include <grpc/grpc_security.h>
 #include <grpc/impl/codegen/propagation_bits.h>
+#include <grpc/impl/sync.h>
 #include <grpc/slice.h>
 #include <grpc/status.h>
 #include <grpc/support/log.h>
@@ -49,7 +50,6 @@
 #include "src/core/lib/gpr/useful.h"
 #include "src/core/lib/gprpp/host_port.h"
 #include "src/core/lib/gprpp/ref_counted_ptr.h"
-#include "src/core/lib/gprpp/sync.h"
 #include "src/core/lib/gprpp/time.h"
 #include "src/core/lib/iomgr/exec_ctx.h"
 #include "src/core/lib/iomgr/resolved_address.h"

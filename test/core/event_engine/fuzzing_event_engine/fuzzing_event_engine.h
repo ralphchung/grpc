@@ -23,8 +23,8 @@
 
 #include <grpc/event_engine/event_engine.h>
 #include <grpc/grpc.h>
+#include <grpc/impl/sync.h>
 
-#include "src/core/lib/gprpp/sync.h"
 #include "test/core/event_engine/fuzzing_event_engine/fuzzing_event_engine.pb.h"
 
 namespace grpc_event_engine {

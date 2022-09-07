@@ -35,6 +35,7 @@
 #include "absl/types/optional.h"
 
 #include <grpc/grpc.h>
+#include <grpc/impl/sync.h>
 #include <grpc/slice.h>
 #include <grpc/support/alloc.h>
 #include <grpc/support/log.h>
@@ -55,7 +56,6 @@
 #include "src/core/lib/gprpp/memory.h"
 #include "src/core/lib/gprpp/orphanable.h"
 #include "src/core/lib/gprpp/ref_counted_ptr.h"
-#include "src/core/lib/gprpp/sync.h"
 #include "src/core/lib/gprpp/time.h"
 #include "src/core/lib/iomgr/error.h"
 #include "src/core/lib/iomgr/exec_ctx.h"

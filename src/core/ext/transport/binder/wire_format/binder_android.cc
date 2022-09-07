@@ -23,10 +23,10 @@
 #include "absl/memory/memory.h"
 #include "absl/strings/str_cat.h"
 
+#include <grpc/impl/sync.h>
 #include <grpc/support/log.h>
 
 #include "src/core/ext/transport/binder/wire_format/binder_android.h"
-#include "src/core/lib/gprpp/sync.h"
 
 namespace grpc_binder {
 namespace {

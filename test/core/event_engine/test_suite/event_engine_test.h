@@ -17,8 +17,7 @@
 #include <gtest/gtest.h>
 
 #include <grpc/event_engine/event_engine.h>
-
-#include "src/core/lib/gprpp/sync.h"
+#include <grpc/impl/sync.h>
 
 extern std::function<
     std::unique_ptr<grpc_event_engine::experimental::EventEngine>()>*

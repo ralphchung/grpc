@@ -28,6 +28,7 @@
 #include "absl/strings/string_view.h"
 #include "absl/types/optional.h"
 
+#include <grpc/impl/sync.h>
 #include <grpc/slice.h>
 #include <grpc/support/alloc.h>
 #include <grpc/support/log.h>
@@ -38,7 +39,6 @@
 #include "src/core/lib/event_engine/channel_args_endpoint_config.h"
 #include "src/core/lib/gprpp/debug_location.h"
 #include "src/core/lib/gprpp/ref_counted_ptr.h"
-#include "src/core/lib/gprpp/sync.h"
 #include "src/core/lib/iomgr/closure.h"
 #include "src/core/lib/iomgr/endpoint.h"
 #include "src/core/lib/iomgr/error.h"

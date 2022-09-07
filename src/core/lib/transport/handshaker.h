@@ -25,12 +25,12 @@
 
 #include "absl/container/inlined_vector.h"
 
+#include <grpc/impl/sync.h>
 #include <grpc/slice.h>
 
 #include "src/core/lib/channel/channel_args.h"
 #include "src/core/lib/gprpp/ref_counted.h"
 #include "src/core/lib/gprpp/ref_counted_ptr.h"
-#include "src/core/lib/gprpp/sync.h"
 #include "src/core/lib/gprpp/time.h"
 #include "src/core/lib/iomgr/closure.h"
 #include "src/core/lib/iomgr/endpoint.h"

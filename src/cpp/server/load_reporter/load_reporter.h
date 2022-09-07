@@ -38,9 +38,9 @@
 #include "opencensus/stats/stats.h"
 #include "opencensus/tags/tag_key.h"
 
+#include <grpc/impl/sync.h>
 #include <grpcpp/support/config.h>
 
-#include "src/core/lib/gprpp/sync.h"
 #include "src/cpp/server/load_reporter/load_data_store.h"
 #include "src/proto/grpc/lb/v1/load_reporter.pb.h"
 

@@ -27,10 +27,10 @@
 #include "absl/strings/string_view.h"
 
 #include <grpc/grpc_security.h>
+#include <grpc/impl/sync.h>
 #include <grpc/support/sync.h>
 
 #include "src/core/lib/gprpp/ref_counted_ptr.h"
-#include "src/core/lib/gprpp/sync.h"
 #include "src/core/lib/gprpp/thd.h"
 #include "src/core/lib/security/authorization/authorization_engine.h"
 #include "src/core/lib/security/authorization/authorization_policy_provider.h"

@@ -42,12 +42,12 @@
 #include "opencensus/trace/status_code.h"
 
 #include <grpc/impl/codegen/gpr_types.h>
+#include <grpc/impl/sync.h>
 #include <grpc/slice.h>
 #include <grpc/support/log.h>
 #include <grpcpp/support/config.h>
 
 #include "src/core/lib/channel/context.h"
-#include "src/core/lib/gprpp/sync.h"
 #include "src/core/lib/resource_quota/arena.h"
 #include "src/core/lib/slice/slice.h"
 #include "src/core/lib/slice/slice_buffer.h"

@@ -939,7 +939,6 @@ grpc_cc_library(
         "src/core/lib/gprpp/memory.h",
         "src/core/lib/gprpp/mpscq.h",
         "src/core/lib/gprpp/stat.h",
-        "src/core/lib/gprpp/sync.h",
         "src/core/lib/gprpp/thd.h",
         "src/core/lib/gprpp/time_util.h",
     ],

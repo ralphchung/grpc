@@ -22,6 +22,7 @@
 #include <grpc/grpc.h>
 #include <grpc/impl/codegen/gpr_types.h>
 #include <grpc/impl/codegen/grpc_types.h>
+#include <grpc/impl/sync.h>
 #include <grpc/support/cpu.h>
 #include <grpc/support/log.h>
 #include <grpc/support/sync.h>
@@ -31,7 +32,6 @@
 #include <grpcpp/impl/completion_queue_tag.h>
 
 #include "src/core/lib/gpr/useful.h"
-#include "src/core/lib/gprpp/sync.h"
 #include "src/core/lib/gprpp/thd.h"
 
 namespace grpc {

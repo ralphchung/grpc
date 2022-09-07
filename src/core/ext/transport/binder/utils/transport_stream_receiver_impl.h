@@ -24,8 +24,9 @@
 #include <string>
 #include <vector>
 
+#include <grpc/impl/sync.h>
+
 #include "src/core/ext/transport/binder/utils/transport_stream_receiver.h"
-#include "src/core/lib/gprpp/sync.h"
 
 namespace grpc_binder {
 

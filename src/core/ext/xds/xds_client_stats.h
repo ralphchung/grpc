@@ -31,11 +31,12 @@
 #include "absl/strings/str_format.h"
 #include "absl/strings/string_view.h"
 
+#include <grpc/impl/sync.h>
+
 #include "src/core/ext/xds/xds_bootstrap.h"
 #include "src/core/lib/gpr/useful.h"
 #include "src/core/lib/gprpp/ref_counted.h"
 #include "src/core/lib/gprpp/ref_counted_ptr.h"
-#include "src/core/lib/gprpp/sync.h"
 
 namespace grpc_core {
 

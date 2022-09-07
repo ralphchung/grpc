@@ -30,8 +30,9 @@
 #include "absl/strings/string_view.h"
 #include "absl/types/optional.h"
 
+#include <grpc/impl/sync.h>
+
 #include "src/core/lib/gprpp/ref_counted.h"
-#include "src/core/lib/gprpp/sync.h"
 #include "src/core/lib/iomgr/error.h"
 #include "src/core/lib/security/security_connector/ssl_utils.h"
 

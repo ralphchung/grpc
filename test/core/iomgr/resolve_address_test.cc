@@ -28,6 +28,7 @@
 #include "absl/strings/match.h"
 
 #include <grpc/grpc.h>
+#include <grpc/impl/sync.h>
 #include <grpc/support/alloc.h>
 #include <grpc/support/log.h>
 #include <grpc/support/sync.h>
@@ -36,7 +37,6 @@
 #include "src/core/ext/filters/client_channel/resolver/dns/c_ares/grpc_ares_wrapper.h"
 #include "src/core/ext/filters/client_channel/resolver/dns/dns_resolver_selection.h"
 #include "src/core/lib/gpr/string.h"
-#include "src/core/lib/gprpp/sync.h"
 #include "src/core/lib/gprpp/time.h"
 #include "src/core/lib/iomgr/executor.h"
 #include "src/core/lib/iomgr/iomgr.h"

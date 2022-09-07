@@ -29,13 +29,13 @@
 #include "absl/types/optional.h"
 #include "absl/types/variant.h"
 
+#include <grpc/impl/sync.h>
 #include <grpc/support/log.h>
 
 #include "src/core/lib/gpr/tls.h"
 #include "src/core/lib/gprpp/construct_destruct.h"
 #include "src/core/lib/gprpp/no_destruct.h"
 #include "src/core/lib/gprpp/orphanable.h"
-#include "src/core/lib/gprpp/sync.h"
 #include "src/core/lib/promise/context.h"
 #include "src/core/lib/promise/detail/promise_factory.h"
 #include "src/core/lib/promise/detail/status.h"

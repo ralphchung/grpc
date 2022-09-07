@@ -44,6 +44,7 @@
 #include <grpc/grpc.h>
 #include <grpc/grpc_security.h>
 #include <grpc/impl/codegen/grpc_types.h>
+#include <grpc/impl/sync.h>
 #include <grpc/slice.h>
 #include <grpc/status.h>
 #include <grpc/support/log.h>
@@ -71,7 +72,6 @@
 #include "src/core/lib/gprpp/debug_location.h"
 #include "src/core/lib/gprpp/host_port.h"
 #include "src/core/lib/gprpp/ref_counted_ptr.h"
-#include "src/core/lib/gprpp/sync.h"
 #include "src/core/lib/gprpp/unique_type_name.h"
 #include "src/core/lib/iomgr/endpoint.h"
 #include "src/core/lib/iomgr/error.h"

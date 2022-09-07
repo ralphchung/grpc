@@ -28,13 +28,13 @@
 #include "absl/types/optional.h"
 
 #include <grpc/grpc_security.h>
+#include <grpc/impl/sync.h>
 #include <grpc/support/log.h>
 #include <grpc/support/sync.h>
 
 #include "src/core/lib/gpr/useful.h"
 #include "src/core/lib/gprpp/ref_counted.h"
 #include "src/core/lib/gprpp/ref_counted_ptr.h"
-#include "src/core/lib/gprpp/sync.h"
 #include "src/core/lib/gprpp/thd.h"
 #include "src/core/lib/gprpp/unique_type_name.h"
 #include "src/core/lib/iomgr/iomgr_fwd.h"

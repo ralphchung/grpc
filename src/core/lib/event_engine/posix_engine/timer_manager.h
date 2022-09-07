@@ -30,10 +30,10 @@
 #include "absl/base/thread_annotations.h"
 
 #include <grpc/event_engine/event_engine.h>
+#include <grpc/impl/sync.h>
 
 #include "src/core/lib/event_engine/forkable.h"
 #include "src/core/lib/event_engine/posix_engine/timer.h"
-#include "src/core/lib/gprpp/sync.h"
 #include "src/core/lib/gprpp/thd.h"
 #include "src/core/lib/gprpp/time.h"
 

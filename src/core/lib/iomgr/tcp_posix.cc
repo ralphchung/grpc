@@ -40,6 +40,7 @@
 #include <algorithm>
 #include <unordered_map>
 
+#include <grpc/impl/sync.h>
 #include <grpc/slice.h>
 #include <grpc/support/alloc.h>
 #include <grpc/support/log.h>
@@ -53,7 +54,6 @@
 #include "src/core/lib/experiments/experiments.h"
 #include "src/core/lib/gpr/string.h"
 #include "src/core/lib/gpr/useful.h"
-#include "src/core/lib/gprpp/sync.h"
 #include "src/core/lib/iomgr/buffer_list.h"
 #include "src/core/lib/iomgr/ev_posix.h"
 #include "src/core/lib/iomgr/executor.h"

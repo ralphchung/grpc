@@ -28,9 +28,9 @@
 #include "absl/time/time.h"
 
 #include <grpc/grpc.h>
+#include <grpc/impl/sync.h>
 #include <grpc/support/log.h>
 
-#include "src/core/lib/gprpp/sync.h"
 #include "src/core/lib/iomgr/closure.h"
 #include "src/core/lib/iomgr/error.h"
 #include "src/core/lib/iomgr/exec_ctx.h"

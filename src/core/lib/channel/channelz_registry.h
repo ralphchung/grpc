@@ -25,9 +25,10 @@
 #include <map>
 #include <string>
 
+#include <grpc/impl/sync.h>
+
 #include "src/core/lib/channel/channelz.h"
 #include "src/core/lib/gprpp/ref_counted_ptr.h"
-#include "src/core/lib/gprpp/sync.h"
 
 namespace grpc_core {
 namespace channelz {

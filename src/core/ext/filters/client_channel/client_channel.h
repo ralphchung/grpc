@@ -35,6 +35,7 @@
 
 #include <grpc/impl/codegen/connectivity_state.h>
 #include <grpc/impl/codegen/grpc_types.h>
+#include <grpc/impl/sync.h>
 #include <grpc/support/atm.h>
 
 #include "src/core/ext/filters/client_channel/client_channel_factory.h"
@@ -53,7 +54,6 @@
 #include "src/core/lib/gprpp/orphanable.h"
 #include "src/core/lib/gprpp/ref_counted.h"
 #include "src/core/lib/gprpp/ref_counted_ptr.h"
-#include "src/core/lib/gprpp/sync.h"
 #include "src/core/lib/gprpp/time.h"
 #include "src/core/lib/gprpp/unique_type_name.h"
 #include "src/core/lib/gprpp/work_serializer.h"

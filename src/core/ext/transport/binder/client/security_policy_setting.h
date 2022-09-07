@@ -20,9 +20,8 @@
 #include "absl/container/flat_hash_map.h"
 #include "absl/strings/string_view.h"
 
+#include <grpc/impl/sync.h>
 #include <grpcpp/security/binder_security_policy.h>
-
-#include "src/core/lib/gprpp/sync.h"
 
 namespace grpc_binder {
 

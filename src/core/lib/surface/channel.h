@@ -37,6 +37,7 @@
 #include <grpc/event_engine/memory_allocator.h>
 #include <grpc/impl/codegen/compression_types.h>
 #include <grpc/impl/codegen/grpc_types.h>
+#include <grpc/impl/sync.h>
 #include <grpc/slice.h>
 
 #include "src/core/lib/channel/channel_args.h"
@@ -48,7 +49,6 @@
 #include "src/core/lib/gprpp/debug_location.h"
 #include "src/core/lib/gprpp/ref_counted.h"
 #include "src/core/lib/gprpp/ref_counted_ptr.h"
-#include "src/core/lib/gprpp/sync.h"
 #include "src/core/lib/gprpp/time.h"
 #include "src/core/lib/iomgr/iomgr_fwd.h"
 #include "src/core/lib/resource_quota/memory_quota.h"

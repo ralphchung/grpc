@@ -22,10 +22,10 @@
 #include "absl/functional/any_invocable.h"
 
 #include <grpc/event_engine/event_engine.h>
+#include <grpc/impl/sync.h>
 
 #include "src/core/lib/event_engine/executor/executor.h"
 #include "src/core/lib/event_engine/socket_notifier.h"
-#include "src/core/lib/gprpp/sync.h"
 
 namespace grpc_event_engine {
 namespace experimental {

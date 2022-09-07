@@ -27,6 +27,7 @@
 #include "upb/upb.hpp"
 
 #include <grpc/grpc_security.h>
+#include <grpc/impl/sync.h>
 #include <grpc/support/alloc.h>
 #include <grpc/support/log.h>
 #include <grpc/support/string_util.h>
@@ -34,7 +35,6 @@
 #include <grpc/support/thd_id.h>
 
 #include "src/core/lib/gprpp/memory.h"
-#include "src/core/lib/gprpp/sync.h"
 #include "src/core/lib/gprpp/thd.h"
 #include "src/core/lib/iomgr/closure.h"
 #include "src/core/lib/slice/slice_internal.h"

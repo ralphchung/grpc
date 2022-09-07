@@ -29,6 +29,7 @@
 #include <grpc/grpc.h>
 #include <grpc/grpc_security.h>
 #include <grpc/impl/codegen/grpc_types.h>
+#include <grpc/impl/sync.h>
 #include <grpc/support/log.h>
 #include <grpc/support/sync.h>
 #include <grpc/support/time.h>
@@ -42,7 +43,6 @@
 #include "src/core/lib/event_engine/posix_engine/timer_manager.h"
 #include "src/core/lib/experiments/config.h"
 #include "src/core/lib/gprpp/fork.h"
-#include "src/core/lib/gprpp/sync.h"
 #include "src/core/lib/gprpp/thd.h"
 #include "src/core/lib/iomgr/exec_ctx.h"
 #include "src/core/lib/iomgr/iomgr.h"

@@ -22,10 +22,10 @@
 
 #include <dlfcn.h>
 
+#include <grpc/impl/sync.h>
 #include <grpc/support/log.h>
 
 #include "src/core/lib/gpr/tls.h"
-#include "src/core/lib/gprpp/sync.h"
 
 namespace {
 void* GetNdkBinderHandle() {

@@ -40,6 +40,7 @@
 #include "gtest/gtest.h"
 
 #include <grpc/grpc.h>
+#include <grpc/impl/sync.h>
 #include <grpc/slice.h>
 #include <grpc/slice_buffer.h>
 #include <grpc/status.h>
@@ -51,7 +52,6 @@
 #include "src/core/lib/channel/channel_args.h"
 #include "src/core/lib/channel/channelz.h"
 #include "src/core/lib/gpr/useful.h"
-#include "src/core/lib/gprpp/sync.h"
 #include "src/core/lib/iomgr/closure.h"
 #include "src/core/lib/iomgr/endpoint.h"
 #include "src/core/lib/iomgr/endpoint_pair.h"

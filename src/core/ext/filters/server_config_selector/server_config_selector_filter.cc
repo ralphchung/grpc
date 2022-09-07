@@ -26,6 +26,7 @@
 #include "absl/status/statusor.h"
 #include "absl/types/optional.h"
 
+#include <grpc/impl/sync.h>
 #include <grpc/support/log.h>
 
 #include "src/core/ext/filters/server_config_selector/server_config_selector.h"
@@ -33,7 +34,6 @@
 #include "src/core/lib/channel/context.h"
 #include "src/core/lib/channel/promise_based_filter.h"
 #include "src/core/lib/gprpp/ref_counted_ptr.h"
-#include "src/core/lib/gprpp/sync.h"
 #include "src/core/lib/iomgr/error.h"
 #include "src/core/lib/promise/arena_promise.h"
 #include "src/core/lib/promise/context.h"

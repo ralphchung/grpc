@@ -36,6 +36,7 @@
 
 #include <grpc/grpc_security.h>
 #include <grpc/grpc_security_constants.h>
+#include <grpc/impl/sync.h>
 #include <grpc/slice.h>
 #include <grpc/slice_buffer.h>
 #include <grpc/support/alloc.h>
@@ -46,7 +47,6 @@
 #include "src/core/lib/config/core_configuration.h"
 #include "src/core/lib/gprpp/debug_location.h"
 #include "src/core/lib/gprpp/ref_counted_ptr.h"
-#include "src/core/lib/gprpp/sync.h"
 #include "src/core/lib/gprpp/unique_type_name.h"
 #include "src/core/lib/iomgr/closure.h"
 #include "src/core/lib/iomgr/endpoint.h"

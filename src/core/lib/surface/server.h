@@ -39,6 +39,7 @@
 #include <grpc/grpc.h>
 #include <grpc/impl/codegen/gpr_types.h>
 #include <grpc/impl/codegen/grpc_types.h>
+#include <grpc/impl/sync.h>
 #include <grpc/slice.h>
 #include <grpc/support/log.h>
 
@@ -51,7 +52,6 @@
 #include "src/core/lib/gprpp/dual_ref_counted.h"
 #include "src/core/lib/gprpp/orphanable.h"
 #include "src/core/lib/gprpp/ref_counted_ptr.h"
-#include "src/core/lib/gprpp/sync.h"
 #include "src/core/lib/gprpp/time.h"
 #include "src/core/lib/iomgr/call_combiner.h"
 #include "src/core/lib/iomgr/closure.h"

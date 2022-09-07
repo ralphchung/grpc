@@ -23,12 +23,12 @@
 
 #include <grpc/event_engine/event_engine.h>
 #include <grpc/event_engine/memory_allocator.h>
+#include <grpc/impl/sync.h>
 #include <grpc/support/log.h>
 
 #include "src/core/lib/address_utils/parse_address.h"
 #include "src/core/lib/event_engine/channel_args_endpoint_config.h"
 #include "src/core/lib/event_engine/promise.h"
-#include "src/core/lib/gprpp/sync.h"
 #include "src/core/lib/iomgr/exec_ctx.h"
 #include "src/core/lib/uri/uri_parser.h"
 #include "test/core/event_engine/test_suite/event_engine_test.h"

@@ -35,6 +35,7 @@
 #include "upb/arena.h"
 
 #include <grpc/event_engine/event_engine.h>
+#include <grpc/impl/sync.h>
 #include <grpc/support/log.h>
 
 #include "src/core/ext/xds/xds_api.h"
@@ -45,7 +46,6 @@
 #include "src/core/lib/gprpp/debug_location.h"
 #include "src/core/lib/gprpp/orphanable.h"
 #include "src/core/lib/gprpp/ref_counted_ptr.h"
-#include "src/core/lib/gprpp/sync.h"
 #include "src/core/lib/uri/uri_parser.h"
 
 #define GRPC_XDS_INITIAL_CONNECT_BACKOFF_SECONDS 1

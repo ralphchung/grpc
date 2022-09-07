@@ -20,11 +20,12 @@
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
+#include <grpc/impl/sync.h>
+
 #include "src/core/lib/event_engine/default_event_engine.h"
 #include "src/core/lib/event_engine/posix_engine/event_poller.h"
 #include "src/core/lib/event_engine/posix_engine/lockfree_event.h"
 #include "src/core/lib/event_engine/posix_engine/posix_engine_closure.h"
-#include "src/core/lib/gprpp/sync.h"
 
 using ::grpc_event_engine::posix_engine::Scheduler;
 

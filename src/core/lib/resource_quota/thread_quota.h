@@ -22,9 +22,10 @@
 
 #include "absl/base/thread_annotations.h"
 
+#include <grpc/impl/sync.h>
+
 #include "src/core/lib/gprpp/ref_counted.h"
 #include "src/core/lib/gprpp/ref_counted_ptr.h"
-#include "src/core/lib/gprpp/sync.h"
 
 namespace grpc_core {
 

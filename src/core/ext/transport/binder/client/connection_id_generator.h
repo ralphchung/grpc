@@ -21,7 +21,7 @@
 
 #include "absl/strings/string_view.h"
 
-#include "src/core/lib/gprpp/sync.h"
+#include <grpc/impl/sync.h>
 
 namespace grpc_binder {
 

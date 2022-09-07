@@ -23,9 +23,8 @@
 
 #include <atomic>
 
+#include <grpc/impl/sync.h>
 #include <grpc/support/log.h>
-
-#include "src/core/lib/gprpp/sync.h"
 
 namespace grpc_core {
 

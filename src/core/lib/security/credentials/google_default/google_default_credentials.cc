@@ -35,6 +35,7 @@
 #include <grpc/grpc_security.h>  // IWYU pragma: keep
 #include <grpc/grpc_security_constants.h>
 #include <grpc/impl/codegen/grpc_types.h>
+#include <grpc/impl/sync.h>
 #include <grpc/slice.h>
 #include <grpc/support/alloc.h>
 #include <grpc/support/log.h>
@@ -47,7 +48,6 @@
 #include "src/core/lib/gpr/env.h"
 #include "src/core/lib/gprpp/host_port.h"
 #include "src/core/lib/gprpp/ref_counted_ptr.h"
-#include "src/core/lib/gprpp/sync.h"
 #include "src/core/lib/gprpp/time.h"
 #include "src/core/lib/http/httpcli.h"
 #include "src/core/lib/http/parser.h"

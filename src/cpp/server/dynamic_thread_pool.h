@@ -23,7 +23,8 @@
 #include <list>
 #include <queue>
 
-#include "src/core/lib/gprpp/sync.h"
+#include <grpc/impl/sync.h>
+
 #include "src/core/lib/gprpp/thd.h"
 #include "src/cpp/server/thread_pool_interface.h"
 

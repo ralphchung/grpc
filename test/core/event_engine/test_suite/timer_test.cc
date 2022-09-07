@@ -23,9 +23,9 @@
 #include "absl/time/time.h"
 
 #include <grpc/event_engine/event_engine.h>
+#include <grpc/impl/sync.h>
 #include <grpc/support/log.h>
 
-#include "src/core/lib/gprpp/sync.h"
 #include "test/core/event_engine/test_suite/event_engine_test.h"
 
 using ::testing::ElementsAre;

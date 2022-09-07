@@ -20,9 +20,9 @@
 
 #include <stdlib.h>
 
+#include <grpc/impl/sync.h>
 #include <grpc/support/sync.h>
 
-#include "src/core/lib/gprpp/sync.h"
 #include "test/core/util/test_config.h"
 #if defined(GRPC_TEST_PICK_PORT)
 

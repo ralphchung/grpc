@@ -19,8 +19,9 @@
 #include "absl/memory/memory.h"
 #include "absl/utility/utility.h"
 
+#include <grpc/impl/sync.h>
+
 #include "src/core/lib/address_utils/sockaddr_utils.h"
-#include "src/core/lib/gprpp/sync.h"
 
 // defined in tcp_client.cc
 extern grpc_tcp_client_vtable* grpc_tcp_client_impl;

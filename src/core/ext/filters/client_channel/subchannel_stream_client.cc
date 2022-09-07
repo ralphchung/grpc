@@ -24,13 +24,13 @@
 #include <string>
 #include <utility>
 
+#include <grpc/impl/sync.h>
 #include <grpc/status.h>
 #include <grpc/support/log.h>
 
 #include "src/core/lib/channel/channel_args.h"
 #include "src/core/lib/gpr/time_precise.h"
 #include "src/core/lib/gprpp/debug_location.h"
-#include "src/core/lib/gprpp/sync.h"
 #include "src/core/lib/gprpp/time.h"
 #include "src/core/lib/iomgr/exec_ctx.h"
 #include "src/core/lib/resource_quota/resource_quota.h"

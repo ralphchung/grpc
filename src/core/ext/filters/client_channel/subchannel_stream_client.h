@@ -28,6 +28,7 @@
 #include "absl/types/optional.h"
 
 #include <grpc/event_engine/memory_allocator.h>
+#include <grpc/impl/sync.h>
 #include <grpc/slice.h>
 #include <grpc/status.h>
 
@@ -36,7 +37,6 @@
 #include "src/core/lib/channel/context.h"
 #include "src/core/lib/gprpp/orphanable.h"
 #include "src/core/lib/gprpp/ref_counted_ptr.h"
-#include "src/core/lib/gprpp/sync.h"
 #include "src/core/lib/iomgr/call_combiner.h"
 #include "src/core/lib/iomgr/closure.h"
 #include "src/core/lib/iomgr/error.h"

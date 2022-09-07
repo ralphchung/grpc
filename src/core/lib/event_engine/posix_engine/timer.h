@@ -32,9 +32,9 @@
 #include "absl/types/optional.h"
 
 #include <grpc/event_engine/event_engine.h>
+#include <grpc/impl/sync.h>
 
 #include "src/core/lib/event_engine/posix_engine/timer_heap.h"
-#include "src/core/lib/gprpp/sync.h"
 #include "src/core/lib/gprpp/time.h"
 #include "src/core/lib/gprpp/time_averaged_stats.h"
 

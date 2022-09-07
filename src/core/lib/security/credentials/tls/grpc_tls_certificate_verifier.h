@@ -26,12 +26,12 @@
 #include "absl/status/status.h"
 
 #include <grpc/grpc_security.h>
+#include <grpc/impl/sync.h>
 #include <grpc/status.h>
 #include <grpc/support/log.h>
 
 #include "src/core/lib/gpr/useful.h"
 #include "src/core/lib/gprpp/ref_counted.h"
-#include "src/core/lib/gprpp/sync.h"
 #include "src/core/lib/gprpp/unique_type_name.h"
 
 // An abstraction of the verifier that all verifier subclasses should extend.

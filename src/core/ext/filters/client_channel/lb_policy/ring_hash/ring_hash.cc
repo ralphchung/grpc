@@ -46,6 +46,7 @@
 #include "xxhash.h"
 
 #include <grpc/impl/codegen/connectivity_state.h>
+#include <grpc/impl/sync.h>
 #include <grpc/support/log.h>
 
 #include "src/core/ext/filters/client_channel/client_channel.h"
@@ -58,7 +59,6 @@
 #include "src/core/lib/gprpp/debug_location.h"
 #include "src/core/lib/gprpp/orphanable.h"
 #include "src/core/lib/gprpp/ref_counted_ptr.h"
-#include "src/core/lib/gprpp/sync.h"
 #include "src/core/lib/gprpp/unique_type_name.h"
 #include "src/core/lib/gprpp/work_serializer.h"
 #include "src/core/lib/iomgr/closure.h"

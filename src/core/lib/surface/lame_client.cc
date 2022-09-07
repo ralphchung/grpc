@@ -28,6 +28,7 @@
 
 #include <grpc/grpc.h>
 #include <grpc/impl/codegen/connectivity_state.h>
+#include <grpc/impl/sync.h>
 #include <grpc/status.h>
 #include <grpc/support/log.h>
 
@@ -40,7 +41,6 @@
 #include "src/core/lib/gpr/useful.h"
 #include "src/core/lib/gprpp/debug_location.h"
 #include "src/core/lib/gprpp/ref_counted_ptr.h"
-#include "src/core/lib/gprpp/sync.h"
 #include "src/core/lib/iomgr/exec_ctx.h"
 #include "src/core/lib/promise/promise.h"
 #include "src/core/lib/surface/api_trace.h"
