@@ -27,10 +27,10 @@
 #include <grpcpp/impl/call.h>
 #include <grpcpp/impl/call_hook.h>
 #include <grpcpp/impl/codegen/core_codegen.h>
-#include <grpcpp/impl/codegen/server_context.h>
 #include <grpcpp/impl/completion_queue_tag.h>
 #include <grpcpp/impl/interceptor_common.h>
 #include <grpcpp/impl/rpc_service_method.h>
+#include <grpcpp/server_context.h>
 #include <grpcpp/support/byte_buffer.h>
 
 namespace grpc {
