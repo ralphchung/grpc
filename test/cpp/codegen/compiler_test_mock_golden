@@ -2,12 +2,13 @@
 // If you make any local change, they will be lost.
 // source: src/proto/grpc/testing/compiler_test.proto
 
-#include "src/proto/grpc/testing/compiler_test.pb.h"
-#include "src/proto/grpc/testing/compiler_test.grpc.pb.h"
-
-#include <grpcpp/impl/codegen/sync_stream.h>
-#include <grpcpp/support/async_stream.h>
 #include <gmock/gmock.h>
+
+#include <grpcpp/support/async_stream.h>
+#include <grpcpp/support/sync_stream.h>
+
+#include "src/proto/grpc/testing/compiler_test.grpc.pb.h"
+#include "src/proto/grpc/testing/compiler_test.pb.h"
 namespace grpc {
 namespace testing {
 
@@ -36,4 +37,3 @@ class MockServiceBStub : public ServiceB::StubInterface {
 
 } // namespace grpc
 } // namespace testing
-

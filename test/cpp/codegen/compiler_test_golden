@@ -29,7 +29,6 @@
 #include <grpcpp/client_context.h>
 #include <grpcpp/completion_queue.h>
 #include <grpcpp/generic/async_generic_service.h>
-#include <grpcpp/impl/codegen/sync_stream.h>
 #include <grpcpp/impl/rpc_method.h>
 #include <grpcpp/impl/service_type.h>
 #include <grpcpp/server_context.h>
@@ -43,6 +42,7 @@
 #include <grpcpp/support/server_callback_handlers.h>
 #include <grpcpp/support/status.h>
 #include <grpcpp/support/stub_options.h>
+#include <grpcpp/support/sync_stream.h>
 
 #include "src/proto/grpc/testing/compiler_test.pb.h"
 

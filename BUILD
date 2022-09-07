@@ -391,10 +391,8 @@ GRPCXX_PUBLIC_HDRS = [
     "include/grpcpp/support/time.h",
     "include/grpcpp/support/validate_service_config.h",
     "include/grpc++/impl/codegen/security/auth_context.h",
-    "include/grpc++/impl/codegen/sync_stream.h",
     "include/grpc++/impl/codegen/time.h",
     "include/grpcpp/impl/codegen/security/auth_context.h",
-    "include/grpcpp/impl/codegen/sync_stream.h",
     "include/grpcpp/impl/codegen/time.h",
     "include/grpcpp/impl/codegen/sync.h",
 ]
