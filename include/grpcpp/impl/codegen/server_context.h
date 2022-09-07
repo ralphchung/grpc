@@ -37,7 +37,6 @@
 #include <grpcpp/impl/callback_common.h>
 #include <grpcpp/impl/codegen/core_codegen.h>
 #include <grpcpp/impl/codegen/security/auth_context.h>
-#include <grpcpp/impl/codegen/server_callback.h>
 #include <grpcpp/impl/codegen/server_interceptor.h>
 #include <grpcpp/impl/codegen/status.h>
 #include <grpcpp/impl/codegen/string_ref.h>
@@ -47,6 +46,7 @@
 #include <grpcpp/impl/rpc_service_method.h>
 #include <grpcpp/support/config.h>
 #include <grpcpp/support/message_allocator.h>
+#include <grpcpp/support/server_callback.h>
 
 struct grpc_metadata;
 struct grpc_call;

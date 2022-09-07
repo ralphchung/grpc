@@ -15,7 +15,6 @@
  *
  */
 
-#include <grpcpp/impl/codegen/server_callback.h>
 #include <grpcpp/support/server_callback.h>
 
 #include "src/core/lib/iomgr/closure.h"
