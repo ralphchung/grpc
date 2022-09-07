@@ -3276,7 +3276,6 @@ foreach(_hdr
   include/grpc++/impl/client_unary_call.h
   include/grpc++/impl/codegen/core_codegen.h
   include/grpc++/impl/codegen/security/auth_context.h
-  include/grpc++/impl/codegen/stub_options.h
   include/grpc++/impl/codegen/sync_stream.h
   include/grpc++/impl/codegen/time.h
   include/grpc++/impl/method_handler_impl.h
@@ -3335,7 +3334,6 @@ foreach(_hdr
   include/grpcpp/impl/client_unary_call.h
   include/grpcpp/impl/codegen/core_codegen.h
   include/grpcpp/impl/codegen/security/auth_context.h
-  include/grpcpp/impl/codegen/stub_options.h
   include/grpcpp/impl/codegen/sync.h
   include/grpcpp/impl/codegen/sync_stream.h
   include/grpcpp/impl/codegen/time.h
@@ -3887,7 +3885,6 @@ foreach(_hdr
   include/grpc++/impl/client_unary_call.h
   include/grpc++/impl/codegen/core_codegen.h
   include/grpc++/impl/codegen/security/auth_context.h
-  include/grpc++/impl/codegen/stub_options.h
   include/grpc++/impl/codegen/sync_stream.h
   include/grpc++/impl/codegen/time.h
   include/grpc++/impl/method_handler_impl.h
@@ -3945,7 +3942,6 @@ foreach(_hdr
   include/grpcpp/impl/client_unary_call.h
   include/grpcpp/impl/codegen/core_codegen.h
   include/grpcpp/impl/codegen/security/auth_context.h
-  include/grpcpp/impl/codegen/stub_options.h
   include/grpcpp/impl/codegen/sync.h
   include/grpcpp/impl/codegen/sync_stream.h
   include/grpcpp/impl/codegen/time.h
