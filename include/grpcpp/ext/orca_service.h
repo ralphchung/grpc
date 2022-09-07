@@ -23,7 +23,7 @@
 #include "absl/time/time.h"
 #include "absl/types/optional.h"
 
-#include <grpcpp/impl/codegen/sync.h>
+#include <grpc/impl/sync.h>
 #include <grpcpp/impl/service_type.h>
 #include <grpcpp/server_builder.h>
 #include <grpcpp/support/server_callback.h>
@@ -70,7 +70,7 @@ class OrcaService : public Service {
 
   const absl::Duration min_report_duration_;
 
-  grpc::internal::Mutex mu_;
+  grpc_core::Mutex mu_;
   double cpu_utilization_ ABSL_GUARDED_BY(&mu_) = -1;
   double memory_utilization_ ABSL_GUARDED_BY(&mu_) = -1;
   std::map<std::string, double> named_utilization_ ABSL_GUARDED_BY(&mu_);

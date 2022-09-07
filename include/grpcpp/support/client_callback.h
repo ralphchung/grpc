@@ -23,11 +23,11 @@
 #include <functional>
 
 #include <grpc/grpc.h>
+#include <grpc/impl/sync.h>
 #include <grpcpp/channel_interface.h>
 #include <grpcpp/impl/call.h>
 #include <grpcpp/impl/call_op_set.h>
 #include <grpcpp/impl/callback_common.h>
-#include <grpcpp/impl/codegen/sync.h>
 #include <grpcpp/support/config.h>
 #include <grpcpp/support/status.h>
 
@@ -493,7 +493,7 @@ class ClientCallbackReaderWriterImpl
     call_.PerformOps(&start_ops_);
 
     {
-      grpc::internal::MutexLock lock(&start_mu_);
+      grpc_core::MutexLock lock(&start_mu_);
 
       if (backlog_.read_ops) {
         call_.PerformOps(&read_ops_);
@@ -519,7 +519,7 @@ class ClientCallbackReaderWriterImpl
     read_ops_.RecvMessage(msg);
     callbacks_outstanding_.fetch_add(1, std::memory_order_relaxed);
     if (GPR_UNLIKELY(!started_.load(std::memory_order_acquire))) {
-      grpc::internal::MutexLock lock(&start_mu_);
+      grpc_core::MutexLock lock(&start_mu_);
       if (GPR_LIKELY(!started_.load(std::memory_order_relaxed))) {
         backlog_.read_ops = true;
         return;
@@ -544,7 +544,7 @@ class ClientCallbackReaderWriterImpl
     }
 
     if (GPR_UNLIKELY(!started_.load(std::memory_order_acquire))) {
-      grpc::internal::MutexLock lock(&start_mu_);
+      grpc_core::MutexLock lock(&start_mu_);
       if (GPR_LIKELY(!started_.load(std::memory_order_relaxed))) {
         backlog_.write_ops = true;
         return;
@@ -569,7 +569,7 @@ class ClientCallbackReaderWriterImpl
       corked_write_needed_ = false;
     }
     if (GPR_UNLIKELY(!started_.load(std::memory_order_acquire))) {
-      grpc::internal::MutexLock lock(&start_mu_);
+      grpc_core::MutexLock lock(&start_mu_);
       if (GPR_LIKELY(!started_.load(std::memory_order_relaxed))) {
         backlog_.writes_done_ops = true;
         return;
@@ -699,7 +699,7 @@ class ClientCallbackReaderWriterImpl
   // Minimum of 3 callbacks to pre-register for start ops, StartCall, and finish
   std::atomic<intptr_t> callbacks_outstanding_{3};
   std::atomic_bool started_{false};
-  grpc::internal::Mutex start_mu_;
+  grpc_core::Mutex start_mu_;
 };
 
 template <class Request, class Response>
@@ -766,7 +766,7 @@ class ClientCallbackReaderImpl : public ClientCallbackReader<Response> {
     read_ops_.set_core_cq_tag(&read_tag_);
 
     {
-      grpc::internal::MutexLock lock(&start_mu_);
+      grpc_core::MutexLock lock(&start_mu_);
       if (backlog_.read_ops) {
         call_.PerformOps(&read_ops_);
       }
@@ -786,7 +786,7 @@ class ClientCallbackReaderImpl : public ClientCallbackReader<Response> {
     read_ops_.RecvMessage(msg);
     callbacks_outstanding_.fetch_add(1, std::memory_order_relaxed);
     if (GPR_UNLIKELY(!started_.load(std::memory_order_acquire))) {
-      grpc::internal::MutexLock lock(&start_mu_);
+      grpc_core::MutexLock lock(&start_mu_);
       if (GPR_LIKELY(!started_.load(std::memory_order_relaxed))) {
         backlog_.read_ops = true;
         return;
@@ -858,7 +858,7 @@ class ClientCallbackReaderImpl : public ClientCallbackReader<Response> {
   // Minimum of 2 callbacks to pre-register for start and finish
   std::atomic<intptr_t> callbacks_outstanding_{2};
   std::atomic_bool started_{false};
-  grpc::internal::Mutex start_mu_;
+  grpc_core::Mutex start_mu_;
 };
 
 template <class Response>
@@ -907,7 +907,7 @@ class ClientCallbackWriterImpl : public ClientCallbackWriter<Request> {
     call_.PerformOps(&start_ops_);
 
     {
-      grpc::internal::MutexLock lock(&start_mu_);
+      grpc_core::MutexLock lock(&start_mu_);
 
       if (backlog_.write_ops) {
         call_.PerformOps(&write_ops_);
@@ -943,7 +943,7 @@ class ClientCallbackWriterImpl : public ClientCallbackWriter<Request> {
     }
 
     if (GPR_UNLIKELY(!started_.load(std::memory_order_acquire))) {
-      grpc::internal::MutexLock lock(&start_mu_);
+      grpc_core::MutexLock lock(&start_mu_);
       if (GPR_LIKELY(!started_.load(std::memory_order_relaxed))) {
         backlog_.write_ops = true;
         return;
@@ -971,7 +971,7 @@ class ClientCallbackWriterImpl : public ClientCallbackWriter<Request> {
     }
 
     if (GPR_UNLIKELY(!started_.load(std::memory_order_acquire))) {
-      grpc::internal::MutexLock lock(&start_mu_);
+      grpc_core::MutexLock lock(&start_mu_);
       if (GPR_LIKELY(!started_.load(std::memory_order_relaxed))) {
         backlog_.writes_done_ops = true;
         return;
@@ -1087,7 +1087,7 @@ class ClientCallbackWriterImpl : public ClientCallbackWriter<Request> {
   // Minimum of 3 callbacks to pre-register for start ops, StartCall, and finish
   std::atomic<intptr_t> callbacks_outstanding_{3};
   std::atomic_bool started_{false};
-  grpc::internal::Mutex start_mu_;
+  grpc_core::Mutex start_mu_;
 };
 
 template <class Request>

@@ -22,11 +22,11 @@
 #include <memory>
 
 #include <grpc/grpc.h>
+#include <grpc/impl/sync.h>
 #include <grpcpp/channel_interface.h>
 #include <grpcpp/completion_queue.h>
 #include <grpcpp/grpc_library.h>
 #include <grpcpp/impl/call.h>
-#include <grpcpp/impl/codegen/sync.h>
 #include <grpcpp/support/client_interceptor.h>
 #include <grpcpp/support/config.h>
 
@@ -108,7 +108,7 @@ class Channel final : public grpc::ChannelInterface,
   grpc_channel* const c_channel_;  // owned
 
   // mu_ protects callback_cq_ (the per-channel callbackable completion queue)
-  grpc::internal::Mutex mu_;
+  grpc_core::Mutex mu_;
 
   // callback_cq_ references the callbackable completion queue associated
   // with this channel (if any). It is set on the first call to CallbackCQ().

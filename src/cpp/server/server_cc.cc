@@ -34,6 +34,7 @@
 #include <grpc/grpc.h>
 #include <grpc/impl/codegen/gpr_types.h>
 #include <grpc/impl/codegen/grpc_types.h>
+#include <grpc/impl/sync.h>
 #include <grpc/slice.h>
 #include <grpc/support/log.h>
 #include <grpc/support/sync.h>
@@ -45,7 +46,6 @@
 #include <grpcpp/impl/call.h>
 #include <grpcpp/impl/call_op_set.h>
 #include <grpcpp/impl/call_op_set_interface.h>
-#include <grpcpp/impl/codegen/sync.h>
 #include <grpcpp/impl/completion_queue_tag.h>
 #include <grpcpp/impl/interceptor_common.h>
 #include <grpcpp/impl/metadata_map.h>
@@ -946,7 +946,7 @@ Server::Server(
 
 Server::~Server() {
   {
-    grpc::internal::ReleasableMutexLock lock(&mu_);
+    grpc_core::ReleasableMutexLock lock(&mu_);
     if (started_ && !shutdown_) {
       lock.Release();
       Shutdown();
@@ -1120,7 +1120,7 @@ void Server::UnrefWithPossibleNotify() {
                        1, std::memory_order_acq_rel) == 1)) {
     // No refs outstanding means that shutdown has been initiated and no more
     // callback requests are outstanding.
-    grpc::internal::MutexLock lock(&mu_);
+    grpc_core::MutexLock lock(&mu_);
     GPR_ASSERT(shutdown_);
     shutdown_done_ = true;
     shutdown_done_cv_.Signal();
@@ -1219,7 +1219,7 @@ void Server::Start(grpc::ServerCompletionQueue** cqs, size_t num_cqs) {
 }
 
 void Server::ShutdownInternal(gpr_timespec deadline) {
-  grpc::internal::MutexLock lock(&mu_);
+  grpc_core::MutexLock lock(&mu_);
   if (shutdown_) {
     return;
   }
@@ -1297,7 +1297,7 @@ void Server::ShutdownInternal(gpr_timespec deadline) {
 }
 
 void Server::Wait() {
-  grpc::internal::MutexLock lock(&mu_);
+  grpc_core::MutexLock lock(&mu_);
   while (started_ && !shutdown_notified_) {
     shutdown_cv_.Wait(&mu_);
   }
@@ -1348,7 +1348,7 @@ grpc::CompletionQueue* Server::CallbackCQ() {
   }
   // The callback_cq_ wasn't already set, so grab a lock and set it up exactly
   // once for this server.
-  grpc::internal::MutexLock l(&mu_);
+  grpc_core::MutexLock l(&mu_);
   callback_cq = callback_cq_.load(std::memory_order_relaxed);
   if (callback_cq != nullptr) {
     return callback_cq;

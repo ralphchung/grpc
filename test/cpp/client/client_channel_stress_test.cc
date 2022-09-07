@@ -28,13 +28,13 @@
 #include "absl/strings/str_cat.h"
 
 #include <grpc/grpc.h>
+#include <grpc/impl/sync.h>
 #include <grpc/support/alloc.h>
 #include <grpc/support/log.h>
 #include <grpc/support/time.h>
 #include <grpcpp/channel.h>
 #include <grpcpp/client_context.h>
 #include <grpcpp/create_channel.h>
-#include <grpcpp/impl/codegen/sync.h>
 #include <grpcpp/server.h>
 #include <grpcpp/server_builder.h>
 
@@ -173,24 +173,24 @@ class ClientChannelStressTest {
     explicit ServerThread(const std::string& type,
                           const std::string& server_host, T* service)
         : type_(type), service_(service) {
-      grpc::internal::Mutex mu;
+      grpc_core::Mutex mu;
       // We need to acquire the lock here in order to prevent the notify_one
       // by ServerThread::Start from firing before the wait below is hit.
-      grpc::internal::MutexLock lock(&mu);
+      grpc_core::MutexLock lock(&mu);
       port_ = grpc_pick_unused_port_or_die();
       gpr_log(GPR_INFO, "starting %s server on port %d", type_.c_str(), port_);
-      grpc::internal::CondVar cond;
+      grpc_core::CondVar cond;
       thread_ = absl::make_unique<std::thread>(
           std::bind(&ServerThread::Start, this, server_host, &mu, &cond));
       cond.Wait(&mu);
       gpr_log(GPR_INFO, "%s server startup complete", type_.c_str());
     }
 
-    void Start(const std::string& server_host, grpc::internal::Mutex* mu,
-               grpc::internal::CondVar* cond) {
+    void Start(const std::string& server_host, grpc_core::Mutex* mu,
+               grpc_core::CondVar* cond) {
       // We need to acquire the lock here in order to prevent the notify_one
       // below from firing before its corresponding wait is executed.
-      grpc::internal::MutexLock lock(mu);
+      grpc_core::MutexLock lock(mu);
       std::ostringstream server_address;
       server_address << server_host << ":" << port_;
       ServerBuilder builder;

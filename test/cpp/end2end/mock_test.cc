@@ -192,12 +192,12 @@ TEST_F(MockCallbackTest, MockedCallSucceedsWithWait) {
   EchoRequest req;
   EchoResponse resp;
   struct {
-    grpc::internal::Mutex mu;
-    grpc::internal::CondVar cv;
+    grpc_core::Mutex mu;
+    grpc_core::CondVar cv;
     absl::optional<grpc::Status> ABSL_GUARDED_BY(mu) status;
   } status;
   DefaultReactorTestPeer peer(&ctx, [&](grpc::Status s) {
-    grpc::internal::MutexLock l(&status.mu);
+    grpc_core::MutexLock l(&status.mu);
     status.status = std::move(s);
     status.cv.Signal();
   });
@@ -205,7 +205,7 @@ TEST_F(MockCallbackTest, MockedCallSucceedsWithWait) {
   req.set_message("mock 1");
   auto* reactor = service_.Echo(&ctx, &req, &resp);
 
-  grpc::internal::MutexLock l(&status.mu);
+  grpc_core::MutexLock l(&status.mu);
   while (!status.status.has_value()) {
     status.cv.Wait(&status.mu);
   }

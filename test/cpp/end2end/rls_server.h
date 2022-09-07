@@ -73,7 +73,7 @@ class RlsServiceImpl : public RlsService {
   };
 
   ContextProcessingFunc context_proc_;
-  grpc::internal::Mutex mu_;
+  grpc_core::Mutex mu_;
   std::map<grpc::lookup::v1::RouteLookupRequest, ResponseData,
            RlsRequestLessThan>
       responses_ ABSL_GUARDED_BY(&mu_);

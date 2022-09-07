@@ -24,9 +24,9 @@
 #include <vector>
 
 #include <grpc/grpc_security_constants.h>
+#include <grpc/impl/sync.h>
 #include <grpc/status.h>
 #include <grpc/support/log.h>
-#include <grpcpp/impl/codegen/sync.h>
 #include <grpcpp/support/config.h>
 #include <grpcpp/support/status.h>
 #include <grpcpp/support/string_ref.h>
@@ -119,7 +119,7 @@ class CertificateVerifier {
       grpc_status_code status, const char* error_details);
 
   grpc_tls_certificate_verifier* verifier_ = nullptr;
-  grpc::internal::Mutex mu_;
+  grpc_core::Mutex mu_;
   std::map<grpc_tls_custom_verification_check_request*,
            std::function<void(grpc::Status)>>
       request_map_ ABSL_GUARDED_BY(mu_);
@@ -206,7 +206,7 @@ class ExternalCertificateVerifier {
   // TODO(yihuazhang): after the insecure build is removed, make this an object
   // member instead of a pointer.
   grpc_tls_certificate_verifier_external* base_ = nullptr;
-  grpc::internal::Mutex mu_;
+  grpc_core::Mutex mu_;
   std::map<grpc_tls_custom_verification_check_request*, AsyncRequestState>
       request_map_ ABSL_GUARDED_BY(mu_);
 };

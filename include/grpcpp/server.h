@@ -291,16 +291,16 @@ class Server : public ServerInterface, private GrpcLibrary {
   std::vector<std::unique_ptr<SyncRequestThreadManager>> sync_req_mgrs_;
 
   // Server status
-  internal::Mutex mu_;
+  grpc_core::Mutex mu_;
   bool started_;
   bool shutdown_ ABSL_GUARDED_BY(mu_);
   bool shutdown_notified_
       ABSL_GUARDED_BY(mu_);  // Was notify called on the shutdown_cv_
-  internal::CondVar shutdown_done_cv_;
+  grpc_core::CondVar shutdown_done_cv_;
   bool shutdown_done_ ABSL_GUARDED_BY(mu_) = false;
   std::atomic_int shutdown_refs_outstanding_{1};
 
-  internal::CondVar shutdown_cv_;
+  grpc_core::CondVar shutdown_cv_;
 
   std::shared_ptr<GlobalCallbacks> global_callbacks_;
 

@@ -395,7 +395,6 @@ GRPCXX_PUBLIC_HDRS = [
     "include/grpc++/impl/codegen/time.h",
     "include/grpcpp/impl/codegen/security/auth_context.h",
     "include/grpcpp/impl/codegen/time.h",
-    "include/grpcpp/impl/codegen/sync.h",
 ]
 
 grpc_cc_library(
@@ -6943,6 +6942,7 @@ grpc_cc_library(
     visibility = ["@grpc:public"],
     deps = [
         "arena",
+        "gpr_public_hdrs",
         "grpc++_public_hdrs",
         "grpc_backend_metric_data",
         "xds_orca_upb",

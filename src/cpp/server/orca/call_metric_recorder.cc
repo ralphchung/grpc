@@ -26,8 +26,8 @@
 #include "upb/upb.hpp"
 #include "xds/data/orca/v3/orca_load_report.upb.h"
 
+#include <grpc/impl/sync.h>
 #include <grpcpp/ext/call_metric_recorder.h>
-#include <grpcpp/impl/codegen/sync.h>
 #include <grpcpp/support/config.h>
 #include <grpcpp/support/string_ref.h>
 
@@ -46,21 +46,21 @@ CallMetricRecorder::~CallMetricRecorder() {
 
 CallMetricRecorder& CallMetricRecorder::RecordCpuUtilizationMetric(
     double value) {
-  internal::MutexLock lock(&mu_);
+  grpc_core::MutexLock lock(&mu_);
   backend_metric_data_->cpu_utilization = value;
   return *this;
 }
 
 CallMetricRecorder& CallMetricRecorder::RecordMemoryUtilizationMetric(
     double value) {
-  internal::MutexLock lock(&mu_);
+  grpc_core::MutexLock lock(&mu_);
   backend_metric_data_->mem_utilization = value;
   return *this;
 }
 
 CallMetricRecorder& CallMetricRecorder::RecordUtilizationMetric(
     grpc::string_ref name, double value) {
-  internal::MutexLock lock(&mu_);
+  grpc_core::MutexLock lock(&mu_);
   absl::string_view name_sv(name.data(), name.length());
   backend_metric_data_->utilization[name_sv] = value;
   return *this;
@@ -68,7 +68,7 @@ CallMetricRecorder& CallMetricRecorder::RecordUtilizationMetric(
 
 CallMetricRecorder& CallMetricRecorder::RecordRequestCostMetric(
     grpc::string_ref name, double value) {
-  internal::MutexLock lock(&mu_);
+  grpc_core::MutexLock lock(&mu_);
   absl::string_view name_sv(name.data(), name.length());
   backend_metric_data_->request_cost[name_sv] = value;
   return *this;
@@ -76,7 +76,7 @@ CallMetricRecorder& CallMetricRecorder::RecordRequestCostMetric(
 
 absl::optional<std::string> CallMetricRecorder::CreateSerializedReport() {
   upb::Arena arena;
-  internal::MutexLock lock(&mu_);
+  grpc_core::MutexLock lock(&mu_);
   bool has_data = backend_metric_data_->cpu_utilization != -1 ||
                   backend_metric_data_->mem_utilization != -1 ||
                   !backend_metric_data_->utilization.empty() ||

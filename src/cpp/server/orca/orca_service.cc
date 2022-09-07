@@ -30,9 +30,9 @@
 #include "xds/service/orca/v3/orca.upb.h"
 
 #include <grpc/event_engine/event_engine.h>
+#include <grpc/impl/sync.h>
 #include <grpc/support/log.h>
 #include <grpcpp/ext/orca_service.h>
-#include <grpcpp/impl/codegen/sync.h>
 #include <grpcpp/impl/rpc_method.h>
 #include <grpcpp/impl/rpc_service_method.h>
 #include <grpcpp/server_context.h>
@@ -126,7 +126,7 @@ class OrcaService::Reactor : public ServerWriteReactor<ByteBuffer>,
   bool MaybeScheduleTimer() {
     grpc_core::ApplicationCallbackExecCtx callback_exec_ctx;
     grpc_core::ExecCtx exec_ctx;
-    grpc::internal::MutexLock lock(&timer_mu_);
+    grpc_core::MutexLock lock(&timer_mu_);
     if (cancelled_) return false;
     timer_handle_ = GetDefaultEventEngine()->RunAfter(
         report_interval_,
@@ -135,7 +135,7 @@ class OrcaService::Reactor : public ServerWriteReactor<ByteBuffer>,
   }
 
   bool MaybeCancelTimer() {
-    grpc::internal::MutexLock lock(&timer_mu_);
+    grpc_core::MutexLock lock(&timer_mu_);
     cancelled_ = true;
     if (timer_handle_.has_value() &&
         GetDefaultEventEngine()->Cancel(*timer_handle_)) {
@@ -148,14 +148,14 @@ class OrcaService::Reactor : public ServerWriteReactor<ByteBuffer>,
   void OnTimer() {
     grpc_core::ApplicationCallbackExecCtx callback_exec_ctx;
     grpc_core::ExecCtx exec_ctx;
-    grpc::internal::MutexLock lock(&timer_mu_);
+    grpc_core::MutexLock lock(&timer_mu_);
     timer_handle_.reset();
     SendResponse();
   }
 
   OrcaService* service_;
 
-  grpc::internal::Mutex timer_mu_;
+  grpc_core::Mutex timer_mu_;
   absl::optional<EventEngine::TaskHandle> timer_handle_
       ABSL_GUARDED_BY(&timer_mu_);
   bool cancelled_ ABSL_GUARDED_BY(&timer_mu_) = false;
@@ -181,50 +181,50 @@ OrcaService::OrcaService(OrcaService::Options options)
 }
 
 void OrcaService::SetCpuUtilization(double cpu_utilization) {
-  grpc::internal::MutexLock lock(&mu_);
+  grpc_core::MutexLock lock(&mu_);
   cpu_utilization_ = cpu_utilization;
   response_slice_.reset();
 }
 
 void OrcaService::DeleteCpuUtilization() {
-  grpc::internal::MutexLock lock(&mu_);
+  grpc_core::MutexLock lock(&mu_);
   cpu_utilization_ = -1;
   response_slice_.reset();
 }
 
 void OrcaService::SetMemoryUtilization(double memory_utilization) {
-  grpc::internal::MutexLock lock(&mu_);
+  grpc_core::MutexLock lock(&mu_);
   memory_utilization_ = memory_utilization;
   response_slice_.reset();
 }
 
 void OrcaService::DeleteMemoryUtilization() {
-  grpc::internal::MutexLock lock(&mu_);
+  grpc_core::MutexLock lock(&mu_);
   memory_utilization_ = -1;
   response_slice_.reset();
 }
 
 void OrcaService::SetNamedUtilization(std::string name, double utilization) {
-  grpc::internal::MutexLock lock(&mu_);
+  grpc_core::MutexLock lock(&mu_);
   named_utilization_[std::move(name)] = utilization;
   response_slice_.reset();
 }
 
 void OrcaService::DeleteNamedUtilization(const std::string& name) {
-  grpc::internal::MutexLock lock(&mu_);
+  grpc_core::MutexLock lock(&mu_);
   named_utilization_.erase(name);
   response_slice_.reset();
 }
 
 void OrcaService::SetAllNamedUtilization(
     std::map<std::string, double> named_utilization) {
-  grpc::internal::MutexLock lock(&mu_);
+  grpc_core::MutexLock lock(&mu_);
   named_utilization_ = std::move(named_utilization);
   response_slice_.reset();
 }
 
 Slice OrcaService::GetOrCreateSerializedResponse() {
-  grpc::internal::MutexLock lock(&mu_);
+  grpc_core::MutexLock lock(&mu_);
   if (!response_slice_.has_value()) {
     upb::Arena arena;
     xds_data_orca_v3_OrcaLoadReport* response =

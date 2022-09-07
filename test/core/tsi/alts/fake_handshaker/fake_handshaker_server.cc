@@ -22,8 +22,8 @@
 #include <string>
 
 #include <grpc/grpc.h>
+#include <grpc/impl/sync.h>
 #include <grpc/support/log.h>
-#include <grpcpp/impl/codegen/sync.h>
 #include <grpcpp/security/server_credentials.h>
 #include <grpcpp/server.h>
 #include <grpcpp/server_builder.h>
@@ -249,8 +249,7 @@ class FakeHandshakerService : public HandshakerService::Service {
     explicit ConcurrentRpcsCheck(FakeHandshakerService* parent)
         : parent_(parent) {
       if (parent->expected_max_concurrent_rpcs_ > 0) {
-        grpc::internal::MutexLock lock(
-            &parent->expected_max_concurrent_rpcs_mu_);
+        grpc_core::MutexLock lock(&parent->expected_max_concurrent_rpcs_mu_);
         if (++parent->concurrent_rpcs_ >
             parent->expected_max_concurrent_rpcs_) {
           gpr_log(GPR_ERROR,
@@ -265,8 +264,7 @@ class FakeHandshakerService : public HandshakerService::Service {
 
     ~ConcurrentRpcsCheck() {
       if (parent_->expected_max_concurrent_rpcs_ > 0) {
-        grpc::internal::MutexLock lock(
-            &parent_->expected_max_concurrent_rpcs_mu_);
+        grpc_core::MutexLock lock(&parent_->expected_max_concurrent_rpcs_mu_);
         parent_->concurrent_rpcs_--;
       }
     }
@@ -275,7 +273,7 @@ class FakeHandshakerService : public HandshakerService::Service {
     FakeHandshakerService* parent_;
   };
 
-  grpc::internal::Mutex expected_max_concurrent_rpcs_mu_;
+  grpc_core::Mutex expected_max_concurrent_rpcs_mu_;
   int concurrent_rpcs_ = 0;
   const int expected_max_concurrent_rpcs_;
 };

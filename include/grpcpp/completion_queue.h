@@ -35,10 +35,10 @@
 #include <list>
 
 #include <grpc/grpc.h>
+#include <grpc/impl/sync.h>
 #include <grpc/support/atm.h>
 #include <grpc/support/time.h>
 #include <grpcpp/grpc_library.h>
-#include <grpcpp/impl/codegen/sync.h>
 #include <grpcpp/impl/completion_queue_tag.h>
 #include <grpcpp/impl/rpc_service_method.h>
 #include <grpcpp/support/status.h>
@@ -385,20 +385,20 @@ class CompletionQueue : private grpc::GrpcLibrary {
   void RegisterServer(const grpc::Server* server) {
     (void)server;
 #ifndef NDEBUG
-    grpc::internal::MutexLock l(&server_list_mutex_);
+    grpc_core::MutexLock l(&server_list_mutex_);
     server_list_.push_back(server);
 #endif
   }
   void UnregisterServer(const grpc::Server* server) {
     (void)server;
 #ifndef NDEBUG
-    grpc::internal::MutexLock l(&server_list_mutex_);
+    grpc_core::MutexLock l(&server_list_mutex_);
     server_list_.remove(server);
 #endif
   }
   bool ServerListEmpty() const {
 #ifndef NDEBUG
-    grpc::internal::MutexLock l(&server_list_mutex_);
+    grpc_core::MutexLock l(&server_list_mutex_);
     return server_list_.empty();
 #endif
     return true;
@@ -414,7 +414,7 @@ class CompletionQueue : private grpc::GrpcLibrary {
   // List of servers associated with this CQ. Even though this is only used with
   // NDEBUG, instantiate it in all cases since otherwise the size will be
   // inconsistent.
-  mutable grpc::internal::Mutex server_list_mutex_;
+  mutable grpc_core::Mutex server_list_mutex_;
   std::list<const grpc::Server*>
       server_list_ /* GUARDED_BY(server_list_mutex_) */;
 };

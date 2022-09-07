@@ -27,6 +27,7 @@
 #include <grpc/impl/codegen/connectivity_state.h>
 #include <grpc/impl/codegen/gpr_types.h>
 #include <grpc/impl/codegen/grpc_types.h>
+#include <grpc/impl/sync.h>
 #include <grpc/slice.h>
 #include <grpc/support/alloc.h>
 #include <grpc/support/log.h>
@@ -36,7 +37,6 @@
 #include <grpcpp/impl/call.h>
 #include <grpcpp/impl/call_op_set_interface.h>
 #include <grpcpp/impl/codegen/core_codegen.h>
-#include <grpcpp/impl/codegen/sync.h>
 #include <grpcpp/impl/completion_queue_tag.h>
 #include <grpcpp/impl/rpc_method.h>
 #include <grpcpp/support/client_interceptor.h>
@@ -251,7 +251,7 @@ class ShutdownCallback : public grpc_completion_queue_functor {
   }
   // The callback_cq_ wasn't already set, so grab a lock and set it up exactly
   // once for this channel.
-  grpc::internal::MutexLock l(&mu_);
+  grpc_core::MutexLock l(&mu_);
   callback_cq = callback_cq_.load(std::memory_order_relaxed);
   if (callback_cq == nullptr) {
     if (grpc_iomgr_run_in_background()) {

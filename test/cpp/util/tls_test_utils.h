@@ -72,7 +72,7 @@ class AsyncCertificateVerifier
 
   bool success_ = false;
   grpc_core::Thread thread_;
-  grpc::internal::Mutex mu_;
+  grpc_core::Mutex mu_;
   std::deque<Request> queue_ ABSL_GUARDED_BY(mu_);
 };
 

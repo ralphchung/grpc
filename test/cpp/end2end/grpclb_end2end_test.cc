@@ -30,13 +30,13 @@
 #include "absl/strings/str_format.h"
 
 #include <grpc/grpc.h>
+#include <grpc/impl/sync.h>
 #include <grpc/support/alloc.h>
 #include <grpc/support/log.h>
 #include <grpc/support/time.h>
 #include <grpcpp/channel.h>
 #include <grpcpp/client_context.h>
 #include <grpcpp/create_channel.h>
-#include <grpcpp/impl/codegen/sync.h>
 #include <grpcpp/server.h>
 #include <grpcpp/server_builder.h>
 
@@ -138,17 +138,17 @@ class BackendServiceImpl : public BackendService {
   void Shutdown() {}
 
   std::set<std::string> clients() {
-    grpc::internal::MutexLock lock(&clients_mu_);
+    grpc_core::MutexLock lock(&clients_mu_);
     return clients_;
   }
 
  private:
   void AddClient(const std::string& client) {
-    grpc::internal::MutexLock lock(&clients_mu_);
+    grpc_core::MutexLock lock(&clients_mu_);
     clients_.insert(client);
   }
 
-  grpc::internal::Mutex clients_mu_;
+  grpc_core::Mutex clients_mu_;
   std::set<std::string> clients_ ABSL_GUARDED_BY(&clients_mu_);
 };
 
@@ -205,7 +205,7 @@ class BalancerServiceImpl : public BalancerService {
   Status BalanceLoad(ServerContext* context, Stream* stream) override {
     gpr_log(GPR_INFO, "LB[%p]: BalanceLoad", this);
     {
-      grpc::internal::MutexLock lock(&mu_);
+      grpc_core::MutexLock lock(&mu_);
       if (serverlist_done_) goto done;
     }
     {
@@ -228,7 +228,7 @@ class BalancerServiceImpl : public BalancerService {
         goto done;
       } else {
         if (request.has_initial_request()) {
-          grpc::internal::MutexLock lock(&mu_);
+          grpc_core::MutexLock lock(&mu_);
           service_names_.push_back(request.initial_request().name());
         }
       }
@@ -246,7 +246,7 @@ class BalancerServiceImpl : public BalancerService {
       }
 
       {
-        grpc::internal::MutexLock lock(&mu_);
+        grpc_core::MutexLock lock(&mu_);
         responses_and_delays = responses_and_delays_;
       }
       for (const auto& response_and_delay : responses_and_delays) {
@@ -254,7 +254,7 @@ class BalancerServiceImpl : public BalancerService {
                      response_and_delay.second);
       }
       {
-        grpc::internal::MutexLock lock(&mu_);
+        grpc_core::MutexLock lock(&mu_);
         while (!serverlist_done_) {
           serverlist_cond_.Wait(&mu_);
         }
@@ -284,7 +284,7 @@ class BalancerServiceImpl : public BalancerService {
           }
           // We need to acquire the lock here in order to prevent the notify_one
           // below from firing before its corresponding wait is executed.
-          grpc::internal::MutexLock lock(&mu_);
+          grpc_core::MutexLock lock(&mu_);
           load_report_queue_.emplace_back(std::move(load_report));
           load_report_cond_.Signal();
         }
@@ -296,12 +296,12 @@ class BalancerServiceImpl : public BalancerService {
   }
 
   void add_response(const LoadBalanceResponse& response, int send_after_ms) {
-    grpc::internal::MutexLock lock(&mu_);
+    grpc_core::MutexLock lock(&mu_);
     responses_and_delays_.push_back(std::make_pair(response, send_after_ms));
   }
 
   void Start() {
-    grpc::internal::MutexLock lock(&mu_);
+    grpc_core::MutexLock lock(&mu_);
     serverlist_done_ = false;
     responses_and_delays_.clear();
     load_report_queue_.clear();
@@ -313,7 +313,7 @@ class BalancerServiceImpl : public BalancerService {
   }
 
   ClientStats WaitForLoadReport() {
-    grpc::internal::MutexLock lock(&mu_);
+    grpc_core::MutexLock lock(&mu_);
     if (load_report_queue_.empty()) {
       while (load_report_queue_.empty()) {
         load_report_cond_.Wait(&mu_);
@@ -325,7 +325,7 @@ class BalancerServiceImpl : public BalancerService {
   }
 
   void NotifyDoneWithServerlists() {
-    grpc::internal::MutexLock lock(&mu_);
+    grpc_core::MutexLock lock(&mu_);
     if (!serverlist_done_) {
       serverlist_done_ = true;
       serverlist_cond_.SignalAll();
@@ -333,7 +333,7 @@ class BalancerServiceImpl : public BalancerService {
   }
 
   std::vector<std::string> service_names() {
-    grpc::internal::MutexLock lock(&mu_);
+    grpc_core::MutexLock lock(&mu_);
     return service_names_;
   }
 
@@ -354,10 +354,10 @@ class BalancerServiceImpl : public BalancerService {
   std::vector<ResponseDelayPair> responses_and_delays_;
   std::vector<std::string> service_names_;
 
-  grpc::internal::Mutex mu_;
-  grpc::internal::CondVar serverlist_cond_;
+  grpc_core::Mutex mu_;
+  grpc_core::CondVar serverlist_cond_;
   bool serverlist_done_ ABSL_GUARDED_BY(mu_) = false;
-  grpc::internal::CondVar load_report_cond_;
+  grpc_core::CondVar load_report_cond_;
   std::deque<ClientStats> load_report_queue_ ABSL_GUARDED_BY(mu_);
 };
 
@@ -703,22 +703,22 @@ class GrpclbEnd2endTest : public ::testing::Test {
       GPR_ASSERT(!running_);
       running_ = true;
       service_.Start();
-      grpc::internal::Mutex mu;
+      grpc_core::Mutex mu;
       // We need to acquire the lock here in order to prevent the notify_one
       // by ServerThread::Serve from firing before the wait below is hit.
-      grpc::internal::MutexLock lock(&mu);
-      grpc::internal::CondVar cond;
+      grpc_core::MutexLock lock(&mu);
+      grpc_core::CondVar cond;
       thread_ = absl::make_unique<std::thread>(
           std::bind(&ServerThread::Serve, this, server_host, &mu, &cond));
       cond.Wait(&mu);
       gpr_log(GPR_INFO, "%s server startup complete", type_.c_str());
     }
 
-    void Serve(const std::string& server_host, grpc::internal::Mutex* mu,
-               grpc::internal::CondVar* cond) {
+    void Serve(const std::string& server_host, grpc_core::Mutex* mu,
+               grpc_core::CondVar* cond) {
       // We need to acquire the lock here in order to prevent the notify_one
       // below from firing before its corresponding wait is executed.
-      grpc::internal::MutexLock lock(mu);
+      grpc_core::MutexLock lock(mu);
       std::ostringstream server_address;
       server_address << server_host << ":" << port_;
       ServerBuilder builder;

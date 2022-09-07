@@ -27,9 +27,9 @@
 
 #include "absl/base/thread_annotations.h"
 
+#include <grpc/impl/sync.h>
 #include <grpcpp/grpcpp.h>
 #include <grpcpp/health_check_service_interface.h>
-#include <grpcpp/impl/codegen/sync.h>
 #include <grpcpp/impl/service_type.h>
 #include <grpcpp/support/byte_buffer.h>
 #include <grpcpp/support/config.h>
@@ -72,7 +72,7 @@ class DefaultHealthCheckService final : public HealthCheckServiceInterface {
       std::string service_name_;
       ByteBuffer response_;
 
-      grpc::internal::Mutex mu_;
+      grpc_core::Mutex mu_;
       bool write_pending_ ABSL_GUARDED_BY(mu_) = false;
       ServingStatus pending_status_ ABSL_GUARDED_BY(mu_) = NOT_FOUND;
       bool finish_called_ ABSL_GUARDED_BY(mu_) = false;
@@ -95,8 +95,8 @@ class DefaultHealthCheckService final : public HealthCheckServiceInterface {
 
     DefaultHealthCheckService* database_;
 
-    grpc::internal::Mutex mu_;
-    grpc::internal::CondVar shutdown_condition_;
+    grpc_core::Mutex mu_;
+    grpc_core::CondVar shutdown_condition_;
     bool shutdown_ ABSL_GUARDED_BY(mu_) = false;
     size_t num_watches_ ABSL_GUARDED_BY(mu_) = 0;
   };
@@ -138,7 +138,7 @@ class DefaultHealthCheckService final : public HealthCheckServiceInterface {
   void UnregisterWatch(const std::string& service_name,
                        HealthCheckServiceImpl::WatchReactor* watcher);
 
-  mutable grpc::internal::Mutex mu_;
+  mutable grpc_core::Mutex mu_;
   bool shutdown_ ABSL_GUARDED_BY(&mu_) = false;
   std::map<std::string, ServiceData> services_map_ ABSL_GUARDED_BY(&mu_);
   std::unique_ptr<HealthCheckServiceImpl> impl_;

@@ -40,8 +40,8 @@
 
 #include <grpc/impl/codegen/compression_types.h>
 #include <grpc/impl/codegen/propagation_bits.h>
+#include <grpc/impl/sync.h>
 #include <grpcpp/create_auth_context.h>
-#include <grpcpp/impl/codegen/sync.h>
 #include <grpcpp/impl/metadata_map.h>
 #include <grpcpp/impl/rpc_method.h>
 #include <grpcpp/security/auth_context.h>
@@ -487,7 +487,7 @@ class ClientContext {
   bool wait_for_ready_;
   bool wait_for_ready_explicitly_set_;
   std::shared_ptr<grpc::Channel> channel_;
-  grpc::internal::Mutex mu_;
+  grpc_core::Mutex mu_;
   grpc_call* call_;
   bool call_canceled_;
   gpr_timespec deadline_;

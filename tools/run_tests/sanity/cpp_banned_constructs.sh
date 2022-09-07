@@ -19,8 +19,7 @@ cd "$(dirname "$0")/../../.."
 
 #
 # Prevent the use of synchronization and threading constructs from std:: since
-# the code should be using grpc_core::Mutex, grpc::internal::Mutex,
-# grpc_core::Thread, etc.
+# the code should be using grpc_core::Mutex, grpc_core::Thread, etc.
 #
 
 grep -EIrn \

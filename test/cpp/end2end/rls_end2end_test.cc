@@ -102,7 +102,7 @@ class MyTestServiceImpl : public BackendService {
     auto client_metadata = context->client_metadata();
     auto range = client_metadata.equal_range("X-Google-RLS-Data");
     {
-      grpc::internal::MutexLock lock(&mu_);
+      grpc_core::MutexLock lock(&mu_);
       for (auto it = range.first; it != range.second; ++it) {
         rls_header_data_.insert(
             std::string(it->second.begin(), it->second.length()));
@@ -113,7 +113,7 @@ class MyTestServiceImpl : public BackendService {
   }
 
   std::set<std::string> rls_data() {
-    grpc::internal::MutexLock lock(&mu_);
+    grpc_core::MutexLock lock(&mu_);
     return std::move(rls_header_data_);
   }
 
@@ -122,7 +122,7 @@ class MyTestServiceImpl : public BackendService {
   void Shutdown() {}
 
  private:
-  grpc::internal::Mutex mu_;
+  grpc_core::Mutex mu_;
   std::set<std::string> rls_header_data_ ABSL_GUARDED_BY(&mu_);
 };
 
@@ -420,21 +420,21 @@ class RlsEnd2endTest : public ::testing::Test {
       GPR_ASSERT(!running_);
       running_ = true;
       service_.Start();
-      grpc::internal::Mutex mu;
+      grpc_core::Mutex mu;
       // We need to acquire the lock here in order to prevent the notify_one
       // by ServerThread::Serve from firing before the wait below is hit.
-      grpc::internal::MutexLock lock(&mu);
-      grpc::internal::CondVar cond;
+      grpc_core::MutexLock lock(&mu);
+      grpc_core::CondVar cond;
       thread_ = absl::make_unique<std::thread>(
           std::bind(&ServerThread::Serve, this, &mu, &cond));
       cond.Wait(&mu);
       gpr_log(GPR_INFO, "%s server startup complete", type_.c_str());
     }
 
-    void Serve(grpc::internal::Mutex* mu, grpc::internal::CondVar* cond) {
+    void Serve(grpc_core::Mutex* mu, grpc_core::CondVar* cond) {
       // We need to acquire the lock here in order to prevent the notify_one
       // below from firing before its corresponding wait is executed.
-      grpc::internal::MutexLock lock(mu);
+      grpc_core::MutexLock lock(mu);
       ServerBuilder builder;
       auto creds = std::make_shared<SecureServerCredentials>(
           grpc_fake_transport_security_server_credentials_create());

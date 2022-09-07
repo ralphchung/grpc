@@ -23,11 +23,11 @@
 #include <gtest/gtest.h>
 
 #include <grpc/grpc.h>
+#include <grpc/impl/sync.h>
 #include <grpc/support/time.h>
 #include <grpcpp/channel.h>
 #include <grpcpp/client_context.h>
 #include <grpcpp/create_channel.h>
-#include <grpcpp/impl/codegen/sync.h>
 #include <grpcpp/resource_quota.h>
 #include <grpcpp/server.h>
 #include <grpcpp/server_builder.h>
@@ -200,7 +200,7 @@ class CommonStressTestAsyncServer : public BaseClass {
   }
   void TearDown() override {
     {
-      grpc::internal::MutexLock l(&mu_);
+      grpc_core::MutexLock l(&mu_);
       this->TearDownStart();
       shutting_down_ = true;
       cq_->Shutdown();
@@ -241,7 +241,7 @@ class CommonStressTestAsyncServer : public BaseClass {
     }
   }
   void RefreshContext(int i) {
-    grpc::internal::MutexLock l(&mu_);
+    grpc_core::MutexLock l(&mu_);
     if (!shutting_down_) {
       contexts_[i].state = Context::READY;
       contexts_[i].srv_ctx.reset(new ServerContext);
@@ -265,7 +265,7 @@ class CommonStressTestAsyncServer : public BaseClass {
   grpc::testing::EchoTestService::AsyncService service_;
   std::unique_ptr<ServerCompletionQueue> cq_;
   bool shutting_down_;
-  grpc::internal::Mutex mu_;
+  grpc_core::Mutex mu_;
   std::vector<std::thread> server_threads_;
 };
 
@@ -356,7 +356,7 @@ class AsyncClientEnd2endTest : public ::testing::Test {
   }
 
   void Wait() {
-    grpc::internal::MutexLock l(&mu_);
+    grpc_core::MutexLock l(&mu_);
     while (rpcs_outstanding_ != 0) {
       cv_.Wait(&mu_);
     }
@@ -380,7 +380,7 @@ class AsyncClientEnd2endTest : public ::testing::Test {
           common_.GetStub()->AsyncEcho(&call->context, request, &cq_);
       call->response_reader->Finish(&call->response, &call->status, call);
 
-      grpc::internal::MutexLock l(&mu_);
+      grpc_core::MutexLock l(&mu_);
       rpcs_outstanding_++;
     }
   }
@@ -398,7 +398,7 @@ class AsyncClientEnd2endTest : public ::testing::Test {
 
       bool notify;
       {
-        grpc::internal::MutexLock l(&mu_);
+        grpc_core::MutexLock l(&mu_);
         rpcs_outstanding_--;
         notify = (rpcs_outstanding_ == 0);
       }
@@ -410,8 +410,8 @@ class AsyncClientEnd2endTest : public ::testing::Test {
 
   Common common_;
   CompletionQueue cq_;
-  grpc::internal::Mutex mu_;
-  grpc::internal::CondVar cv_;
+  grpc_core::Mutex mu_;
+  grpc_core::CondVar cv_;
   int rpcs_outstanding_;
 };
 
