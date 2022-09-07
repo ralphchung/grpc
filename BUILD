@@ -400,7 +400,6 @@ GRPCXX_PUBLIC_HDRS = [
     "include/grpc++/impl/codegen/sync_stream.h",
     "include/grpc++/impl/codegen/time.h",
     "include/grpcpp/impl/codegen/security/auth_context.h",
-    "include/grpcpp/impl/codegen/server_interceptor.h",
     "include/grpcpp/impl/codegen/server_interface.h",
     "include/grpcpp/impl/codegen/service_type.h",
     "include/grpcpp/impl/codegen/slice.h",

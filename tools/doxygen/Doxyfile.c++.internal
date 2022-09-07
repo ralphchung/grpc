@@ -945,7 +945,6 @@ include/grpcpp/impl/channel_argument_option.h \
 include/grpcpp/impl/client_unary_call.h \
 include/grpcpp/impl/codegen/core_codegen.h \
 include/grpcpp/impl/codegen/security/auth_context.h \
-include/grpcpp/impl/codegen/server_interceptor.h \
 include/grpcpp/impl/codegen/server_interface.h \
 include/grpcpp/impl/codegen/service_type.h \
 include/grpcpp/impl/codegen/slice.h \
