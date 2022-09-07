@@ -925,6 +925,7 @@ PUBLIC_HEADERS_C += \
     include/grpc/impl/codegen/sync_generic.h \
     include/grpc/impl/codegen/sync_posix.h \
     include/grpc/impl/codegen/sync_windows.h \
+    include/grpc/impl/sync.h \
     include/grpc/support/alloc.h \
     include/grpc/support/atm.h \
     include/grpc/support/atm_gcc_atomic.h \
@@ -1711,6 +1712,7 @@ PUBLIC_HEADERS_C += \
     include/grpc/impl/codegen/sync_generic.h \
     include/grpc/impl/codegen/sync_posix.h \
     include/grpc/impl/codegen/sync_windows.h \
+    include/grpc/impl/sync.h \
     include/grpc/load_reporting.h \
     include/grpc/slice.h \
     include/grpc/slice_buffer.h \
@@ -2148,6 +2150,7 @@ PUBLIC_HEADERS_C += \
     include/grpc/impl/codegen/sync_generic.h \
     include/grpc/impl/codegen/sync_posix.h \
     include/grpc/impl/codegen/sync_windows.h \
+    include/grpc/impl/sync.h \
     include/grpc/load_reporting.h \
     include/grpc/slice.h \
     include/grpc/slice_buffer.h \
