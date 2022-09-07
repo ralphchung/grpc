@@ -817,7 +817,6 @@ include/grpc++/impl/channel_argument_option.h \
 include/grpc++/impl/client_unary_call.h \
 include/grpc++/impl/codegen/core_codegen.h \
 include/grpc++/impl/codegen/security/auth_context.h \
-include/grpc++/impl/codegen/time.h \
 include/grpc++/impl/method_handler_impl.h \
 include/grpc++/impl/rpc_method.h \
 include/grpc++/impl/rpc_service_method.h \
@@ -938,7 +937,6 @@ include/grpcpp/impl/channel_argument_option.h \
 include/grpcpp/impl/client_unary_call.h \
 include/grpcpp/impl/codegen/core_codegen.h \
 include/grpcpp/impl/codegen/security/auth_context.h \
-include/grpcpp/impl/codegen/time.h \
 include/grpcpp/impl/completion_queue_tag.h \
 include/grpcpp/impl/intercepted_channel.h \
 include/grpcpp/impl/interceptor_common.h \

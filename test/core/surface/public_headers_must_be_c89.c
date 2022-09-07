@@ -38,6 +38,7 @@
 #include <grpc/impl/codegen/propagation_bits.h>
 #include <grpc/impl/codegen/slice.h>
 #include <grpc/impl/codegen/status.h>
+#include <grpc/impl/codegen/sync.h>
 #include <grpc/impl/codegen/sync_abseil.h>
 #include <grpc/impl/codegen/sync_custom.h>
 #include <grpc/impl/codegen/sync_generic.h>
