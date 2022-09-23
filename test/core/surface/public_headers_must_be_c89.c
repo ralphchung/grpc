@@ -114,10 +114,10 @@ int main(int argc, char **argv) {
   printf("%lx", (unsigned long) grpc_channel_get_target);
   printf("%lx", (unsigned long) grpc_channel_get_info);
   printf("%lx", (unsigned long) grpc_channel_reset_connect_backoff);
-  printf("%lx", (unsigned long) grpc_channel_credentials_release);
-  printf("%lx", (unsigned long) grpc_server_credentials_release);
   printf("%lx", (unsigned long) grpc_insecure_credentials_create);
+  printf("%lx", (unsigned long) grpc_channel_credentials_release);
   printf("%lx", (unsigned long) grpc_insecure_server_credentials_create);
+  printf("%lx", (unsigned long) grpc_server_credentials_release);
   printf("%lx", (unsigned long) grpc_channel_create);
   printf("%lx", (unsigned long) grpc_lame_client_channel_create);
   printf("%lx", (unsigned long) grpc_channel_destroy);
