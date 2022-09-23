@@ -27,7 +27,6 @@
 
 #include <string.h>
 
-#include <grpc/grpc_security.h>
 #include <grpc/support/log.h>
 
 #include "src/core/lib/gprpp/host_port.h"

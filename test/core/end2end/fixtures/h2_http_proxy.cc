@@ -23,7 +23,6 @@
 #include "absl/strings/str_format.h"
 
 #include <grpc/grpc.h>
-#include <grpc/grpc_security.h>
 #include <grpc/support/log.h>
 
 #include "src/core/lib/channel/channel_args.h"

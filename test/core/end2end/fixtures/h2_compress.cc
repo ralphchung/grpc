@@ -22,7 +22,6 @@
 
 #include <grpc/compression.h>
 #include <grpc/grpc.h>
-#include <grpc/grpc_security.h>
 #include <grpc/support/log.h>
 
 #include "src/core/lib/channel/channel_args.h"

@@ -41,7 +41,6 @@
 #include "gtest/gtest.h"
 
 #include <grpc/grpc.h>
-#include <grpc/grpc_security.h>
 #include <grpc/impl/codegen/propagation_bits.h>
 #include <grpc/slice.h>
 #include <grpc/slice_buffer.h>

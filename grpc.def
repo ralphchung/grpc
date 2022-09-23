@@ -47,6 +47,8 @@ EXPORTS
     grpc_channel_reset_connect_backoff
     grpc_channel_credentials_release
     grpc_server_credentials_release
+    grpc_insecure_credentials_create
+    grpc_insecure_server_credentials_create
     grpc_channel_create
     grpc_lame_client_channel_create
     grpc_channel_destroy
@@ -156,8 +158,6 @@ EXPORTS
     grpc_tls_credentials_options_set_crl_directory
     grpc_tls_credentials_options_set_verify_server_cert
     grpc_tls_credentials_options_set_check_call_host
-    grpc_insecure_credentials_create
-    grpc_insecure_server_credentials_create
     grpc_xds_credentials_create
     grpc_xds_server_credentials_create
     grpc_authorization_policy_provider_static_data_create

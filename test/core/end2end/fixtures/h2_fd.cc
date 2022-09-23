@@ -29,7 +29,6 @@
 
 #include <grpc/grpc.h>
 #include <grpc/grpc_posix.h>
-#include <grpc/grpc_security.h>
 #include <grpc/support/alloc.h>
 #include <grpc/support/log.h>
 
