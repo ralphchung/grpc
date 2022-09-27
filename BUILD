@@ -193,6 +193,7 @@ GRPC_PUBLIC_HDRS = [
     "include/grpc/compression.h",
     "include/grpc/fork.h",
     "include/grpc/grpc.h",
+    "include/grpc/grpc_insecure_credentials.h",
     "include/grpc/grpc_posix.h",
     "include/grpc/grpc_security.h",
     "include/grpc/grpc_security_constants.h",

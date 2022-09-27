@@ -29,6 +29,7 @@
 #include <grpc/grpc_security.h>
 #include <grpc/slice.h>
 #include <grpc/support/alloc.h>
+#include <grpc/grpc_insecure_credentials.h>
 
 #include "call.h"
 #include "completion_queue.h"

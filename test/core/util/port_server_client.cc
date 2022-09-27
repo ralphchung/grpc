@@ -28,6 +28,8 @@
 
 #include "absl/status/statusor.h"
 
+#include <grpc/grpc_insecure_credentials.h>
+
 #include "src/core/lib/gprpp/orphanable.h"
 #include "src/core/lib/gprpp/ref_counted_ptr.h"
 #include "src/core/lib/gprpp/time.h"

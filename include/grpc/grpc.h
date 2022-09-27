@@ -293,13 +293,6 @@ GRPCAPI void grpc_channel_reset_connect_backoff(grpc_channel* channel);
 
 typedef struct grpc_channel_credentials grpc_channel_credentials;
 
-/**
- * EXPERIMENTAL API - Subject to change
- *
- * This method creates an insecure channel credentials object.
- */
-GRPCAPI grpc_channel_credentials* grpc_insecure_credentials_create();
-
 /** Releases a channel credentials object.
    The creator of the credentials object is responsible for its release. */
 
@@ -311,13 +304,6 @@ GRPCAPI void grpc_channel_credentials_release(grpc_channel_credentials* creds);
    Different types of server credentials are declared in grpc_security.h. */
 
 typedef struct grpc_server_credentials grpc_server_credentials;
-
-/**
- * EXPERIMENTAL API - Subject to change
- *
- * This method creates an insecure server credentials object.
- */
-GRPCAPI grpc_server_credentials* grpc_insecure_server_credentials_create();
 
 /** Releases a server_credentials object.
    The creator of the server_credentials object is responsible for its release.

@@ -32,6 +32,7 @@
 
 #include <grpc/byte_buffer.h>
 #include <grpc/grpc.h>
+#include <grpc/grpc_insecure_credentials.h>
 #include <grpc/grpc_security.h>
 #include <grpc/slice.h>
 #include <grpc/status.h>

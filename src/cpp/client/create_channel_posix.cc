@@ -22,6 +22,7 @@
 #include <vector>
 
 #include <grpc/grpc.h>
+#include <grpc/grpc_insecure_credentials.h>
 #include <grpc/grpc_posix.h>
 #include <grpc/impl/codegen/grpc_types.h>
 #include <grpcpp/channel.h>

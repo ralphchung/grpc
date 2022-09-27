@@ -17,6 +17,7 @@
  */
 
 #include <grpc/grpc.h>
+#include <grpc/grpc_insecure_credentials.h>
 #include <grpc/grpc_posix.h>
 #include <grpcpp/server.h>
 #include <grpcpp/server_posix.h>

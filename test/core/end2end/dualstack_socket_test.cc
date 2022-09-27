@@ -23,6 +23,7 @@
 
 #include "absl/status/statusor.h"
 
+#include <grpc/grpc_insecure_credentials.h>
 #include <grpc/impl/codegen/propagation_bits.h>
 #include <grpc/slice.h>
 #include <grpc/status.h>

@@ -23,6 +23,7 @@
 #include <time.h>
 
 #include <grpc/grpc.h>
+#include <grpc/grpc_insecure_credentials.h>
 #include <grpc/grpc_security.h>
 #ifndef _WIN32
 /* This is for _exit() below, which is temporary. */

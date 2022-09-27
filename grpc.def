@@ -44,9 +44,7 @@ EXPORTS
     grpc_channel_get_target
     grpc_channel_get_info
     grpc_channel_reset_connect_backoff
-    grpc_insecure_credentials_create
     grpc_channel_credentials_release
-    grpc_insecure_server_credentials_create
     grpc_server_credentials_release
     grpc_channel_create
     grpc_lame_client_channel_create
@@ -89,6 +87,8 @@ EXPORTS
     grpc_channelz_get_subchannel
     grpc_channelz_get_socket
     grpc_authorization_policy_provider_arg_vtable
+    grpc_insecure_credentials_create
+    grpc_insecure_server_credentials_create
     grpc_channel_create_from_fd
     grpc_server_add_channel_from_fd
     grpc_auth_property_iterator_next

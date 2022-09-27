@@ -33,6 +33,7 @@
 #include <grpc/support/log.h>
 #include <grpc/support/string_util.h>
 #include <grpc/support/time.h>
+#include <grpc/grpc_insecure_credentials.h>
 #include <ext/spl/spl_exceptions.h>
 #include <zend_exceptions.h>
 
@@ -184,7 +185,7 @@ void postfork_child() {
   destroy_grpc_channels();
 
   release_persistent_locks();
-  
+
   // clean all channels in the persistent list
   php_grpc_clean_persistent_list(TSRMLS_C);
 
@@ -547,7 +548,7 @@ PHP_MINIT_FUNCTION(grpc) {
   /** grpc version string */
   REGISTER_STRING_CONSTANT("Grpc\\VERSION", PHP_GRPC_VERSION,
                            CONST_CS | CONST_PERSISTENT);
-  
+
   grpc_init_call(TSRMLS_C);
   GRPC_STARTUP(channel);
   grpc_init_server(TSRMLS_C);

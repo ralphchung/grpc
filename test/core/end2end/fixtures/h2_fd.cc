@@ -18,6 +18,8 @@
 
 #include "absl/status/status.h"
 
+#include <grpc/grpc_insecure_credentials.h>
+
 #include "src/core/lib/iomgr/error.h"
 #include "src/core/lib/iomgr/port.h"
 

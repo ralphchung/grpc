@@ -23,6 +23,7 @@
 #include "upb/upb.hpp"
 
 #include <grpc/grpc.h>
+#include <grpc/grpc_insecure_credentials.h>
 #include <grpc/grpc_security.h>
 
 #include "src/core/lib/iomgr/exec_ctx.h"

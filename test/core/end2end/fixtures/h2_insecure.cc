@@ -21,6 +21,7 @@
 #include <string>
 
 #include <grpc/grpc.h>
+#include <grpc/grpc_insecure_credentials.h>
 #include <grpc/grpc_security.h>
 #include <grpc/status.h>
 #include <grpc/support/log.h>

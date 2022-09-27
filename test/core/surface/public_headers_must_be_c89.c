@@ -22,6 +22,7 @@
 #include <grpc/compression.h>
 #include <grpc/fork.h>
 #include <grpc/grpc.h>
+#include <grpc/grpc_insecure_credentials.h>
 #include <grpc/grpc_security.h>
 #include <grpc/grpc_security_constants.h>
 #include <grpc/impl/codegen/atm.h>
@@ -113,9 +114,7 @@ int main(int argc, char **argv) {
   printf("%lx", (unsigned long) grpc_channel_get_target);
   printf("%lx", (unsigned long) grpc_channel_get_info);
   printf("%lx", (unsigned long) grpc_channel_reset_connect_backoff);
-  printf("%lx", (unsigned long) grpc_insecure_credentials_create);
   printf("%lx", (unsigned long) grpc_channel_credentials_release);
-  printf("%lx", (unsigned long) grpc_insecure_server_credentials_create);
   printf("%lx", (unsigned long) grpc_server_credentials_release);
   printf("%lx", (unsigned long) grpc_channel_create);
   printf("%lx", (unsigned long) grpc_lame_client_channel_create);
@@ -158,6 +157,8 @@ int main(int argc, char **argv) {
   printf("%lx", (unsigned long) grpc_channelz_get_subchannel);
   printf("%lx", (unsigned long) grpc_channelz_get_socket);
   printf("%lx", (unsigned long) grpc_authorization_policy_provider_arg_vtable);
+  printf("%lx", (unsigned long) grpc_insecure_credentials_create);
+  printf("%lx", (unsigned long) grpc_insecure_server_credentials_create);
   printf("%lx", (unsigned long) grpc_auth_property_iterator_next);
   printf("%lx", (unsigned long) grpc_auth_context_property_iterator);
   printf("%lx", (unsigned long) grpc_auth_context_peer_identity);

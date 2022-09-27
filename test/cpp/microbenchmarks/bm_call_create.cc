@@ -26,6 +26,7 @@
 #include <benchmark/benchmark.h>
 
 #include <grpc/grpc.h>
+#include <grpc/grpc_insecure_credentials.h>
 #include <grpc/grpc_security.h>
 #include <grpc/support/alloc.h>
 #include <grpc/support/string_util.h>

@@ -24,6 +24,7 @@
 #include "absl/strings/string_view.h"
 
 #include <grpc/grpc.h>
+#include <grpc/grpc_insecure_credentials.h>
 #include <grpc/grpc_security.h>
 
 #include "src/core/lib/config/core_configuration.h"

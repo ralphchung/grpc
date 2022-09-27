@@ -27,6 +27,7 @@
 
 #include <grpc/compression.h>
 #include <grpc/grpc.h>
+#include <grpc/grpc_insecure_credentials.h>
 #include <grpc/grpc_posix.h>
 #include <grpc/grpc_security.h>
 #include <grpc/impl/codegen/byte_buffer.h>
@@ -176,15 +177,9 @@ extern grpc_channel_get_info_type grpc_channel_get_info_import;
 typedef void(*grpc_channel_reset_connect_backoff_type)(grpc_channel* channel);
 extern grpc_channel_reset_connect_backoff_type grpc_channel_reset_connect_backoff_import;
 #define grpc_channel_reset_connect_backoff grpc_channel_reset_connect_backoff_import
-typedef grpc_channel_credentials*(*grpc_insecure_credentials_create_type)();
-extern grpc_insecure_credentials_create_type grpc_insecure_credentials_create_import;
-#define grpc_insecure_credentials_create grpc_insecure_credentials_create_import
 typedef void(*grpc_channel_credentials_release_type)(grpc_channel_credentials* creds);
 extern grpc_channel_credentials_release_type grpc_channel_credentials_release_import;
 #define grpc_channel_credentials_release grpc_channel_credentials_release_import
-typedef grpc_server_credentials*(*grpc_insecure_server_credentials_create_type)();
-extern grpc_insecure_server_credentials_create_type grpc_insecure_server_credentials_create_import;
-#define grpc_insecure_server_credentials_create grpc_insecure_server_credentials_create_import
 typedef void(*grpc_server_credentials_release_type)(grpc_server_credentials* creds);
 extern grpc_server_credentials_release_type grpc_server_credentials_release_import;
 #define grpc_server_credentials_release grpc_server_credentials_release_import
@@ -311,6 +306,12 @@ extern grpc_channelz_get_socket_type grpc_channelz_get_socket_import;
 typedef const grpc_arg_pointer_vtable*(*grpc_authorization_policy_provider_arg_vtable_type)(void);
 extern grpc_authorization_policy_provider_arg_vtable_type grpc_authorization_policy_provider_arg_vtable_import;
 #define grpc_authorization_policy_provider_arg_vtable grpc_authorization_policy_provider_arg_vtable_import
+typedef grpc_channel_credentials*(*grpc_insecure_credentials_create_type)();
+extern grpc_insecure_credentials_create_type grpc_insecure_credentials_create_import;
+#define grpc_insecure_credentials_create grpc_insecure_credentials_create_import
+typedef grpc_server_credentials*(*grpc_insecure_server_credentials_create_type)();
+extern grpc_insecure_server_credentials_create_type grpc_insecure_server_credentials_create_import;
+#define grpc_insecure_server_credentials_create grpc_insecure_server_credentials_create_import
 typedef grpc_channel*(*grpc_channel_create_from_fd_type)(const char* target, int fd, grpc_channel_credentials* creds, const grpc_channel_args* args);
 extern grpc_channel_create_from_fd_type grpc_channel_create_from_fd_import;
 #define grpc_channel_create_from_fd grpc_channel_create_from_fd_import

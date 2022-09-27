@@ -17,6 +17,7 @@
  */
 
 #include <grpc/grpc.h>
+#include <grpc/grpc_insecure_credentials.h>
 #include <grpc/support/time.h>
 
 #include "test/core/util/test_config.h"

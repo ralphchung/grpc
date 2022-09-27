@@ -32,6 +32,7 @@
 #include "absl/types/optional.h"
 
 #include <grpc/grpc.h>
+#include <grpc/grpc_insecure_credentials.h>
 #include <grpc/grpc_security.h>
 #include <grpc/impl/codegen/grpc_types.h>
 #include <grpc/slice.h>

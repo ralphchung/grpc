@@ -21,6 +21,7 @@
 #include <string.h>
 
 #include <grpc/grpc.h>
+#include <grpc/grpc_insecure_credentials.h>
 
 #include "src/core/lib/iomgr/port.h"  // IWYU pragma: keep
 

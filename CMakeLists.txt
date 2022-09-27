@@ -1502,6 +1502,7 @@ foreach(_hdr
   include/grpc/compression.h
   include/grpc/fork.h
   include/grpc/grpc.h
+  include/grpc/grpc_insecure_credentials.h
   include/grpc/grpc_posix.h
   include/grpc/grpc_security.h
   include/grpc/grpc_security_constants.h
@@ -2439,6 +2440,7 @@ foreach(_hdr
   include/grpc/event_engine/slice_buffer.h
   include/grpc/fork.h
   include/grpc/grpc.h
+  include/grpc/grpc_insecure_credentials.h
   include/grpc/grpc_posix.h
   include/grpc/grpc_security.h
   include/grpc/grpc_security_constants.h
@@ -2982,6 +2984,7 @@ foreach(_hdr
   include/grpc/event_engine/slice_buffer.h
   include/grpc/fork.h
   include/grpc/grpc.h
+  include/grpc/grpc_insecure_credentials.h
   include/grpc/grpc_posix.h
   include/grpc/grpc_security.h
   include/grpc/grpc_security_constants.h
