@@ -81,7 +81,7 @@ AwsExternalAccountCredentials::Create(Options options,
                                       grpc_error_handle* error) {
   auto creds = MakeRefCounted<AwsExternalAccountCredentials>(
       std::move(options), std::move(scopes), error);
-  if (GRPC_ERROR_IS_NONE(*error)) {
+  if (error->ok()) {
     return creds;
   } else {
     return nullptr;
@@ -203,12 +203,12 @@ void AwsExternalAccountCredentials::OnRetrieveImdsV2SessionToken(
     void* arg, grpc_error_handle error) {
   AwsExternalAccountCredentials* self =
       static_cast<AwsExternalAccountCredentials*>(arg);
-  self->OnRetrieveImdsV2SessionTokenInternal(GRPC_ERROR_REF(error));
+  self->OnRetrieveImdsV2SessionTokenInternal(error);
 }
 
 void AwsExternalAccountCredentials::OnRetrieveImdsV2SessionTokenInternal(
     grpc_error_handle error) {
-  if (!GRPC_ERROR_IS_NONE(error)) {
+  if (!error.ok()) {
     FinishRetrieveSubjectToken("", error);
     return;
   }
@@ -281,12 +281,12 @@ void AwsExternalAccountCredentials::OnRetrieveRegion(void* arg,
                                                      grpc_error_handle error) {
   AwsExternalAccountCredentials* self =
       static_cast<AwsExternalAccountCredentials*>(arg);
-  self->OnRetrieveRegionInternal(GRPC_ERROR_REF(error));
+  self->OnRetrieveRegionInternal(error);
 }
 
 void AwsExternalAccountCredentials::OnRetrieveRegionInternal(
     grpc_error_handle error) {
-  if (!GRPC_ERROR_IS_NONE(error)) {
+  if (!error.ok()) {
     FinishRetrieveSubjectToken("", error);
     return;
   }
@@ -335,12 +335,12 @@ void AwsExternalAccountCredentials::OnRetrieveRoleName(
     void* arg, grpc_error_handle error) {
   AwsExternalAccountCredentials* self =
       static_cast<AwsExternalAccountCredentials*>(arg);
-  self->OnRetrieveRoleNameInternal(GRPC_ERROR_REF(error));
+  self->OnRetrieveRoleNameInternal(error);
 }
 
 void AwsExternalAccountCredentials::OnRetrieveRoleNameInternal(
     grpc_error_handle error) {
-  if (!GRPC_ERROR_IS_NONE(error)) {
+  if (!error.ok()) {
     FinishRetrieveSubjectToken("", error);
     return;
   }
@@ -400,12 +400,12 @@ void AwsExternalAccountCredentials::OnRetrieveSigningKeys(
     void* arg, grpc_error_handle error) {
   AwsExternalAccountCredentials* self =
       static_cast<AwsExternalAccountCredentials*>(arg);
-  self->OnRetrieveSigningKeysInternal(GRPC_ERROR_REF(error));
+  self->OnRetrieveSigningKeysInternal(error);
 }
 
 void AwsExternalAccountCredentials::OnRetrieveSigningKeysInternal(
     grpc_error_handle error) {
-  if (!GRPC_ERROR_IS_NONE(error)) {
+  if (!error.ok()) {
     FinishRetrieveSubjectToken("", error);
     return;
   }
@@ -468,22 +468,20 @@ void AwsExternalAccountCredentials::BuildSubjectToken() {
         access_key_id_, secret_access_key_, token_, "POST",
         cred_verification_url_, region_, "",
         std::map<std::string, std::string>(), &error);
-    if (!GRPC_ERROR_IS_NONE(error)) {
+    if (!error.ok()) {
       FinishRetrieveSubjectToken(
           "", GRPC_ERROR_CREATE_REFERENCING_FROM_STATIC_STRING(
                   "Creating aws request signer failed.", &error, 1));
-      GRPC_ERROR_UNREF(error);
       return;
     }
   }
   auto signed_headers = signer_->GetSignedRequestHeaders();
-  if (!GRPC_ERROR_IS_NONE(error)) {
+  if (!error.ok()) {
     FinishRetrieveSubjectToken("",
                                GRPC_ERROR_CREATE_REFERENCING_FROM_STATIC_STRING(
                                    "Invalid getting signed request"
                                    "headers.",
                                    &error, 1));
-    GRPC_ERROR_UNREF(error);
     return;
   }
   // Construct subject token
@@ -513,7 +511,7 @@ void AwsExternalAccountCredentials::FinishRetrieveSubjectToken(
   auto cb = cb_;
   cb_ = nullptr;
   // Invoke the callback.
-  if (!GRPC_ERROR_IS_NONE(error)) {
+  if (!error.ok()) {
     cb("", error);
   } else {
     cb(subject_token, GRPC_ERROR_NONE);
