@@ -66,11 +66,11 @@ RUN apt-get install -y openjdk-8-jdk
 # Android SDK/NDK installation
 ENV SDK_ROOT=/opt/android-sdk
 RUN mkdir -p $SDK_ROOT
-RUN wget -O cmd.zip dl.google.com/android/repository/commandlinetools-linux-7302050_latest.zip &&     unzip cmd.zip && rm cmd.zip &&     yes | ./cmdline-tools/bin/sdkmanager --sdk_root=$SDK_ROOT 'tools' &&     yes | ./cmdline-tools/bin/sdkmanager --sdk_root=$SDK_ROOT 'platform-tools' &&     yes | ./cmdline-tools/bin/sdkmanager --sdk_root=$SDK_ROOT 'build-tools;30.0.3' &&     yes | ./cmdline-tools/bin/sdkmanager --sdk_root=$SDK_ROOT 'platforms;android-29' &&     yes | ./cmdline-tools/bin/sdkmanager --sdk_root=$SDK_ROOT 'ndk-bundle' &&     yes | ./cmdline-tools/bin/sdkmanager --sdk_root=$SDK_ROOT 'ndk;16.1.4479499'
+RUN wget -O cmd.zip dl.google.com/android/repository/commandlinetools-linux-7302050_latest.zip &&     unzip cmd.zip && rm cmd.zip &&     yes | ./cmdline-tools/bin/sdkmanager --sdk_root=$SDK_ROOT 'tools' &&     yes | ./cmdline-tools/bin/sdkmanager --sdk_root=$SDK_ROOT 'platform-tools' &&     yes | ./cmdline-tools/bin/sdkmanager --sdk_root=$SDK_ROOT 'build-tools;30.0.3' &&     yes | ./cmdline-tools/bin/sdkmanager --sdk_root=$SDK_ROOT 'platforms;android-29' &&     yes | ./cmdline-tools/bin/sdkmanager --sdk_root=$SDK_ROOT 'ndk-bundle' &&     yes | ./cmdline-tools/bin/sdkmanager --sdk_root=$SDK_ROOT 'ndk;21.4.7075529'
 
 # Set environment variables for Bazel rules
 ENV ANDROID_HOME=/opt/android-sdk
-ENV ANDROID_NDK_HOME=/opt/android-sdk/ndk/16.1.4479499
+ENV ANDROID_NDK_HOME=/opt/android-sdk/ndk/21.4.7075529
 
 RUN mkdir -p /var/local/jenkins
 
