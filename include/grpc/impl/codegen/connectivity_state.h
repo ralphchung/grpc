@@ -27,6 +27,8 @@ extern "C" {
 #endif
 
 /// TODO(chengyuc): Remove this file after solving compatibility.
+#include <grpc/support/port_platform.h>
+
 #include <grpc/connectivity_state.h>
 
 #ifdef __cplusplus
