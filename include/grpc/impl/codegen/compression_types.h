@@ -19,7 +19,12 @@
 #ifndef GRPC_IMPL_CODEGEN_COMPRESSION_TYPES_H
 #define GRPC_IMPL_CODEGEN_COMPRESSION_TYPES_H
 
+// IWYU pragma: private, include <grpc/compression.h>
+// IWYU pragma: friend "src/.*"
+
 /// TODO(chengyuc): Remove this file after solving compatibility.
+#include <grpc/support/port_platform.h>
+
 #include <grpc/compression_types.h>
 
 #endif /* GRPC_IMPL_CODEGEN_COMPRESSION_TYPES_H */
