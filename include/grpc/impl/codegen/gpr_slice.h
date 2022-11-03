@@ -21,6 +21,8 @@
 // IWYU pragma: private
 
 /// TODO(chengyuc): Remove this file after solving compatibility.
+#include <grpc/support/port_platform.h>
+
 #include <grpc/impl/gpr_slice.h>
 
 #endif /* GRPC_IMPL_CODEGEN_GPR_SLICE_H */
