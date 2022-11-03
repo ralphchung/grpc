@@ -19,9 +19,11 @@
 #ifndef GRPC_IMPL_CODEGEN_STATUS_H
 #define GRPC_IMPL_CODEGEN_STATUS_H
 
-// IWYU pragma: private, include <grpc/status.h>
+// IWYU pragma: private
 
 /// TODO(chengyuc): Remove this file after solving compatibility.
+#include <grpc/support/port_platform.h>
+
 #include <grpc/status.h>
 
 #endif /* GRPC_IMPL_CODEGEN_STATUS_H */
