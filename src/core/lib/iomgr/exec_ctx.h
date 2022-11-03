@@ -23,8 +23,8 @@
 
 #include <limits>
 
+#include <grpc/grpc_types.h>
 #include <grpc/impl/codegen/gpr_types.h>
-#include <grpc/impl/codegen/grpc_types.h>
 #include <grpc/support/atm.h>
 #include <grpc/support/cpu.h>
 #include <grpc/support/log.h>

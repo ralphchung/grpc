@@ -21,8 +21,8 @@
 #include <string>
 #include <vector>
 
+#include <grpc/grpc_types.h>
 #include <grpc/impl/codegen/compression_types.h>
-#include <grpc/impl/codegen/grpc_types.h>
 #include <grpc/support/log.h>
 #include <grpcpp/grpcpp.h>
 #include <grpcpp/resource_quota.h>

@@ -30,7 +30,7 @@
 #include "absl/types/optional.h"
 
 #include <grpc/grpc.h>
-#include <grpc/impl/codegen/grpc_types.h>
+#include <grpc/grpc_types.h>
 #include <grpc/support/atm.h>
 #include <grpcpp/support/config.h>
 

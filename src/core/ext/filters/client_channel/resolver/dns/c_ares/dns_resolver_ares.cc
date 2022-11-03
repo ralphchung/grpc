@@ -35,7 +35,7 @@
 #include "absl/types/optional.h"
 
 #include <grpc/event_engine/event_engine.h>
-#include <grpc/impl/codegen/grpc_types.h>
+#include <grpc/grpc_types.h>
 #include <grpc/support/alloc.h>
 #include <grpc/support/log.h>
 

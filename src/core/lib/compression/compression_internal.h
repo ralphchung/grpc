@@ -28,8 +28,8 @@
 #include "absl/strings/string_view.h"
 #include "absl/types/optional.h"
 
+#include <grpc/grpc_types.h>
 #include <grpc/impl/codegen/compression_types.h>
-#include <grpc/impl/codegen/grpc_types.h>
 
 #include "src/core/lib/gprpp/bitset.h"
 #include "src/core/lib/slice/slice.h"

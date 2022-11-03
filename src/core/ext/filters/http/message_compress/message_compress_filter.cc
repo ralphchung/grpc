@@ -31,8 +31,8 @@
 #include "absl/types/optional.h"
 
 #include <grpc/compression.h>
+#include <grpc/grpc_types.h>
 #include <grpc/impl/codegen/compression_types.h>
-#include <grpc/impl/codegen/grpc_types.h>
 #include <grpc/support/log.h>
 
 #include "src/core/lib/compression/compression_internal.h"

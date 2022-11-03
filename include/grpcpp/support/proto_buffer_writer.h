@@ -21,7 +21,7 @@
 
 #include <type_traits>
 
-#include <grpc/impl/codegen/grpc_types.h>
+#include <grpc/grpc_types.h>
 #include <grpc/slice.h>
 #include <grpcpp/impl/codegen/config_protobuf.h>
 #include <grpcpp/impl/codegen/core_codegen_interface.h>

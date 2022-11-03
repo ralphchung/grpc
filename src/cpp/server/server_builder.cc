@@ -28,8 +28,8 @@
 #include <vector>
 
 #include <grpc/grpc.h>
+#include <grpc/grpc_types.h>
 #include <grpc/impl/codegen/compression_types.h>
-#include <grpc/impl/codegen/grpc_types.h>
 #include <grpc/support/log.h>
 #include <grpc/support/sync.h>
 #include <grpc/support/workaround_list.h>

@@ -27,7 +27,7 @@
 #include "absl/status/status.h"
 #include "absl/strings/string_view.h"
 
-#include <grpc/impl/codegen/grpc_types.h>
+#include <grpc/grpc_types.h>
 #include <grpc/slice.h>
 #include <grpc/support/log.h>
 

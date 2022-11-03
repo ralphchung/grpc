@@ -20,7 +20,7 @@
 #include <string>
 #include <vector>
 
-#include <grpc/impl/codegen/grpc_types.h>
+#include <grpc/grpc_types.h>
 #include <grpcpp/support/channel_arguments.h>
 #include <grpcpp/support/config.h>
 

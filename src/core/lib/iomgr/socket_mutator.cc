@@ -20,7 +20,7 @@
 
 #include "src/core/lib/iomgr/socket_mutator.h"
 
-#include <grpc/impl/codegen/grpc_types.h>
+#include <grpc/grpc_types.h>
 #include <grpc/support/log.h>
 #include <grpc/support/sync.h>
 

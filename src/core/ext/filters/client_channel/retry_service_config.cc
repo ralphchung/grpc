@@ -28,7 +28,7 @@
 #include "absl/strings/str_cat.h"
 #include "absl/types/optional.h"
 
-#include <grpc/impl/codegen/grpc_types.h>
+#include <grpc/grpc_types.h>
 #include <grpc/status.h>
 #include <grpc/support/log.h>
 
