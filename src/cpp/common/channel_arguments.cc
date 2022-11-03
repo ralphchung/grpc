@@ -21,7 +21,7 @@
 #include <string>
 #include <vector>
 
-#include <grpc/impl/codegen/compression_types.h>
+#include <grpc/compression_types.h>
 #include <grpc/impl/codegen/grpc_types.h>
 #include <grpc/support/log.h>
 #include <grpcpp/grpcpp.h>

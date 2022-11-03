@@ -27,8 +27,8 @@
 #include <utility>
 #include <vector>
 
+#include <grpc/compression_types.h>
 #include <grpc/grpc.h>
-#include <grpc/impl/codegen/compression_types.h>
 #include <grpc/impl/codegen/grpc_types.h>
 #include <grpc/support/log.h>
 #include <grpc/support/sync.h>

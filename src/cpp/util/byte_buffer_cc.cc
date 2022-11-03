@@ -20,7 +20,7 @@
 
 #include <grpc/byte_buffer.h>
 #include <grpc/byte_buffer_reader.h>
-#include <grpc/impl/codegen/compression_types.h>
+#include <grpc/compression_types.h>
 #include <grpc/impl/codegen/grpc_types.h>
 #include <grpc/slice.h>
 #include <grpcpp/impl/grpc_library.h>

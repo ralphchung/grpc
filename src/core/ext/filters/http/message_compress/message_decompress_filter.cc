@@ -30,7 +30,7 @@
 #include "absl/strings/str_format.h"
 #include "absl/types/optional.h"
 
-#include <grpc/impl/codegen/compression_types.h>
+#include <grpc/compression_types.h>
 #include <grpc/status.h>
 #include <grpc/support/log.h>
 

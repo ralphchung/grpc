@@ -30,7 +30,7 @@
 #include "absl/strings/match.h"
 #include "absl/strings/string_view.h"
 
-#include <grpc/impl/codegen/compression_types.h>
+#include <grpc/compression_types.h>
 #include <grpc/slice.h>
 #include <grpc/status.h>
 

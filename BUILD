@@ -196,6 +196,7 @@ GRPC_PUBLIC_HDRS = [
     "include/grpc/byte_buffer.h",
     "include/grpc/byte_buffer_reader.h",
     "include/grpc/compression.h",
+    "include/grpc/compression_types.h",
     "include/grpc/fork.h",
     "include/grpc/grpc.h",
     "include/grpc/grpc_posix.h",

@@ -28,7 +28,7 @@
 #include "absl/strings/string_view.h"
 #include "absl/types/optional.h"
 
-#include <grpc/impl/codegen/compression_types.h>
+#include <grpc/compression_types.h>
 #include <grpc/impl/codegen/grpc_types.h>
 
 #include "src/core/lib/gprpp/bitset.h"
