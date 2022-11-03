@@ -21,6 +21,7 @@
 #include <grpc/census.h>
 #include <grpc/compression.h>
 #include <grpc/fork.h>
+#include <grpc/gpr_types.h>
 #include <grpc/grpc.h>
 #include <grpc/grpc_security.h>
 #include <grpc/grpc_security_constants.h>

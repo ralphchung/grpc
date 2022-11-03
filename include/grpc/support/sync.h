@@ -21,8 +21,8 @@
 
 #include <grpc/support/port_platform.h>
 
-#include <grpc/gpr_types.h>              /* for gpr_timespec */
-#include <grpc/impl/codegen/sync.h>      // IWYU pragma: export
+#include <grpc/gpr_types.h>          /* for gpr_timespec */
+#include <grpc/impl/codegen/sync.h>  // IWYU pragma: export
 
 #ifdef __cplusplus
 extern "C" {

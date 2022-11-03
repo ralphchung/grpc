@@ -117,6 +117,7 @@ Pod::Spec.new do |s|
                       'include/grpc/event_engine/slice.h',
                       'include/grpc/event_engine/slice_buffer.h',
                       'include/grpc/fork.h',
+                      'include/grpc/gpr_types.h',
                       'include/grpc/grpc.h',
                       'include/grpc/grpc_posix.h',
                       'include/grpc/grpc_security.h',

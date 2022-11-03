@@ -42,6 +42,7 @@
     <file baseinstalldir="/" name="include/grpc/event_engine/slice.h" role="src" />
     <file baseinstalldir="/" name="include/grpc/event_engine/slice_buffer.h" role="src" />
     <file baseinstalldir="/" name="include/grpc/fork.h" role="src" />
+    <file baseinstalldir="/" name="include/grpc/gpr_types.h" role="src" />
     <file baseinstalldir="/" name="include/grpc/grpc.h" role="src" />
     <file baseinstalldir="/" name="include/grpc/grpc_posix.h" role="src" />
     <file baseinstalldir="/" name="include/grpc/grpc_security.h" role="src" />

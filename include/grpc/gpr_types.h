@@ -16,8 +16,8 @@
  *
  */
 
-#ifndef GRPC_IMPL_CODEGEN_GPR_TYPES_H
-#define GRPC_IMPL_CODEGEN_GPR_TYPES_H
+#ifndef GRPC_GPR_TYPES_H
+#define GRPC_GPR_TYPES_H
 
 // IWYU pragma: private, include <grpc/grpc.h>
 // IWYU pragma: friend "src/.*"
@@ -59,4 +59,4 @@ typedef struct gpr_timespec {
 }
 #endif
 
-#endif /* GRPC_IMPL_CODEGEN_GPR_TYPES_H */
+#endif /* GRPC_GPR_TYPES_H */
