@@ -19,13 +19,15 @@
 #ifndef GRPC_IMPL_CODEGEN_LOG_H
 #define GRPC_IMPL_CODEGEN_LOG_H
 
-// IWYU pragma: private, include <grpc/support/log.h>
+// IWYU pragma: private
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 /// TODO(chengyuc): Remove this file after solving compatibility.
+#include <grpc/support/port_platform.h>
+
 #include <grpc/support/log.h>
 
 #ifdef __cplusplus
