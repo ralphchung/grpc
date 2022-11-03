@@ -22,6 +22,8 @@
 // IWYU pragma: private, include <grpc/support/sync.h>
 
 /// TODO(chengyuc): Remove this file after solving compatibility.
+#include <grpc/support/port_platform.h>
+
 #include <grpc/support/sync.h>
 
 #endif /* GRPC_IMPL_CODEGEN_SYNC_H */
