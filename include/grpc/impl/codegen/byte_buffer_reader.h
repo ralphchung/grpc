@@ -19,9 +19,11 @@
 #ifndef GRPC_IMPL_CODEGEN_BYTE_BUFFER_READER_H
 #define GRPC_IMPL_CODEGEN_BYTE_BUFFER_READER_H
 
-// IWYU pragma: private, include <grpc/byte_buffer_reader.h>
+// IWYU pragma: private
 
 /// TODO(chengyuc): Remove this file after solving compatibility.
+#include <grpc/support/port_platform.h>
+
 #include <grpc/byte_buffer_reader.h>
 
 #endif /* GRPC_IMPL_CODEGEN_BYTE_BUFFER_READER_H */
