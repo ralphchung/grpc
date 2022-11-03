@@ -24,7 +24,7 @@
 #include <stddef.h>
 #include <time.h>
 
-#include <grpc/impl/codegen/gpr_types.h>
+#include <grpc/gpr_types.h>
 
 #ifdef __cplusplus
 extern "C" {

@@ -158,6 +158,7 @@ core_version = "28.0.0"  # @unused
 version = "1.51.0-dev"  # @unused
 
 GPR_PUBLIC_HDRS = [
+    "include/grpc/gpr_types.h",
     "include/grpc/support/alloc.h",
     "include/grpc/support/atm_gcc_atomic.h",
     "include/grpc/support/atm_gcc_sync.h",

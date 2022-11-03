@@ -31,8 +31,8 @@
 #include "absl/time/time.h"
 #include "absl/types/optional.h"
 
+#include <grpc/gpr_types.h>
 #include <grpc/grpc_security.h>
-#include <grpc/impl/codegen/gpr_types.h>
 #include <grpc/support/sync.h>
 #include <grpc/support/time.h>
 

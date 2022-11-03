@@ -31,8 +31,8 @@
 #include "absl/status/status.h"
 
 #include <grpc/compression.h>
+#include <grpc/gpr_types.h>
 #include <grpc/grpc.h>
-#include <grpc/impl/codegen/gpr_types.h>
 #include <grpc/support/alloc.h>
 #include <grpc/support/log.h>
 

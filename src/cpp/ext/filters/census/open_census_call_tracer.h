@@ -28,7 +28,7 @@
 #include "absl/strings/string_view.h"
 #include "absl/time/time.h"
 
-#include <grpc/impl/codegen/gpr_types.h>
+#include <grpc/gpr_types.h>
 #include <grpc/support/atm.h>
 #include <grpcpp/opencensus.h>
 

@@ -45,8 +45,8 @@
 #include "upb/upb.h"
 #include "upb/upb.hpp"
 
+#include <grpc/gpr_types.h>
 #include <grpc/grpc.h>
-#include <grpc/impl/codegen/gpr_types.h>
 #include <grpc/status.h>
 #include <grpc/support/log.h>
 

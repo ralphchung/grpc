@@ -34,8 +34,8 @@
 #include "absl/status/statusor.h"
 #include "absl/types/optional.h"
 
+#include <grpc/gpr_types.h>
 #include <grpc/grpc.h>
-#include <grpc/impl/codegen/gpr_types.h>
 #include <grpc/impl/codegen/grpc_types.h>
 #include <grpc/slice.h>
 #include <grpc/support/log.h>

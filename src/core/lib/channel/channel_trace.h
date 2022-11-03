@@ -24,7 +24,7 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#include <grpc/impl/codegen/gpr_types.h>
+#include <grpc/gpr_types.h>
 #include <grpc/slice.h>
 #include <grpc/support/sync.h>
 

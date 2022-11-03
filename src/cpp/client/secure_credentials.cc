@@ -30,8 +30,8 @@
 #include "absl/types/optional.h"
 
 #include <grpc/event_engine/event_engine.h>
+#include <grpc/gpr_types.h>
 #include <grpc/grpc_security_constants.h>
-#include <grpc/impl/codegen/gpr_types.h>
 #include <grpc/slice.h>
 #include <grpc/support/log.h>
 #include <grpc/support/string_util.h>

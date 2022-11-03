@@ -20,7 +20,7 @@
 
 #include <grpc/support/port_platform.h>
 
-#include <grpc/impl/codegen/gpr_types.h>
+#include <grpc/gpr_types.h>
 #include <grpc/support/time.h>
 
 #ifdef GPR_POSIX_SYNC

@@ -25,7 +25,7 @@
 
 #include "absl/status/status.h"
 
-#include <grpc/impl/codegen/gpr_types.h>
+#include <grpc/gpr_types.h>
 #include <grpc/support/atm.h>
 
 #include "src/core/lib/iomgr/error.h"

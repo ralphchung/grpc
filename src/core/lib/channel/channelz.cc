@@ -28,7 +28,7 @@
 #include "absl/strings/escaping.h"
 #include "absl/strings/strip.h"
 
-#include <grpc/impl/codegen/gpr_types.h>
+#include <grpc/gpr_types.h>
 #include <grpc/support/cpu.h>
 #include <grpc/support/log.h>
 #include <grpc/support/time.h>

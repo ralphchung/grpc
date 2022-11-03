@@ -41,7 +41,7 @@
 #include "opencensus/trace/span_context.h"
 #include "opencensus/trace/status_code.h"
 
-#include <grpc/impl/codegen/gpr_types.h>
+#include <grpc/gpr_types.h>
 #include <grpc/slice.h>
 #include <grpc/support/log.h>
 #include <grpcpp/opencensus.h>

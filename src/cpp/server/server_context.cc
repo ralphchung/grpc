@@ -30,9 +30,9 @@
 #include "absl/strings/string_view.h"
 
 #include <grpc/compression.h>
+#include <grpc/gpr_types.h>
 #include <grpc/grpc.h>
 #include <grpc/impl/codegen/compression_types.h>
-#include <grpc/impl/codegen/gpr_types.h>
 #include <grpc/impl/codegen/grpc_types.h>
 #include <grpc/load_reporting.h>
 #include <grpc/status.h>
