@@ -49,4 +49,4 @@ extern "C" {
 }
 #endif
 
-#endif /* GRPC_IMPL_CODEGEN_PROPAGATION_BITS_H */
+#endif /* GRPC_PROPAGATION_BITS_H */
