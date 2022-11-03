@@ -25,6 +25,7 @@
 #include <grpc/grpc_security.h>
 #include <grpc/grpc_security_constants.h>
 #include <grpc/impl/codegen/atm.h>
+#include <grpc/impl/codegen/byte_buffer.h>
 #include <grpc/impl/codegen/byte_buffer_reader.h>
 #include <grpc/impl/codegen/compression_types.h>
 #include <grpc/impl/codegen/connectivity_state.h>
@@ -67,6 +68,17 @@ int main(int argc, char **argv) {
   (void)argc;
   (void)argv;
 
+  printf("%lx", (unsigned long) grpc_raw_byte_buffer_create);
+  printf("%lx", (unsigned long) grpc_raw_compressed_byte_buffer_create);
+  printf("%lx", (unsigned long) grpc_byte_buffer_copy);
+  printf("%lx", (unsigned long) grpc_byte_buffer_length);
+  printf("%lx", (unsigned long) grpc_byte_buffer_destroy);
+  printf("%lx", (unsigned long) grpc_byte_buffer_reader_init);
+  printf("%lx", (unsigned long) grpc_byte_buffer_reader_destroy);
+  printf("%lx", (unsigned long) grpc_byte_buffer_reader_next);
+  printf("%lx", (unsigned long) grpc_byte_buffer_reader_peek);
+  printf("%lx", (unsigned long) grpc_byte_buffer_reader_readall);
+  printf("%lx", (unsigned long) grpc_raw_byte_buffer_from_reader);
   printf("%lx", (unsigned long) grpc_compression_algorithm_is_message);
   printf("%lx", (unsigned long) grpc_compression_algorithm_is_stream);
   printf("%lx", (unsigned long) grpc_compression_algorithm_parse);
@@ -229,17 +241,6 @@ int main(int argc, char **argv) {
   printf("%lx", (unsigned long) grpc_authorization_policy_provider_file_watcher_create);
   printf("%lx", (unsigned long) grpc_authorization_policy_provider_release);
   printf("%lx", (unsigned long) grpc_tls_credentials_options_set_tls_session_key_log_file_path);
-  printf("%lx", (unsigned long) grpc_raw_byte_buffer_create);
-  printf("%lx", (unsigned long) grpc_raw_compressed_byte_buffer_create);
-  printf("%lx", (unsigned long) grpc_byte_buffer_copy);
-  printf("%lx", (unsigned long) grpc_byte_buffer_length);
-  printf("%lx", (unsigned long) grpc_byte_buffer_destroy);
-  printf("%lx", (unsigned long) grpc_byte_buffer_reader_init);
-  printf("%lx", (unsigned long) grpc_byte_buffer_reader_destroy);
-  printf("%lx", (unsigned long) grpc_byte_buffer_reader_next);
-  printf("%lx", (unsigned long) grpc_byte_buffer_reader_peek);
-  printf("%lx", (unsigned long) grpc_byte_buffer_reader_readall);
-  printf("%lx", (unsigned long) grpc_raw_byte_buffer_from_reader);
   printf("%lx", (unsigned long) gpr_log_severity_string);
   printf("%lx", (unsigned long) gpr_log);
   printf("%lx", (unsigned long) gpr_should_log);
