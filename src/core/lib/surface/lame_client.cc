@@ -25,8 +25,8 @@
 
 #include "absl/status/statusor.h"
 
+#include <grpc/connectivity_state.h>
 #include <grpc/grpc.h>
-#include <grpc/impl/codegen/connectivity_state.h>
 #include <grpc/status.h>
 #include <grpc/support/log.h>
 

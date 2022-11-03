@@ -34,8 +34,8 @@
 #include "absl/types/optional.h"
 #include "absl/types/variant.h"
 
+#include <grpc/connectivity_state.h>
 #include <grpc/event_engine/event_engine.h>
-#include <grpc/impl/codegen/connectivity_state.h>
 #include <grpc/support/log.h>
 
 #include "src/core/ext/filters/client_channel/lb_policy/child_policy_handler.h"

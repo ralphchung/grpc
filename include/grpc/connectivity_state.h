@@ -16,8 +16,8 @@
  *
  */
 
-#ifndef GRPC_IMPL_CODEGEN_CONNECTIVITY_STATE_H
-#define GRPC_IMPL_CODEGEN_CONNECTIVITY_STATE_H
+#ifndef GRPC_CONNECTIVITY_STATE_H
+#define GRPC_CONNECTIVITY_STATE_H
 
 // IWYU pragma: private, include <grpc/grpc.h>
 // IWYU pragma: friend "src/.*"
@@ -26,11 +26,22 @@
 extern "C" {
 #endif
 
-/// TODO(chengyuc): Remove this file after solving compatibility.
-#include <grpc/connectivity_state.h>
+/** Connectivity state of a channel. */
+typedef enum {
+  /** channel is idle */
+  GRPC_CHANNEL_IDLE,
+  /** channel is connecting */
+  GRPC_CHANNEL_CONNECTING,
+  /** channel is ready for work */
+  GRPC_CHANNEL_READY,
+  /** channel has seen a failure but expects to recover */
+  GRPC_CHANNEL_TRANSIENT_FAILURE,
+  /** channel has seen a failure that it cannot recover from */
+  GRPC_CHANNEL_SHUTDOWN
+} grpc_connectivity_state;
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* GRPC_IMPL_CODEGEN_CONNECTIVITY_STATE_H */
+#endif /* GRPC_CONNECTIVITY_STATE_H */

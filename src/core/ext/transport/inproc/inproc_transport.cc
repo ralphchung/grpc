@@ -34,8 +34,8 @@
 #include "absl/strings/string_view.h"
 #include "absl/types/optional.h"
 
+#include <grpc/connectivity_state.h>
 #include <grpc/grpc.h>
-#include <grpc/impl/codegen/connectivity_state.h>
 #include <grpc/status.h>
 #include <grpc/support/alloc.h>
 #include <grpc/support/log.h>
