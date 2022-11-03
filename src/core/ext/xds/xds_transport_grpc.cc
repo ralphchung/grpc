@@ -30,7 +30,7 @@
 #include <grpc/byte_buffer_reader.h>
 #include <grpc/grpc.h>
 #include <grpc/impl/codegen/connectivity_state.h>
-#include <grpc/impl/codegen/propagation_bits.h>
+#include <grpc/propagation_bits.h>
 #include <grpc/slice.h>
 #include <grpc/support/log.h>
 
