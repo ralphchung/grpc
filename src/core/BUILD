@@ -1061,10 +1061,7 @@ grpc_cc_library(
     public_hdrs = [
         "//:include/grpc/slice.h",
     ],
-    deps = [
-        "//:event_engine_base_hdrs",
-        "//:gpr",
-    ],
+    deps = ["//:gpr"],
 )
 
 grpc_cc_library(
