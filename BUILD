@@ -2812,6 +2812,7 @@ grpc_cc_library(
         "sockaddr_utils",
         "uri_parser",
         "//src/core:channel_args_preconditioning",
+        "//src/core:closure",
         "//src/core:handshaker_registry",
         "//src/core:iomgr_fwd",
         "//src/core:pollset_set",
