@@ -17,6 +17,8 @@
 #ifndef GRPC_EVENT_ENGINE_PROMISE_ENDPOINT_H
 #define GRPC_EVENT_ENGINE_PROMISE_ENDPOINT_H
 
+#include <grpc/support/port_platform.h>
+
 #include <memory>
 
 #include "absl/status/status.h"
@@ -74,4 +76,4 @@ class PromiseEndpoint {
 
 }  // namespace grpc
 
-#endif
+#endif  // GRPC_EVENT_ENGINE_PROMISE_ENDPOINT_H

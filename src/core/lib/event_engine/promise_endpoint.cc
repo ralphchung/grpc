@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+#include <grpc/support/port_platform.h>
+
 #include <cstdint>
 
 #include <grpc/event_engine/promise_endpoint.h>
