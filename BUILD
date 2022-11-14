@@ -2666,6 +2666,7 @@ grpc_cc_library(
     visibility = ["@grpc:client_channel"],
     deps = [
         "backoff",
+        "channel_stack_builder",
         "config",
         "debug_location",
         "exec_ctx",
@@ -2688,7 +2689,6 @@ grpc_cc_library(
         "work_serializer",
         "xds_orca_service_upb",
         "xds_orca_upb",
-        ":channel_stack_builder",
         "//src/core:arena",
         "//src/core:channel_fwd",
         "//src/core:channel_init",
@@ -3139,6 +3139,7 @@ grpc_cc_library(
     language = "c++",
     visibility = ["@grpc:http"],
     deps = [
+        "channel_stack_builder",
         "config",
         "debug_location",
         "gpr",
@@ -3146,7 +3147,6 @@ grpc_cc_library(
         "grpc_public_hdrs",
         "grpc_trace",
         "promise",
-        ":channel_stack_builder",
         "//src/core:arena",
         "//src/core:arena_promise",
         "//src/core:basic_seq",
