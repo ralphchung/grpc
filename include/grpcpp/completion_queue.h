@@ -251,7 +251,7 @@ class CompletionQueue : private grpc::internal::GrpcLibrary {
   /// Private constructor of CompletionQueue only visible to friend classes
   explicit CompletionQueue(const grpc_completion_queue_attributes& attributes) {
     cq_ = grpc::g_core_codegen_interface->grpc_completion_queue_create(
-        ::grpc_completion_queue_factory_lookup(&attributes), &attributes,
+        grpc_completion_queue_factory_lookup(&attributes), &attributes,
         nullptr);
     InitialAvalanching();  // reserve this for the future shutdown
   }
