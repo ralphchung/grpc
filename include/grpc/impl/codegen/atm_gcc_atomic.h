@@ -19,7 +19,11 @@
 #ifndef GRPC_IMPL_CODEGEN_ATM_GCC_ATOMIC_H
 #define GRPC_IMPL_CODEGEN_ATM_GCC_ATOMIC_H
 
+// IWYU pragma: private, include <grpc/support/atm.h>
+
 /// TODO(chengyuc): Remove this file after solving compatibility.
+#include <grpc/support/port_platform.h>
+
 #include <grpc/support/atm_gcc_atomic.h>
 
 #endif /* GRPC_IMPL_CODEGEN_ATM_GCC_ATOMIC_H */
