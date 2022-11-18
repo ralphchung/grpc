@@ -552,9 +552,6 @@ cdef extern from "grpc/grpc_security.h":
   void grpc_set_ssl_roots_override_callback(
       grpc_ssl_roots_override_callback cb) nogil
 
-  grpc_channel_credentials *grpc_ssl_credentials_create(
-      const char *pem_root_certs, grpc_ssl_pem_key_cert_pair *pem_key_cert_pair,
-      verify_peer_options *verify_options, void *reserved) nogil
   grpc_channel_credentials *grpc_composite_channel_credentials_create(
       grpc_channel_credentials *creds1, grpc_call_credentials *creds2,
       void *reserved) nogil
@@ -689,6 +686,21 @@ cdef extern from "grpc/channel_credentials/google_default.h":
     pass
 
   grpc_channel_credentials *grpc_google_default_credentials_create(grpc_call_credentials* call_credentials) nogil
+
+
+cdef extern from "grpc/channel_credentials/ssl.h":
+
+  ctypedef struct grpc_ssl_pem_key_cert_pair:
+    # We don't care about the internals (and in fact don't know them)
+    pass
+
+  ctypedef struct verify_peer_options:
+    # We don't care about the internals (and in fact don't know them)
+    pass
+
+  grpc_channel_credentials *grpc_ssl_credentials_create(
+    const char *pem_root_certs, grpc_ssl_pem_key_cert_pair *pem_key_cert_pair,
+    verify_peer_options *verify_options, void *reserved) nogil
 
 
 cdef extern from "grpc/compression.h":
