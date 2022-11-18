@@ -82,6 +82,10 @@ int main(int argc, char **argv) {
   printf("%lx", (unsigned long) grpc_byte_buffer_reader_readall);
   printf("%lx", (unsigned long) grpc_raw_byte_buffer_from_reader);
   printf("%lx", (unsigned long) grpc_google_default_credentials_create);
+  printf("%lx", (unsigned long) grpc_ssl_credentials_create);
+  printf("%lx", (unsigned long) grpc_ssl_credentials_create_ex);
+  printf("%lx", (unsigned long) grpc_ssl_server_credentials_create);
+  printf("%lx", (unsigned long) grpc_ssl_server_credentials_create_ex);
   printf("%lx", (unsigned long) grpc_compression_algorithm_is_message);
   printf("%lx", (unsigned long) grpc_compression_algorithm_is_stream);
   printf("%lx", (unsigned long) grpc_compression_algorithm_parse);
@@ -186,8 +190,6 @@ int main(int argc, char **argv) {
   printf("%lx", (unsigned long) grpc_ssl_session_cache_create_channel_arg);
   printf("%lx", (unsigned long) grpc_call_credentials_release);
   printf("%lx", (unsigned long) grpc_set_ssl_roots_override_callback);
-  printf("%lx", (unsigned long) grpc_ssl_credentials_create);
-  printf("%lx", (unsigned long) grpc_ssl_credentials_create_ex);
   printf("%lx", (unsigned long) grpc_composite_channel_credentials_create);
   printf("%lx", (unsigned long) grpc_composite_call_credentials_create);
   printf("%lx", (unsigned long) grpc_google_compute_engine_credentials_create);
@@ -203,8 +205,6 @@ int main(int argc, char **argv) {
   printf("%lx", (unsigned long) grpc_metadata_credentials_create_from_plugin);
   printf("%lx", (unsigned long) grpc_ssl_server_certificate_config_create);
   printf("%lx", (unsigned long) grpc_ssl_server_certificate_config_destroy);
-  printf("%lx", (unsigned long) grpc_ssl_server_credentials_create);
-  printf("%lx", (unsigned long) grpc_ssl_server_credentials_create_ex);
   printf("%lx", (unsigned long) grpc_ssl_server_credentials_create_options_using_config);
   printf("%lx", (unsigned long) grpc_ssl_server_credentials_create_options_using_config_fetcher);
   printf("%lx", (unsigned long) grpc_ssl_server_credentials_options_destroy);

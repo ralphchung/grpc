@@ -120,4 +120,4 @@ GRPCAPI grpc_server_credentials* grpc_ssl_server_credentials_create_ex(
 }
 #endif
 
-#endif
+#endif /* GRPC_CHANNEL_CREDENTIALS_SSL_H */
