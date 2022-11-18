@@ -49,4 +49,4 @@ GRPCAPI grpc_channel_credentials* grpc_google_default_credentials_create(
 }
 #endif
 
-#endif
+#endif /* GRPC_CHANNEL_CREDENTIALS_GOOGLE_DEFAULT_H */
