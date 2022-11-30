@@ -27,9 +27,9 @@
 #include <stddef.h>
 
 #include <grpc/impl/codegen/compression_types.h>
-#include <grpc/impl/codegen/gpr_types.h>
 #include <grpc/impl/codegen/slice.h>
 #include <grpc/impl/codegen/status.h>
+#include <grpc/support/time.h>
 
 #ifdef __cplusplus
 extern "C" {
