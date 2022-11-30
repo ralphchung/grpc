@@ -131,7 +131,6 @@ Pod::Spec.new do |s|
                       'include/grpc/impl/codegen/connectivity_state.h',
                       'include/grpc/impl/codegen/fork.h',
                       'include/grpc/impl/codegen/gpr_slice.h',
-                      'include/grpc/impl/codegen/gpr_types.h',
                       'include/grpc/impl/codegen/grpc_types.h',
                       'include/grpc/impl/codegen/log.h',
                       'include/grpc/impl/codegen/port_platform.h',
