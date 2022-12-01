@@ -521,12 +521,8 @@ cdef extern from "grpc/grpc_security.h":
   grpc_channel_credentials *grpc_xds_credentials_create(
       grpc_channel_credentials *fallback_creds) nogil
 
-  grpc_channel_credentials *grpc_insecure_credentials_create() nogil
-
   grpc_server_credentials *grpc_xds_server_credentials_create(
       grpc_server_credentials *fallback_creds) nogil
-
-  grpc_server_credentials *grpc_insecure_server_credentials_create() nogil
 
   grpc_call_credentials *grpc_composite_call_credentials_create(
       grpc_call_credentials *creds1, grpc_call_credentials *creds2,
@@ -652,6 +648,20 @@ cdef extern from "grpc/channel_credentials/google_default.h":
     pass
 
   grpc_channel_credentials *grpc_google_default_credentials_create(grpc_call_credentials* call_credentials) nogil
+
+
+cdef extern from "grpc/channel_credentials/insecure.h":
+  ctypedef struct grpc_channel_credentials:
+    # We don't care about the internals (and in fact don't know them)
+    pass
+
+  ctypedef struct grpc_server_credentials:
+    # We don't care about the internals (and in fact don't know them)
+    pass
+
+  grpc_channel_credentials *grpc_insecure_credentials_create() nogil
+
+  grpc_server_credentials *grpc_insecure_server_credentials_create() nogil
 
 
 cdef extern from "grpc/channel_credentials/local.h":
