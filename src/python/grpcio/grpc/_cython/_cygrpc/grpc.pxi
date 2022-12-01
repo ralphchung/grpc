@@ -518,12 +518,6 @@ cdef extern from "grpc/grpc_security.h":
       void *reserved) nogil
   void grpc_channel_credentials_release(grpc_channel_credentials *creds) nogil
 
-  grpc_channel_credentials *grpc_xds_credentials_create(
-      grpc_channel_credentials *fallback_creds) nogil
-
-  grpc_server_credentials *grpc_xds_server_credentials_create(
-      grpc_server_credentials *fallback_creds) nogil
-
   grpc_call_credentials *grpc_composite_call_credentials_create(
       grpc_call_credentials *creds1, grpc_call_credentials *creds2,
       void *reserved) nogil
@@ -691,6 +685,13 @@ cdef extern from "grpc/channel_credentials/ssl.h":
 
   grpc_server_credentials *grpc_ssl_server_credentials_create_with_options(
       grpc_ssl_server_credentials_options *options)
+
+
+cdef extern from "grpc/channel_credentials/xds.h":
+  grpc_channel_credentials *grpc_xds_credentials_create(
+      grpc_channel_credentials *fallback_creds) nogil
+  grpc_server_credentials *grpc_xds_server_credentials_create(
+      grpc_server_credentials *fallback_creds) nogil
 
 
 cdef extern from "grpc/compression.h":

@@ -201,6 +201,7 @@ GRPC_PUBLIC_HDRS = [
     "include/grpc/channel_credentials/local.h",
     "include/grpc/channel_credentials/ssl.h",
     "include/grpc/channel_credentials/tls.h",
+    "include/grpc/channel_credentials/xds.h",
     "include/grpc/compression.h",
     "include/grpc/fork.h",
     "include/grpc/grpc.h",

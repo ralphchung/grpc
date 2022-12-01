@@ -56,6 +56,7 @@ Gem::Specification.new do |s|
   s.files += %w( include/grpc/channel_credentials/local.h )
   s.files += %w( include/grpc/channel_credentials/ssl.h )
   s.files += %w( include/grpc/channel_credentials/tls.h )
+  s.files += %w( include/grpc/channel_credentials/xds.h )
   s.files += %w( include/grpc/compression.h )
   s.files += %w( include/grpc/event_engine/endpoint_config.h )
   s.files += %w( include/grpc/event_engine/event_engine.h )
