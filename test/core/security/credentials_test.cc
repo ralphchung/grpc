@@ -20,6 +20,7 @@
 
 #include "src/core/lib/security/credentials/credentials.h"
 
+#include <grpc/channel_credentials/insecure.h>
 #include <stdlib.h>
 #include <string.h>
 
