@@ -244,4 +244,4 @@ grpc_ssl_server_credentials_create_with_options(
 }
 #endif
 
-#endif
+#endif /* GRPC_CHANNEL_CREDENTIALS_SSL_H */
