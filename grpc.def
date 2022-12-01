@@ -48,6 +48,8 @@ EXPORTS
     grpc_tls_credentials_options_set_verify_server_cert
     grpc_tls_credentials_options_set_check_call_host
     grpc_tls_credentials_options_set_tls_session_key_log_file_path
+    grpc_xds_credentials_create
+    grpc_xds_server_credentials_create
     grpc_compression_algorithm_is_message
     grpc_compression_algorithm_is_stream
     grpc_compression_algorithm_parse
@@ -169,8 +171,6 @@ EXPORTS
     grpc_metadata_credentials_create_from_plugin
     grpc_call_set_credentials
     grpc_server_credentials_set_auth_metadata_processor
-    grpc_xds_credentials_create
-    grpc_xds_server_credentials_create
     grpc_authorization_policy_provider_static_data_create
     grpc_authorization_policy_provider_file_watcher_create
     grpc_authorization_policy_provider_release

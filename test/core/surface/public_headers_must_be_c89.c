@@ -125,6 +125,8 @@ int main(int argc, char **argv) {
   printf("%lx", (unsigned long) grpc_tls_credentials_options_set_verify_server_cert);
   printf("%lx", (unsigned long) grpc_tls_credentials_options_set_check_call_host);
   printf("%lx", (unsigned long) grpc_tls_credentials_options_set_tls_session_key_log_file_path);
+  printf("%lx", (unsigned long) grpc_xds_credentials_create);
+  printf("%lx", (unsigned long) grpc_xds_server_credentials_create);
   printf("%lx", (unsigned long) grpc_compression_algorithm_is_message);
   printf("%lx", (unsigned long) grpc_compression_algorithm_is_stream);
   printf("%lx", (unsigned long) grpc_compression_algorithm_parse);
@@ -244,8 +246,6 @@ int main(int argc, char **argv) {
   printf("%lx", (unsigned long) grpc_metadata_credentials_create_from_plugin);
   printf("%lx", (unsigned long) grpc_call_set_credentials);
   printf("%lx", (unsigned long) grpc_server_credentials_set_auth_metadata_processor);
-  printf("%lx", (unsigned long) grpc_xds_credentials_create);
-  printf("%lx", (unsigned long) grpc_xds_server_credentials_create);
   printf("%lx", (unsigned long) grpc_authorization_policy_provider_static_data_create);
   printf("%lx", (unsigned long) grpc_authorization_policy_provider_file_watcher_create);
   printf("%lx", (unsigned long) grpc_authorization_policy_provider_release);

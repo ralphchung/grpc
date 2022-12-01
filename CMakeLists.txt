@@ -2437,6 +2437,7 @@ foreach(_hdr
   include/grpc/channel_credentials/local.h
   include/grpc/channel_credentials/ssl.h
   include/grpc/channel_credentials/tls.h
+  include/grpc/channel_credentials/xds.h
   include/grpc/compression.h
   include/grpc/event_engine/endpoint_config.h
   include/grpc/event_engine/event_engine.h
@@ -3049,6 +3050,7 @@ foreach(_hdr
   include/grpc/channel_credentials/local.h
   include/grpc/channel_credentials/ssl.h
   include/grpc/channel_credentials/tls.h
+  include/grpc/channel_credentials/xds.h
   include/grpc/compression.h
   include/grpc/event_engine/endpoint_config.h
   include/grpc/event_engine/event_engine.h
@@ -4533,6 +4535,7 @@ foreach(_hdr
   include/grpc/channel_credentials/local.h
   include/grpc/channel_credentials/ssl.h
   include/grpc/channel_credentials/tls.h
+  include/grpc/channel_credentials/xds.h
   include/grpc/compression.h
   include/grpc/event_engine/endpoint_config.h
   include/grpc/event_engine/event_engine.h
