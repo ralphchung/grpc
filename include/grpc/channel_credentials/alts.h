@@ -99,4 +99,4 @@ GRPCAPI grpc_server_credentials* grpc_alts_server_credentials_create(
 }
 #endif
 
-#endif
+#endif /* GRPC_CHANNEL_CREDENTIALS_ALTS_H */
