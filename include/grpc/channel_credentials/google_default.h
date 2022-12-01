@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef GRPC_GRPC_CHANNEL_CREDENTIALS_H
-#define GRPC_GRPC_CHANNEL_CREDENTIALS_H
+#ifndef GRPC_CHANNEL_CREDENTIALS_GOOGLE_DEFAULT_H
+#define GRPC_CHANNEL_CREDENTIALS_GOOGLE_DEFAULT_H
 
 #include <grpc/support/port_platform.h>
 
@@ -49,4 +49,4 @@ GRPCAPI grpc_channel_credentials* grpc_google_default_credentials_create(
 }
 #endif
 
-#endif
+#endif /* GRPC_CHANNEL_CREDENTIALS_GOOGLE_DEFAULT_H */
