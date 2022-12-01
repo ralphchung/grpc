@@ -93,6 +93,8 @@ int main(int argc, char **argv) {
   printf("%lx", (unsigned long) grpc_alts_credentials_create);
   printf("%lx", (unsigned long) grpc_alts_server_credentials_create);
   printf("%lx", (unsigned long) grpc_google_default_credentials_create);
+  printf("%lx", (unsigned long) grpc_insecure_credentials_create);
+  printf("%lx", (unsigned long) grpc_insecure_server_credentials_create);
   printf("%lx", (unsigned long) grpc_local_credentials_create);
   printf("%lx", (unsigned long) grpc_local_server_credentials_create);
   printf("%lx", (unsigned long) grpc_ssl_credentials_create);
@@ -241,8 +243,6 @@ int main(int argc, char **argv) {
   printf("%lx", (unsigned long) grpc_metadata_credentials_create_from_plugin);
   printf("%lx", (unsigned long) grpc_call_set_credentials);
   printf("%lx", (unsigned long) grpc_server_credentials_set_auth_metadata_processor);
-  printf("%lx", (unsigned long) grpc_insecure_credentials_create);
-  printf("%lx", (unsigned long) grpc_insecure_server_credentials_create);
   printf("%lx", (unsigned long) grpc_xds_credentials_create);
   printf("%lx", (unsigned long) grpc_xds_server_credentials_create);
   printf("%lx", (unsigned long) grpc_authorization_policy_provider_static_data_create);

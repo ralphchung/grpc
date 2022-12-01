@@ -41,4 +41,4 @@ GRPCAPI grpc_server_credentials* grpc_insecure_server_credentials_create();
 }
 #endif
 
-#endif /* GRPC_CHANNEL_CREDENTIALS_LOCAL_H */
+#endif /* GRPC_CHANNEL_CREDENTIALS_INSECURE_H */
