@@ -29,6 +29,7 @@
 
 #include <grpc/channel_credentials/google_default.h>
 #include <grpc/channel_credentials/ssl.h>
+#include <grpc/channel_credentials/xds.h>
 #include <grpc/support/alloc.h>
 #include <grpc/support/string_util.h>
 

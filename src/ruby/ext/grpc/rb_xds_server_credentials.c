@@ -24,6 +24,7 @@
 #include "rb_grpc_imports.generated.h"
 #include "rb_server_credentials.h"
 
+#include <grpc/channel_credentials/xds.h>
 #include <grpc/grpc.h>
 #include <grpc/grpc_security.h>
 #include <grpc/support/log.h>

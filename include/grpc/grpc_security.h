@@ -367,36 +367,6 @@ GRPCAPI void grpc_server_credentials_set_auth_metadata_processor(
     grpc_server_credentials* creds, grpc_auth_metadata_processor processor);
 
 /**
- * EXPERIMENTAL API - Subject to change
- *
- * This method creates an xDS channel credentials object.
- *
- * Creating a channel with credentials of this type indicates that the channel
- * should get credentials configuration from the xDS control plane.
- *
- * \a fallback_credentials are used if the channel target does not have the
- * 'xds:///' scheme or if the xDS control plane does not provide information on
- * how to fetch credentials dynamically. Does NOT take ownership of the \a
- * fallback_credentials. (Internally takes a ref to the object.)
- */
-GRPCAPI grpc_channel_credentials* grpc_xds_credentials_create(
-    grpc_channel_credentials* fallback_credentials);
-
-/**
- * EXPERIMENTAL API - Subject to change
- *
- * This method creates an xDS server credentials object.
- *
- * \a fallback_credentials are used if the xDS control plane does not provide
- * information on how to fetch credentials dynamically.
- *
- * Does NOT take ownership of the \a fallback_credentials. (Internally takes
- * a ref to the object.)
- */
-GRPCAPI grpc_server_credentials* grpc_xds_server_credentials_create(
-    grpc_server_credentials* fallback_credentials);
-
-/**
  * EXPERIMENTAL - Subject to change.
  * An opaque type that is responsible for providing authorization policies to
  * gRPC.
