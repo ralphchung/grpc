@@ -135,8 +135,7 @@ inline grpc_slice SliceReferencingString(const std::string& str) {
 }
 
 inline grpc_slice SliceFromCopiedString(const std::string& str) {
-  return grpc_slice_from_copied_buffer(str.data(),
-                                                                 str.length());
+  return grpc_slice_from_copied_buffer(str.data(), str.length());
 }
 
 }  // namespace grpc
