@@ -22,7 +22,7 @@
 #include <grpc/support/port_platform.h>
 
 #include <grpc/grpc.h>
-#include <grpc/impl/codegen/grpc_types.h>
+#include <grpc/impl/grpc_types.h>
 #include <grpcpp/impl/call.h>
 #include <grpcpp/impl/call_hook.h>
 #include <grpcpp/impl/codegen/core_codegen_interface.h>
