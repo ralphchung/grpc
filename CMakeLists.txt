@@ -3286,7 +3286,6 @@ add_library(grpc++
   src/cpp/server/server_callback.cc
   src/cpp/server/server_cc.cc
   src/cpp/server/server_context.cc
-  src/cpp/server/server_credentials.cc
   src/cpp/server/server_posix.cc
   src/cpp/server/xds_server_credentials.cc
   src/cpp/thread_manager/thread_manager.cc
@@ -3978,7 +3977,6 @@ add_library(grpc++_unsecure
   src/cpp/server/server_callback.cc
   src/cpp/server/server_cc.cc
   src/cpp/server/server_context.cc
-  src/cpp/server/server_credentials.cc
   src/cpp/server/server_posix.cc
   src/cpp/thread_manager/thread_manager.cc
   src/cpp/util/byte_buffer_cc.cc
@@ -7002,7 +7000,6 @@ add_executable(binder_transport_test
   src/cpp/server/server_callback.cc
   src/cpp/server/server_cc.cc
   src/cpp/server/server_context.cc
-  src/cpp/server/server_credentials.cc
   src/cpp/server/server_posix.cc
   src/cpp/thread_manager/thread_manager.cc
   src/cpp/util/byte_buffer_cc.cc
@@ -9842,7 +9839,6 @@ add_executable(endpoint_binder_pool_test
   src/cpp/server/server_callback.cc
   src/cpp/server/server_cc.cc
   src/cpp/server/server_context.cc
-  src/cpp/server/server_credentials.cc
   src/cpp/server/server_posix.cc
   src/cpp/thread_manager/thread_manager.cc
   src/cpp/util/byte_buffer_cc.cc
@@ -10492,7 +10488,6 @@ add_executable(fake_binder_test
   src/cpp/server/server_callback.cc
   src/cpp/server/server_cc.cc
   src/cpp/server/server_context.cc
-  src/cpp/server/server_credentials.cc
   src/cpp/server/server_posix.cc
   src/cpp/thread_manager/thread_manager.cc
   src/cpp/util/byte_buffer_cc.cc
@@ -21102,7 +21097,6 @@ add_executable(transport_stream_receiver_test
   src/cpp/server/server_callback.cc
   src/cpp/server/server_cc.cc
   src/cpp/server/server_context.cc
-  src/cpp/server/server_credentials.cc
   src/cpp/server/server_posix.cc
   src/cpp/thread_manager/thread_manager.cc
   src/cpp/util/byte_buffer_cc.cc
@@ -21776,7 +21770,6 @@ add_executable(wire_reader_test
   src/cpp/server/server_callback.cc
   src/cpp/server/server_cc.cc
   src/cpp/server/server_context.cc
-  src/cpp/server/server_credentials.cc
   src/cpp/server/server_posix.cc
   src/cpp/thread_manager/thread_manager.cc
   src/cpp/util/byte_buffer_cc.cc
@@ -21878,7 +21871,6 @@ add_executable(wire_writer_test
   src/cpp/server/server_callback.cc
   src/cpp/server/server_cc.cc
   src/cpp/server/server_context.cc
-  src/cpp/server/server_credentials.cc
   src/cpp/server/server_posix.cc
   src/cpp/thread_manager/thread_manager.cc
   src/cpp/util/byte_buffer_cc.cc

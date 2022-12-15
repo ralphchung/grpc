@@ -1081,7 +1081,6 @@ Pod::Spec.new do |s|
                       'src/cpp/server/server_callback.cc',
                       'src/cpp/server/server_cc.cc',
                       'src/cpp/server/server_context.cc',
-                      'src/cpp/server/server_credentials.cc',
                       'src/cpp/server/server_posix.cc',
                       'src/cpp/server/thread_pool_interface.h',
                       'src/cpp/server/xds_server_credentials.cc',
