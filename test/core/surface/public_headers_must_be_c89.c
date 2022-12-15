@@ -24,6 +24,7 @@
 #include <grpc/grpc.h>
 #include <grpc/grpc_security.h>
 #include <grpc/grpc_security_constants.h>
+#include <grpc/impl/codegen/atm.h>
 #include <grpc/impl/compression_types.h>
 #include <grpc/impl/connectivity_state.h>
 #include <grpc/impl/grpc_types.h>
