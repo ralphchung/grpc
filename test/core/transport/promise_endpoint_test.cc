@@ -16,6 +16,10 @@
 
 #include "src/core/lib/transport/promise_endpoint.h"
 
+#include <sys/socket.h>
+
+#include <algorithm>
+#include <cstring>
 #include <functional>
 #include <memory>
 #include <queue>
@@ -26,6 +30,7 @@
 #include "absl/types/optional.h"
 #include "absl/types/variant.h"
 #include "gmock/gmock.h"
+#include "gtest/gtest.h"
 
 #include <grpc/event_engine/event_engine.h>
 
